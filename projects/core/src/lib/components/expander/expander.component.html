@@ -1,0 +1,37 @@
+<section class="primaryBanner" *ngIf="hasPrimaryBanner">
+
+</section>
+<section class="header" [ngClass]="{'selectable': isSelectable}">
+  <div id="iconWrapper" (click)="toggle()" >
+    <tf-checkbox 
+      *ngIf="isSelectable" 
+      size="24" 
+      [(value)]="isSelected">
+    </tf-checkbox>
+    <fa-icon 
+      [icon]="expandedIcon" 
+      *ngIf="!isSelectable">
+    </fa-icon>
+  </div>
+  <div id="title">
+    {{headerText}}
+  </div>
+  <div id="headerContent">
+    <ng-content select="[header]">
+
+    </ng-content>
+  </div>
+</section>
+<section class="preview" [ngClass]="{'hidden': !displayPreview}">
+  <ng-content select="[preview]">
+
+  </ng-content>
+</section>
+<section class="content" 
+  #content 
+  [attr.guid]="contentId" 
+  [ngStyle]="{'height.px': isOpen ? getContentMaxHeight() : 0}" 
+  [ngClass]="{'open': isOpen}">
+  <ng-content select="[content]">
+  </ng-content>
+</section>

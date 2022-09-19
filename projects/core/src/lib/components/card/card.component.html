@@ -1,0 +1,13 @@
+<section class="bar" *ngIf="hasTopBar"></section>
+<section #header class="header" [style.display]="shouldDisplayHeader() ? 'block': 'none'">
+  <ng-content select="[header]"></ng-content>
+</section>
+<section #well class="well" [style.display]="shouldDisplayWell() ? 'block': 'none'">
+  <ng-content select="[well]"></ng-content>
+</section>
+<section #content class="content" [style.display]="shouldDisplayContent() ? 'block': 'none'">
+  <ng-content select="[content]"></ng-content>
+</section>
+<section #footer class="footer" [style.display]="shouldDisplayFooter() ? 'block': 'none'">
+  <ng-content select="[footer]"></ng-content>
+</section>

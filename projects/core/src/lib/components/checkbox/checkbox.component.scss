@@ -1,0 +1,50 @@
+@import '../../../../styles.scss';
+
+:host{
+    display:inline-block;
+    box-sizing: border-box;
+    div {
+        border-radius: 2px;
+
+        line-height: 1px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        border: 1px solid $grey;
+        box-sizing: border-box;
+        &.checked{
+            background-color: $primary;
+            border: 1px solid $primary;
+            &:hover{
+                background-color: $primary;
+            }
+
+            fa-icon{
+                opacity: 1;
+            }
+            &.disabled {
+                background-color: $primary;
+            }
+        }
+
+        fa-icon {
+            display: inline-block;
+            opacity: 0;
+        }
+        &:hover{
+            background-color: $grey-light;
+            cursor: pointer;
+        }
+        &:active{
+            background-color: $primary-lighter;
+        }
+
+        &.disabled{
+            background-color: $grey-light;
+            &:hover{
+                cursor: not-allowed;
+            }
+        }
+    }
+}

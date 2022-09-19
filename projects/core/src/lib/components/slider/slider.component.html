@@ -1,0 +1,12 @@
+<div class="sliderContainer">
+  <div class="background" #background></div>
+  <div class="highlightBackground" 
+    [style.width.%]="percentageValue">
+  </div>
+  <div class="circle" #circle 
+    cdkDrag
+    cdkDragLockAxis="x"
+    cdkDragBoundary=".sliderContainer" 
+    (cdkDragMoved)="onDragMoved($event)">
+  </div>
+</div>
