@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-slider',
+  selector: 'tf-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })

@@ -3,6 +3,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ExpanderComponent } from './components/expander/expander.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CoreComponent } from './core.component';
 
@@ -10,22 +11,22 @@ import { CoreComponent } from './core.component';
 
 @NgModule({
   declarations: [
-    CoreComponent,
     ButtonComponent,
     CardComponent,
     CheckboxComponent,
     ExpanderComponent,
-    SliderComponent
+    SliderComponent,
+    NavbarComponent
   ],
   imports: [
   ],
   exports: [
-    CoreComponent,
     ButtonComponent,
     CardComponent,
     CheckboxComponent,
     ExpanderComponent,
-    SliderComponent
+    SliderComponent,
+    NavbarComponent
   ]
 })
-export class CoreModule { }
+export class TechfabricModule { }
