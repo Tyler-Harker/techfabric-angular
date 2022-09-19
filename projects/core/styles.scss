@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+$undefined: black;
+
+$white: white;
+
+
+$primary-lightest: $undefined;
+$primary-lighter: #DBFCFD;
+$primary-light: #5AC5CB;
+$primary: #009CA6;
+$primary-dark: $undefined;
+$primary-darker: $undefined;
+$primary-darkest: $undefined;
+
+$secondary-lightest: $undefined;
+$secondary-lighter: $undefined;
+$secondary-light: #28334A;
+$secondary: $undefined;
+$secondary-dark: #001020;
+$secondary-darker: $undefined;
+$secondary-darkest: $undefined;
+
+$grey-lightest: $undefined;
+$grey-lighter: $undefined;
+$grey-light: #EFEFEF;
+$grey: #B5B5B5;
+$grey-dark: #7E7E7E;
+$grey-darker: $undefined;
+$grey-darkest: $undefined;
+
+
+
+$box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+
+div{
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
