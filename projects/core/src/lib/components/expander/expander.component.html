@@ -5,7 +5,7 @@
   <div id="iconWrapper" (click)="toggle()" >
     <tf-checkbox 
       *ngIf="isSelectable" 
-      size="24" 
+      [size]="24" 
       [(value)]="isSelected">
     </tf-checkbox>
     <fa-icon 
@@ -29,7 +29,6 @@
 </section>
 <section class="content" 
   #content 
-  [attr.guid]="contentId" 
   [ngStyle]="{'height.px': isOpen ? getContentMaxHeight() : 0}" 
   [ngClass]="{'open': isOpen}">
   <ng-content select="[content]">

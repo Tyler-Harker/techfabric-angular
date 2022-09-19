@@ -1,4 +1,8 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
@@ -19,6 +23,10 @@ import { CoreComponent } from './core.component';
     NavbarComponent
   ],
   imports: [
+    CommonModule,
+    BrowserModule,
+    DragDropModule,
+    FontAwesomeModule
   ],
   exports: [
     ButtonComponent,

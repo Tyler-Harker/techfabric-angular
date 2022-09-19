@@ -28,14 +28,14 @@ export class ExpanderComponent implements OnInit {
   }
   
 
-  private toggle(){
+  toggle(){
     this.isOpen = !this.isOpen;
     if(this.isSelectable){
       this.isSelected = this.isOpen;
     }
   }
   
-  private getContentMaxHeight(){
+  getContentMaxHeight(){
     let maxHeight = 0;
     try{
       let children  = [...this.contentElement?.nativeElement.children];
