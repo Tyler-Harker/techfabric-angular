@@ -3,9 +3,11 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import {SignInFormComponent} from './signInForm.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { InputComponent } from '../input/input.component';
+import { FormsModule } from '@angular/forms';
 
 
-let declarations: any[] = [];
+let declarations: any[] = [InputComponent];
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -15,7 +17,7 @@ export default {
     moduleMetadata({
       //👇 Imports both components to allow component composition with Storybook
       declarations,
-      imports: [FontAwesomeModule],
+      imports: [FontAwesomeModule, FormsModule],
     })
   ]
 } as Meta;

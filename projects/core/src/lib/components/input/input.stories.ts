@@ -4,6 +4,7 @@ import {InputComponent} from './input.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -13,7 +14,7 @@ export default {
     moduleMetadata({
       //👇 Imports both components to allow component composition with Storybook
       declarations: [],
-      imports: [FontAwesomeModule],
+      imports: [FontAwesomeModule, FormsModule, ReactiveFormsModule],
     })
   ]
 } as Meta;
@@ -25,4 +26,5 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
+  label: 'label'
 }
