@@ -183,14 +183,14 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-926f108d630e97e1b719b5ea4171fbb50288b398b4846a2fc4bbaa3c853529f978dda4eaaa726fa8663fcffeab6058325c9034252a258e364068e8e814cc088f",
+            "id": "component-CardComponent-bcc51e78c5568bc6de24b482ff623afc900e31ad4e7dae248c267ec9abb27e9b254558e66571dcf3adaeca8ac027b388cd82b0fe78c2c20e1d9fc3addb640e6a",
             "file": "projects/core/src/lib/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "tf-card",
+            "selector": "app-card",
             "styleUrls": [
                 "./card.component.scss"
             ],
@@ -199,17 +199,153 @@
                 "./card.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "hasTopBar",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'content'"
+                        }
+                    ]
+                },
+                {
+                    "name": "footer",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'footer'"
+                        }
+                    ]
+                },
+                {
+                    "name": "header",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'header'"
+                        }
+                    ]
+                },
+                {
+                    "name": "well",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'well'"
+                        }
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
+                    "name": "doesElementHaveContent",
+                    "args": [
+                        {
+                            "name": "element",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "element",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "shouldDisplayContent",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "shouldDisplayFooter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "shouldDisplayHeader",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "shouldDisplayWell",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -221,7 +357,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "sourceCode": "import { AfterViewChecked, AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n  @Input() hasTopBar: boolean = false;\n\n  @ViewChild('header') header: any = null;\n  @ViewChild('well') well: any = null;\n  @ViewChild('content') content: any = null;\n  @ViewChild('footer') footer: any = null;\n  constructor() { }\n\n  shouldDisplayHeader(): boolean {\n    return this.doesElementHaveContent(this.header);\n  }\n  shouldDisplayWell(): boolean {\n    return this.doesElementHaveContent(this.well);\n  }\n  shouldDisplayContent(): boolean {\n    return this.doesElementHaveContent(this.content);\n  }\n  shouldDisplayFooter(): boolean {\n    return this.doesElementHaveContent(this.footer);\n  }\n\n  private doesElementHaveContent(element: any): boolean{\n    try{\n      return element.nativeElement.children.length > 0 || element.nativeElement.innerText != \"\";\n    }\n    catch(ex){\n      return false;\n    }\n  }\n  \n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -236,12 +372,129 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 14
+            },
+            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\n  <ng-content select=\"[header]\"></ng-content>\n</section>\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\n  <ng-content select=\"[well]\"></ng-content>\n</section>\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\n  <ng-content select=\"[content]\"></ng-content>\n</section>\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\n  <ng-content select=\"[footer]\"></ng-content>\n</section>"
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-bd9f9da237ed606fc3d887b137cfbdd554be7442217cfc4d8b29bc4ba08ec33e0d882e1aa0fa3b73e61a1b1618df7b9ee4c0a739a8f061c9c567f9f30169fe1e",
+            "file": "projects/core/src/lib/components/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-checkbox",
+            "styleUrls": [
+                "./checkbox.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "16",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "icon",
+                    "defaultValue": "faCheck",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\nimport { faCheck } from '@fortawesome/free-solid-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss']\r\n})\r\nexport class CheckboxComponent implements OnInit {\r\n  @Input() size: number = 16;\r\n  @Input() value: boolean = false;\r\n  @Output() valueChange = new EventEmitter<boolean>();\r\n  @Input() disabled: boolean = false;\r\n  icon = faCheck;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n  toggle(){\r\n    if(!this.disabled){\r\n      this.value = !this.value;\r\n      this.valueChange.emit(this.value);\r\n    }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host{\r\n    display:inline-block;\r\n    box-sizing: border-box;\r\n    div {\r\n        border-radius: 2px;\r\n\r\n        line-height: 1px;\r\n        display: inline-flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        color: $white;\r\n        border: 1px solid $grey;\r\n        box-sizing: border-box;\r\n        &.checked{\r\n            background-color: $primary;\r\n            border: 1px solid $primary;\r\n            &:hover{\r\n                background-color: $primary;\r\n            }\r\n\r\n            fa-icon{\r\n                opacity: 1;\r\n            }\r\n            &.disabled {\r\n                background-color: $primary;\r\n            }\r\n        }\r\n\r\n        fa-icon {\r\n            display: inline-block;\r\n            opacity: 0;\r\n        }\r\n        &:hover{\r\n            background-color: $grey-light;\r\n            cursor: pointer;\r\n        }\r\n        &:active{\r\n            background-color: $primary-lighter;\r\n        }\r\n\r\n        &.disabled{\r\n            background-color: $grey-light;\r\n            &:hover{\r\n                cursor: not-allowed;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./checkbox.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\n  <ng-content select=\"[header]\"></ng-content>\n</section>\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\n  <ng-content select=\"[well]\"></ng-content>\n</section>\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\n  <ng-content select=\"[content]\"></ng-content>\n</section>\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\n  <ng-content select=\"[footer]\"></ng-content>\n</section>"
+            "templateData": "<div [ngStyle]=\"{'height.px': size, 'width.px': size}\" [ngClass]=\"{'checked': value, 'disabled': disabled}\" (click)=\"toggle()\">\r\n  <fa-icon [icon]=\"icon\" [ngStyle]=\"{'font-size.px': size}\"></fa-icon>\r\n</div>"
         },
         {
             "name": "CoreComponent",
@@ -295,18 +548,676 @@
             "implements": [
                 "OnInit"
             ]
+        },
+        {
+            "name": "ExpanderComponent",
+            "id": "component-ExpanderComponent-24790373e5f15de0d0baf2907ed30cf8a728e65a605a7d81aa1f0f16df9243a2542d010c22abe00899841a74a1e780a0c23b85a3480fbadbee4faaa22036a1bd",
+            "file": "projects/core/src/lib/components/expander/expander.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-expander",
+            "styleUrls": [
+                "./expander.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expander.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "displayPreview",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hasPrimaryBanner",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "headerText",
+                    "defaultValue": "'Header'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isOpen",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isSelectable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isSelected",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "isSelectedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "contentElement",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "content"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getContentMaxHeight",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\nimport { faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'\n\n@Component({\n  selector: 'tf-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.scss']\n})\nexport class ExpanderComponent implements OnInit {\n  @Input() isOpen: boolean = true;\n  @Input() headerText: string = 'Header';\n  @Input() displayPreview: boolean = false;\n  @Input() hasPrimaryBanner: boolean = false;\n  @Input() isSelectable: boolean = false;\n  @Input() isSelected: boolean = false;\n  @Output() isSelectedChange = new EventEmitter<boolean>();\n\n  @ViewChild(`content`) contentElement : any = null;\n  constructor() { \n  }\n\n  ngOnInit() {\n  }\n\n  get expandedIcon(): any {\n    return this.isOpen ? faMinus : faPlus;\n  }\n  \n\n  toggle(){\n    this.isOpen = !this.isOpen;\n    if(this.isSelectable){\n      this.isSelected = this.isOpen;\n    }\n  }\n  \n  getContentMaxHeight(){\n    let maxHeight = 0;\n    try{\n      let children  = [...this.contentElement?.nativeElement.children];\n      for(let elem of children){\n        maxHeight += elem.clientHeight;\n      }\n    }\n    catch(ex){\n\n    }\n    return maxHeight;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host{\r\n    display: block;\r\n    border-radius: 8px;\r\n    box-shadow: 0px 3px 10px rgba(0,0,0,0.16) !important;\r\n    overflow: hidden;\r\n\r\n    .hidden {\r\n        display: none;\r\n    }\r\n\r\n    section {\r\n        display: block;\r\n    }\r\n\r\n    content {\r\n        display: inline-block;\r\n    }\r\n\r\n    .primaryBanner {\r\n        display: block;\r\n        height: 8px;\r\n        background-color: $primary;\r\n    }\r\n\r\n    .header {\r\n        #iconWrapper {\r\n            display: inline-block;\r\n            background-color: $primary;\r\n            padding: 24px 14px;\r\n            cursor: pointer;\r\n            fa-icon{\r\n                color: white;\r\n            }\r\n\r\n            \r\n        }\r\n        #title {\r\n            padding-left: 22px;\r\n            padding-right: 46px; \r\n            display: inline-block;\r\n            font-size: 24px;\r\n            color: $secondary-light;\r\n            font-weight: 500;\r\n        }\r\n        #headerContent {\r\n            display: inline-block;\r\n        }\r\n\r\n\r\n        &.selectable {\r\n            #iconWrapper {\r\n                background-color: $white;\r\n            }   \r\n            #title {\r\n                padding-left: 12px;\r\n            }\r\n        }\r\n    }\r\n\r\n    .preview {\r\n        padding: 20px;\r\n        background-color: $grey-light;\r\n    }\r\n    .content {\r\n        transition: padding linear .3s, height linear .3s;\r\n        padding: 0px 20px 0px 20px;\r\n        &.open{\r\n            padding: 20px 20px 20px 20px;\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./expander.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 19
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "expandedIcon": {
+                    "name": "expandedIcon",
+                    "getSignature": {
+                        "name": "expandedIcon",
+                        "type": "any",
+                        "returnType": "any",
+                        "line": 26
+                    }
+                }
+            },
+            "templateData": "<section class=\"primaryBanner\" *ngIf=\"hasPrimaryBanner\">\n\n</section>\n<section class=\"header\" [ngClass]=\"{'selectable': isSelectable}\">\n  <div id=\"iconWrapper\" (click)=\"toggle()\" >\n    <tf-checkbox \n      *ngIf=\"isSelectable\" \n      [size]=\"24\" \n      [(value)]=\"isSelected\">\n    </tf-checkbox>\n    <fa-icon \n      [icon]=\"expandedIcon\" \n      *ngIf=\"!isSelectable\">\n    </fa-icon>\n  </div>\n  <div id=\"title\">\n    {{headerText}}\n  </div>\n  <div id=\"headerContent\">\n    <ng-content select=\"[header]\">\n\n    </ng-content>\n  </div>\n</section>\n<section class=\"preview\" [ngClass]=\"{'hidden': !displayPreview}\">\n  <ng-content select=\"[preview]\">\n\n  </ng-content>\n</section>\n<section class=\"content\" \n  #content \n  [ngStyle]=\"{'height.px': isOpen ? getContentMaxHeight() : 0}\" \n  [ngClass]=\"{'open': isOpen}\">\n  <ng-content select=\"[content]\">\n  </ng-content>\n</section>"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-093127bdaf856987ac227e126d88e70d4527d2901cbe1aed8eff4a0f0af77466f9ab9d504f306e62929af1266c35b872426a1b7b38f3cc02eb2adeba25d0ae9e",
+            "file": "projects/core/src/lib/components/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-input",
+            "styleUrls": [
+                "./input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>\n  input works!s\n</p>\n"
+        },
+        {
+            "name": "NavbarComponent",
+            "id": "component-NavbarComponent-0c7d5b7a33ce6d0bff9259696e46a1066273536ce9e9c4be6f3abec8fcb4ba969ab6d3e250916f1269d670c7ee93ad526a5d9e1967151a4cbba2e7627c4720f7",
+            "file": "projects/core/src/lib/components/navbar/navbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-navbar",
+            "styleUrls": [
+                "./navbar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "displayName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "logoUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "hamburgerIcon",
+                    "defaultValue": "faBars",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'tf-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  @Input() displayName: string = '';\n  hamburgerIcon: any = faBars;\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n:host{\r\n    display: flex;\r\n    align-items: center;;\r\n    width: 100%;\r\n    box-shadow: $box-shadow;\r\n\r\n    .hamburgerWrapper {\r\n        padding: 10px 10px 10px 20px;\r\n        cursor: pointer;\r\n    }\r\n    .logo {\r\n        padding: 20px 10px;\r\n        img {\r\n            height: 32px;\r\n        }\r\n    }\r\n    .profile {\r\n        padding: 20px;\r\n        margin-left: auto;\r\n    }\r\n}",
+                    "styleUrl": "./navbar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"hamburgerWrapper d-sm-none\">\n  <fa-icon [icon]=\"hamburgerIcon\"></fa-icon>\n</div>\n<div class=\"logo\">\n  <img  [src]=\"logoUrl\" />\n</div>\n<div class=\"profile\">\n  {{displayName}}\n</div>"
+        },
+        {
+            "name": "SignInFormComponent",
+            "id": "component-SignInFormComponent-e9ef242a064538cec44909b117d354d92874a61d3e17657f76718b4a4620eb3d5ecaa320c358fe29be1fa39c77ca319f2178b12f51f8397c261da6a6841e66e6",
+            "file": "projects/core/src/lib/components/signInForm/signInForm.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-signInForm",
+            "styleUrls": [
+                "./signInForm.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./signInForm.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-signInForm',\n  templateUrl: './signInForm.component.html',\n  styleUrls: ['./signInForm.component.scss']\n})\nexport class SignInFormComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./signInForm.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>\n  signInForm works!\n</p>\n"
+        },
+        {
+            "name": "SignInPageComponent",
+            "id": "component-SignInPageComponent-6467e78540244f7a0ed776833870e56968ca21e065f3750d4f5e4f6003f529299749b4e910b7d42709266c75f5fd9370995238de8f327ff8aae5f474de27747f",
+            "file": "projects/core/src/lib/pages/signInPage/signInPage.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-signInPage",
+            "styleUrls": [
+                "./signInPage.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./signInPage.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-signInPage',\n  templateUrl: './signInPage.component.html',\n  styleUrls: ['./signInPage.component.scss']\n})\nexport class SignInPageComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./signInPage.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>\n  signInPage works!\n</p>\n"
+        },
+        {
+            "name": "SliderComponent",
+            "id": "component-SliderComponent-d418be3b087b3065870a2ba2b623fb82c12f87008c66b0373088d9277f16715e197bf3dc820e2e51f74f993a1cd51365e562c24a4745941dd2f334c42eb0ea96",
+            "file": "projects/core/src/lib/components/slider/slider.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-slider",
+            "styleUrls": [
+                "./slider.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./slider.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "maxValue",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "percentageValue",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "backgroundElement",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'background'"
+                        }
+                    ]
+                },
+                {
+                    "name": "circleElement",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'circle'"
+                        }
+                    ]
+                },
+                {
+                    "name": "isDragging",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "position",
+                    "defaultValue": "'test'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onDragMoved",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "CdkDragMove",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "CdkDragMove",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, ViewChild } from '@angular/core';\nimport { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';\n\n@Component({\n  selector: 'tf-slider',\n  templateUrl: './slider.component.html',\n  styleUrls: ['./slider.component.scss']\n})\nexport class SliderComponent {\n  @Input() value: number = 0;\n  @Input() percentageValue: number = 0;\n  @Input() maxValue: number = 100;\n  constructor() { }\n\n  @ViewChild('background') backgroundElement: any;\n  @ViewChild('circle') circleElement: any;\n\n  private isDragging: boolean = false;\n  position: string = 'test';\n\n  onDragMoved($event: CdkDragMove){\n    this.percentageValue = ($event.pointerPosition.x - this.backgroundElementPosition.x) / (this.backgroundElementWidth) * 100;\n  }\n\n  get backgroundElementPosition(){\n    return {x: this.backgroundElement.nativeElement.offsetLeft, y: this.backgroundElement.nativeElement.offsetTop};\n  }\n\n  get backgroundElementWidth(){\n    return this.backgroundElement.nativeElement.offsetWidth;\n  }\n\n  get mousePosition(){\n    return {x: (<any>window)?.event?.clientX, y: (<any>window)?.event?.clientY};\n  }\n\n  get circlePosition(){\n    return {x: this.circleElement.nativeElement.offsetLeft, y: this.circleElement.nativeElement.offsetTop};\n  }\n\n  get circleRelativePosition(){\n    try{\n      let transform = this.circleElement.nativeElement.style.transform.replace('translate3d(', '').replace(')').replace('px', '');\n      let transformValues = transform.split(',');\n      return {x: parseInt(transformValues[0]), y: parseInt(transformValues[1])};\n    }\n    catch(ex) {\n      return {x: 0, y: 0};\n    }\n    \n    \n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host {\r\n    display: block;\r\n    height: 32px;\r\n    .background {\r\n        position: relative;\r\n        left: 0px;\r\n        right: 0px;\r\n        background-color: $grey;\r\n        height: 8px;\r\n        top: 12px;\r\n        border-radius: 8px;\r\n    }\r\n    .highlightBackground {\r\n        position: relative;\r\n        left: 0px;\r\n        background-color: $primary;\r\n        height: 8px;\r\n        top: 4px;\r\n        border-radius: 8px;\r\n    }\r\n    .circle {\r\n        position: absolute;\r\n        background-color: black;\r\n        box-shadow: $box-shadow;\r\n        width: 12px;\r\n        height: 12px;\r\n        border: 10px solid $white;\r\n        top: 16px;\r\n        border-radius: 80px;\r\n        cursor: pointer;\r\n    }\r\n}",
+                    "styleUrl": "./slider.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 12
+            },
+            "accessors": {
+                "backgroundElementPosition": {
+                    "name": "backgroundElementPosition",
+                    "getSignature": {
+                        "name": "backgroundElementPosition",
+                        "type": "",
+                        "returnType": "",
+                        "line": 25
+                    }
+                },
+                "backgroundElementWidth": {
+                    "name": "backgroundElementWidth",
+                    "getSignature": {
+                        "name": "backgroundElementWidth",
+                        "type": "",
+                        "returnType": "",
+                        "line": 29
+                    }
+                },
+                "mousePosition": {
+                    "name": "mousePosition",
+                    "getSignature": {
+                        "name": "mousePosition",
+                        "type": "",
+                        "returnType": "",
+                        "line": 33
+                    }
+                },
+                "circlePosition": {
+                    "name": "circlePosition",
+                    "getSignature": {
+                        "name": "circlePosition",
+                        "type": "",
+                        "returnType": "",
+                        "line": 37
+                    }
+                },
+                "circleRelativePosition": {
+                    "name": "circleRelativePosition",
+                    "getSignature": {
+                        "name": "circleRelativePosition",
+                        "type": "",
+                        "returnType": "",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"sliderContainer\">\n  <div class=\"background\" #background></div>\n  <div class=\"highlightBackground\" \n    [style.width.%]=\"percentageValue\">\n  </div>\n  <div class=\"circle\" #circle \n    cdkDrag\n    cdkDragLockAxis=\"x\"\n    cdkDragBoundary=\".sliderContainer\" \n    (cdkDragMoved)=\"onDragMoved($event)\">\n  </div>\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-a477d387143d10f81cb75dfb0f9f9e0135c3401fdc080447bd9af5b151e33bcebdc9215e755716c237c48acefc0b541153757329bed2442034af2431e2eb2985",
+            "id": "module-AppModule-c29fb20a83e17634391964dd0562da89142ceec6b9f9e832092c34f762b4f5f53f0bbe2ca0dbc958198321be3c9c23a83a41ea6bd97c10d6f65c2c1329adc196",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    NgbModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -343,14 +1254,14 @@
             ]
         },
         {
-            "name": "CoreModule",
-            "id": "module-CoreModule-e995526b6858400e99500c2854a5a65c09567357c1c71c2605866aa8e0ce80053fe4d878af1b4ba0b1d548a5f04dca6abd392aa24e4960c3022b6029d3a01ec0",
+            "name": "TechfabricModule",
+            "id": "module-TechfabricModule-a96db1ea4bb39029c96537dbc0c134aa6ee555e4e8c1764322401cdb8a30db8d4d5ef0f6872a126617a4fcc1ac847f8b4ee0351ddeed2cc12d5749e7564b0bd2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/core/src/lib/core.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { CoreComponent } from './core.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    CoreComponent,\r\n    ButtonComponent\r\n  ],\r\n  imports: [\r\n  ],\r\n  exports: [\r\n    CoreComponent,\r\n    ButtonComponent\r\n  ]\r\n})\r\nexport class CoreModule { }\r\n",
+            "sourceCode": "import { DragDropModule } from '@angular/cdk/drag-drop';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { CardComponent } from './components/card/card.component';\r\nimport { CheckboxComponent } from './components/checkbox/checkbox.component';\r\nimport { ExpanderComponent } from './components/expander/expander.component';\r\nimport { NavbarComponent } from './components/navbar/navbar.component';\r\nimport { SignInFormComponent } from './components/signInForm/signInForm.component';\r\nimport { SliderComponent } from './components/slider/slider.component';\r\nimport { CoreComponent } from './core.component';\r\nimport { SignInPageComponent } from './pages/signInPage/signInPage.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonComponent,\r\n    CardComponent,\r\n    CheckboxComponent,\r\n    ExpanderComponent,\r\n    SliderComponent,\r\n    NavbarComponent,\r\n    SignInFormComponent,\r\n    SignInPageComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    DragDropModule,\r\n    FontAwesomeModule\r\n  ],\r\n  exports: [\r\n    ButtonComponent,\r\n    CardComponent,\r\n    CheckboxComponent,\r\n    ExpanderComponent,\r\n    SliderComponent,\r\n    NavbarComponent,\r\n    SignInFormComponent,\r\n    SignInPageComponent\r\n  ]\r\n})\r\nexport class TechfabricModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -363,7 +1274,25 @@
                             "name": "ButtonComponent"
                         },
                         {
-                            "name": "CoreComponent"
+                            "name": "CardComponent"
+                        },
+                        {
+                            "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "ExpanderComponent"
+                        },
+                        {
+                            "name": "NavbarComponent"
+                        },
+                        {
+                            "name": "SignInFormComponent"
+                        },
+                        {
+                            "name": "SignInPageComponent"
+                        },
+                        {
+                            "name": "SliderComponent"
                         }
                     ]
                 },
@@ -378,7 +1307,25 @@
                             "name": "ButtonComponent"
                         },
                         {
-                            "name": "CoreComponent"
+                            "name": "CardComponent"
+                        },
+                        {
+                            "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "ExpanderComponent"
+                        },
+                        {
+                            "name": "NavbarComponent"
+                        },
+                        {
+                            "name": "SignInFormComponent"
+                        },
+                        {
+                            "name": "SignInPageComponent"
+                        },
+                        {
+                            "name": "SliderComponent"
                         }
                     ]
                 },
@@ -395,6 +1342,46 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "ButtonInEverySection",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "ButtonInPreview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        \r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "ButtonInTitle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "ButtonInTitleAndPreview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -414,6 +1401,126 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[ButtonComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[ButtonComponent, CheckboxComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-navbar [logoUrl]=\"logoUrl\" [displayName]=\"displayName\">\r\n                </tf-navbar>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInForm>\r\n                </tf-signInForm>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInPage>\r\n                </tf-signInPage>`\r\n})"
             },
             {
                 "name": "DefaultBasic",
@@ -436,10 +1543,70 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "DefaultNoContent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
+                "name": "DefaultNoFooter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
+                "name": "DefaultNoHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
+                "name": "DefaultNoWell",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
                 "name": "DefaultPrimary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/core/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DefaultWithTopBar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"true\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -514,6 +1681,16 @@
                 "type": "literal type"
             },
             {
+                "name": "SelectableWithBanner",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n        isSelectable: true,\r\n        isSelected: true,\r\n        hasPrimaryBanner: true\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview [isSelectable]=\"isSelectable\" [(isSelected)]=\"isSelected\" [hasPrimaryBanner]=\"hasPrimaryBanner\">\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        Preview Text\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -522,6 +1699,86 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ExpanderComponent>",
+                "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SignInFormComponent>",
+                "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SliderComponent>",
+                "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SignInPageComponent>",
+                "defaultValue": "(args: SignInPageComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -555,6 +1812,88 @@
             }
         ],
         "groupedVariables": {
+            "projects/core/src/lib/components/expander/expander.stories.ts": [
+                {
+                    "name": "ButtonInEverySection",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "ButtonInPreview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        \r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "ButtonInTitle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "ButtonInTitleAndPreview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div preview>\r\n                        <tf-button></tf-button>\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[ButtonComponent, CheckboxComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "SelectableWithBanner",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n        isSelectable: true,\r\n        isSelected: true,\r\n        hasPrimaryBanner: true\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview [isSelectable]=\"isSelectable\" [(isSelected)]=\"isSelected\" [hasPrimaryBanner]=\"hasPrimaryBanner\">\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        Preview Text\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ExpanderComponent>",
+                    "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -595,6 +1934,238 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "projects/core/src/lib/components/card/card.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[ButtonComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "DefaultNoContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "DefaultNoFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "DefaultNoHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "DefaultNoWell",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"false\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "DefaultWithTopBar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <app-card [hasTopBar]=\"true\">\r\n                    <div header>\r\n                        Header\r\n                    </div>\r\n                    <div well>\r\n                        Well\r\n                    </div>\r\n                    <div content>\r\n                        Content\r\n                    </div>\r\n                    <div footer>\r\n                        Footer\r\n                    </div>\r\n                </app-card>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/navbar/navbar.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-navbar [logoUrl]=\"logoUrl\" [displayName]=\"displayName\">\r\n                </tf-navbar>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/signInForm/signInForm.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInForm>\r\n                </tf-signInForm>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SignInFormComponent>",
+                    "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/pages/signInPage/signInPage.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInPage>\r\n                </tf-signInPage>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SignInPageComponent>",
+                    "defaultValue": "(args: SignInPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/checkbox/checkbox.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CheckboxComponent>",
+                    "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/slider/slider.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SliderComponent>",
+                    "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/button/button.stories.ts": [
@@ -691,6 +2262,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "projects/core/src/lib/components/input/input.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -817,7 +2400,341 @@
                 "linktype": "component",
                 "name": "CardComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultNoContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultNoFooter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultNoHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultNoWell",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultWithTopBar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpanderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonInEverySection",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonInPreview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonInTitle",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonInTitleAndPreview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SelectableWithBanner",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/navbar/navbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signInForm/signInForm.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SignInFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/slider/slider.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SliderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -836,6 +2753,45 @@
                 "name": "CoreService",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SignInPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

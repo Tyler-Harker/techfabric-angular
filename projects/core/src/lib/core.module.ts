@@ -7,9 +7,12 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ExpanderComponent } from './components/expander/expander.component';
+import { InputComponent } from './components/input/input.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignInFormComponent } from './components/signInForm/signInForm.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CoreComponent } from './core.component';
+import { SignInPageComponent } from './pages/signInPage/signInPage.component';
 
 
 
@@ -20,7 +23,10 @@ import { CoreComponent } from './core.component';
     CheckboxComponent,
     ExpanderComponent,
     SliderComponent,
-    NavbarComponent
+    NavbarComponent,
+    SignInFormComponent,
+    SignInPageComponent,
+    InputComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +40,10 @@ import { CoreComponent } from './core.component';
     CheckboxComponent,
     ExpanderComponent,
     SliderComponent,
-    NavbarComponent
+    NavbarComponent,
+    SignInFormComponent,
+    SignInPageComponent,
+    InputComponent
   ]
 })
 export class TechfabricModule { }
