@@ -33,9 +33,32 @@ export const Default = () => ({
         declarations
     },
     props: {
-        displayName: 'Tyler H.',
         logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'
     },
-    template: ` <tf-signInForm>
+    template: ` <tf-signInForm [logoUrl]="logoUrl">
                 </tf-signInForm>`
+});
+export const MicrosoftSignInOnly = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+      showUsernameAndPassword: false,
+      showMicrosoftLogin: true,
+      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'
+  },
+  template: ` <tf-signInForm [logoUrl]="logoUrl" [showUsernameAndPassword]="showUsernameAndPassword" [showMicrosoftLogin]="true">
+              </tf-signInForm>`
+});
+export const RegularAndMicrosoftLogin = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+      showUsernameAndPassword: true,
+      showMicrosoftLogin: true,
+      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'
+  },
+  template: ` <tf-signInForm [logoUrl]="logoUrl" [showUsernameAndPassword]="showUsernameAndPassword" [showMicrosoftLogin]="true">
+              </tf-signInForm>`
 })

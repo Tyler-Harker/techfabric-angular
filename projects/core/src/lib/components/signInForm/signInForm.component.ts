@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 
@@ -8,6 +8,11 @@ import { faMicrosoft } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./signInForm.component.scss']
 })
 export class SignInFormComponent implements OnInit {
+  @Input() logoUrl: string = '';
+  @Input() showUsernameAndPassword: boolean = true;
+  @Input() showMicrosoftLogin: boolean = false;
+  @Input() showBackButton: boolean = true;
+
   microsoftIcon: any = faMicrosoft;
   constructor() { }
 

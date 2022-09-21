@@ -1,7 +1,23 @@
-<tf-input label="Username"></tf-input>
-<tf-input label="Password"></tf-input>
-<tf-button [type]="1">cancel</tf-button>
-<tf-button [type]="2">Sign In</tf-button>
-<div>
-  <tf-button><fa-icon [icon]="microsoftIcon" style="color: #00a2ed"></fa-icon> Sign in with Microsoft</tf-button>
+<div class="logoContainer" *ngIf="logoUrl !== ''">
+  <img [src]="logoUrl" />
+</div>
+<div class="customSignIn" *ngIf="showUsernameAndPassword">
+  <tf-input label="Username"></tf-input>
+  <tf-input label="Password"></tf-input>
+  <div class="buttonContainer">
+    <tf-button [type]="1" *ngIf="showBackButton">Back</tf-button>
+    <tf-button [type]="2">Sign In</tf-button>
+  </div>
+  
+</div>
+
+<div class="orDividerContainer" *ngIf="showMicrosoftLogin">
+  <div class="orDivider"></div>
+  <div class="or">Sign In With</div>
+</div>
+
+<div class="ssoIntegrationWrapper">
+  <div *ngIf="showMicrosoftLogin">
+    <tf-button><fa-icon [icon]="microsoftIcon" style="color: #00a2ed"></fa-icon> Microsoft</tf-button>
+  </div>
 </div>
