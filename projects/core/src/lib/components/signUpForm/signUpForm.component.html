@@ -4,16 +4,17 @@
 <div class="customSignIn" *ngIf="showLegacyLogin">
   <tf-input label="Username"></tf-input>
   <tf-input label="Password"></tf-input>
+  <tf-input label="Confirm Password"></tf-input>
   <div class="buttonContainer">
     <tf-button [type]="1" *ngIf="showBackButton">Back</tf-button>
-    <tf-button [type]="2">Sign In</tf-button>
+    <tf-button [type]="2">Sign Up</tf-button>
   </div>
   
 </div>
 
 <div class="orDividerContainer" *ngIf="showMicrosoftLogin">
   <div class="orDivider"></div>
-  <div class="or">Sign In With</div>
+  <div class="or">Sign Up With</div>
 </div>
 
 <div class="ssoIntegrationWrapper">

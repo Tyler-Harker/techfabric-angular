@@ -1,0 +1,50 @@
+@import '../../../../styles.scss';
+
+:host {
+    .logoContainer {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        img {
+            width: 60%;
+            margin: 20px 0px;
+        }
+    }
+    .customSignIn > * {
+        margin-top: 16px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        tf-button {
+            margin-left: 16px;
+        }
+    }
+
+    .ssoIntegrationWrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    .orDividerContainer {
+        position: relative;
+        margin: 20px 0px;
+        text-align: center;
+        .orDivider {
+            height: 1px;
+            background-color: $grey;;
+        }
+        .or {
+            background-color: $white;
+            padding: 0px 10px;
+            position: absolute;
+            top: -13px;
+            left: calc(50% - 50px)
+        }
+    }
+}

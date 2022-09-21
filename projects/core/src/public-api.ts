@@ -18,6 +18,9 @@ export * from './lib/components/navbar/navbar.component';
 export * from './lib/components/input/input.component';
 export * from './lib/components/footer/footer.component';
 
+export * from './lib/layouts/unauthorizedLayout/unauthorizedLayout.component';
+
 export * from './lib/components/signInForm/signInForm.component';
+export * from './lib/components/signUpForm/signUpForm.component';
 
 export * from './lib/pages/signInPage/signInPage.component';

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignUpFormComponent, UnauthorizedLayoutComponent } from '../public-api';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
@@ -28,7 +29,9 @@ let components = [
   SignInFormComponent,
   SignInPageComponent,
   InputComponent,
-  FooterComponent
+  FooterComponent,
+  SignUpFormComponent,
+  UnauthorizedLayoutComponent
 ];
 
 @NgModule({

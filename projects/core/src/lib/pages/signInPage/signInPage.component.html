@@ -1,5 +1,6 @@
-<tf-navbar [logoUrl]="logoUrl"></tf-navbar>
-<tf-signInForm>
 
-</tf-signInForm>
-<tf-footer></tf-footer>
+<tf-unauthorizedLayout [logoUrl]="logoUrl">
+    <tf-signInForm [logoUrl]="logoUrl" [showMicrosoftLogin]="showMicrosoftLogin" [showLegacyLogin]="showLegacyLogin">
+
+    </tf-signInForm>
+</tf-unauthorizedLayout>

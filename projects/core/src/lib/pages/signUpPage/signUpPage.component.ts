@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'tf-signInPage',
-  templateUrl: './signInPage.component.html',
-  styleUrls: ['./signInPage.component.scss']
+  selector: 'tf-signUpPage',
+  templateUrl: './signUpPage.component.html',
+  styleUrls: ['./signUpPage.component.scss']
 })
-export class SignInPageComponent implements OnInit {
+export class SignUpPageComponent implements OnInit {
   @Input() logoUrl: string = '';
   @Input() showLegacyLogin: boolean = true;
   @Input() showMicrosoftLogin: boolean = false;
