@@ -1,9 +1,12 @@
 :host{
-    height: 100%;
+    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
     tf-signInForm{
-        align-self: center;
         justify-self: center;
+        align-self: center;
     }
 }

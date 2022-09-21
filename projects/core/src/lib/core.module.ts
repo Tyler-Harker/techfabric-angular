@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ExpanderComponent } from './components/expander/expander.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { InputComponent } from './components/input/input.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignInFormComponent } from './components/signInForm/signInForm.component';
@@ -17,18 +18,21 @@ import { SignInPageComponent } from './pages/signInPage/signInPage.component';
 
 
 
+let components = [
+  ButtonComponent,
+  CardComponent,
+  CheckboxComponent,
+  ExpanderComponent,
+  SliderComponent,
+  NavbarComponent,
+  SignInFormComponent,
+  SignInPageComponent,
+  InputComponent,
+  FooterComponent
+];
+
 @NgModule({
-  declarations: [
-    ButtonComponent,
-    CardComponent,
-    CheckboxComponent,
-    ExpanderComponent,
-    SliderComponent,
-    NavbarComponent,
-    SignInFormComponent,
-    SignInPageComponent,
-    InputComponent
-  ],
+  declarations: components,
   imports: [
     CommonModule,
     BrowserModule,
@@ -37,16 +41,6 @@ import { SignInPageComponent } from './pages/signInPage/signInPage.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [
-    ButtonComponent,
-    CardComponent,
-    CheckboxComponent,
-    ExpanderComponent,
-    SliderComponent,
-    NavbarComponent,
-    SignInFormComponent,
-    SignInPageComponent,
-    InputComponent
-  ]
+  exports: components
 })
 export class TechfabricModule { }

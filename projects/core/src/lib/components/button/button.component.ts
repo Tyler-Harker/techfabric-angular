@@ -8,7 +8,7 @@ import { ButtonType } from './button.models';
 })
 export class ButtonComponent implements OnInit {
   @Input() type: ButtonType = ButtonType.Basic;
-  @Input() text: string = 'Button';
+  @Input() text: string = '';
   @Input() disabled: boolean = false;
   constructor() { }
 

@@ -1,0 +1,6 @@
+@import '../../../../styles.scss';
+:host {
+    display: block;
+    height: 60px;
+    background-color: $grey-darker;
+}

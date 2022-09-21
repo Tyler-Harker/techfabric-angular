@@ -6,6 +6,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ButtonType } from './button.models';
 
+let declarations: any[] = [];
+
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Controls/Button',
@@ -23,29 +25,73 @@ export default {
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
 });
-export const DefaultBasic = Template.bind({});
-DefaultBasic.args = {
-}
-export const DefaultPrimary = Template.bind({});
-DefaultPrimary.args = {
-  type: ButtonType.Primary
-}
-export const DefaultGhost = Template.bind({});
-DefaultGhost.args = {
-  type: ButtonType.Ghost
-}
-export const DisabledBasic = Template.bind({});
-DisabledBasic.args = {
-  disabled: true
-}
-export const DisabledPrimary = Template.bind({});
-DisabledPrimary.args = {
-  type: ButtonType.Primary,
-  disabled: true
-}
-export const DisabledGhost = Template.bind({});
-DisabledGhost.args = {
-  type: ButtonType.Ghost,
-  disabled: true
-}
 
+
+
+export const DefaultBasic = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+  },
+  template: ` <tf-button>
+                Button
+              </tf-button>`
+});
+export const DefaultPrimary = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+    type: ButtonType.Primary
+  },
+  template: ` <tf-button [type]="type">
+                Button
+              </tf-button>`
+});
+export const DefaultGhost = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+    type: ButtonType.Ghost
+  },
+  template: ` <tf-button [type]="type">
+                Button
+              </tf-button>`
+});
+export const DisabledBasic = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+    disabled: true
+  },
+  template: ` <tf-button [disabled]="disabled">
+                Button
+              </tf-button>`
+});
+export const DisabledPrimary = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+    type: ButtonType.Basic,
+    disabled: true
+  },
+  template: ` <tf-button [type]="type" [disabled]="disabled">
+                Button
+              </tf-button>`
+});
+export const DisabledGhost = () => ({
+  moduleMetadata: {
+      declarations
+  },
+  props: {
+    type: ButtonType.Ghost,
+    disabled: true
+  },
+  template: ` <tf-button [type]="type" [disabled]="disabled">
+                Button
+              </tf-button>`
+});
