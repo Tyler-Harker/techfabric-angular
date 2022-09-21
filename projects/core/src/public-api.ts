@@ -16,6 +16,7 @@ export * from './lib/components/expander/expander.component';
 export * from './lib/components/slider/slider.component';
 export * from './lib/components/navbar/navbar.component';
 export * from './lib/components/input/input.component';
+export * from './lib/components/footer/footer.component';
 
 export * from './lib/components/signInForm/signInForm.component';
 
