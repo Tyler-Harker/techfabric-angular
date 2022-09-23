@@ -12,7 +12,7 @@ import { InteractionType, PublicClientApplication } from '@azure/msal-browser';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { MsalNgrxModule } from 'projects/msal/src/lib/msal.module';
-import { MsalAuthService } from 'projects/msal/src/public-api';
+// import { MsalAuthService } from 'projects/msal/src/lib/msalAuth.service';
 import { MSAL_CONFIG_TOKEN } from 'projects/msal/src/lib/msal.config';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;

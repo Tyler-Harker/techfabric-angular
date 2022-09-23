@@ -26,7 +26,6 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     imports: [  
         StoreModule.forFeature(azureAdFeatureKey, azureAdReducer),
         EffectsModule.forFeature([AzureAdEffects]),
-        MsalNgrxModule
     ]
 })
 export class AzureAdModule {

@@ -1,15 +1,16 @@
 import { InjectionToken } from "@angular/core";
 
+export interface AdConfigWrapper {
+    azureAd: AdConfig
+}
 export interface AdConfig {
-    azureAd: {
-        redirectUrl: string,
-        clientId: string,
-        tenantId: string
-    }
+    redirectUrl: string,
+    clientId: string,
+    tenantId: string
 }
 
 
-export const MSAL_CONFIG_TOKEN = new InjectionToken<Object>('tf-msal-config');
+export const MSAL_CONFIG_TOKEN = new InjectionToken<AdConfig>('TF_MSAL_CONFIG');
 
 // export const MSAL_CONFIG = {
 //     redirectUrl: env.azureAd.redirectUrl,
