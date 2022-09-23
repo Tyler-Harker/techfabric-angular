@@ -11,6 +11,9 @@ import { MsalModule } from '@azure/msal-angular';
 import { InteractionType, PublicClientApplication } from '@azure/msal-browser';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
+import { MsalNgrxModule } from 'projects/msal/src/lib/msal.module';
+import { MsalAuthService } from 'projects/msal/src/public-api';
+import { MSAL_CONFIG_TOKEN } from 'projects/msal/src/lib/msal.config';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -21,14 +24,23 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   imports: [
     BrowserModule,
     NgbModule,
-    TechfabricModule,
     HttpClientModule,
     StoreModule.forRoot({}),
     RouterModule.forRoot([]),
     EffectsModule.forRoot([]),
-    AzureAdModule.forRoot("https://localhost:7073/Configuration/AzureAdConfiguration"),
+    MsalNgrxModule
+    // AzureAdModule.forRoot("https://localhost:7073/Configuration/AzureAdConfiguration"),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MSAL_CONFIG_TOKEN,
+      useValue: {
+        clientId: '',
+        tenantId: '',
+        redirectUri: ''
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

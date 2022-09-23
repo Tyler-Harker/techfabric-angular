@@ -6,6 +6,7 @@ import { AzureAdConfigurationService } from "./azureAdConfigurationService";
 import { Configuration, InteractionType, PublicClientApplication } from "@azure/msal-browser";
 import { AzureAdEffects, MsalServiceCustom } from "./azureAd.effects";
 import { EffectsModule } from "@ngrx/effects";
+import { MsalNgrxModule } from "projects/msal/src/lib/msal.module";
 
 
 
@@ -24,9 +25,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     ],
     imports: [  
         StoreModule.forFeature(azureAdFeatureKey, azureAdReducer),
-        MsalModule,
-        EffectsModule.forFeature([AzureAdEffects])
-
+        EffectsModule.forFeature([AzureAdEffects]),
+        MsalNgrxModule
     ]
 })
 export class AzureAdModule {

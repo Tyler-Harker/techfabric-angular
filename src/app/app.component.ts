@@ -8,9 +8,8 @@ import { MsalService } from '@azure/msal-angular';
 })
 export class AppComponent {
   title = 'techfabric-angular';
-  constructor(private authService: MsalService){}
+  constructor(){}
 
   signIn(){
-    this.authService.loginRedirect();
   }
 }

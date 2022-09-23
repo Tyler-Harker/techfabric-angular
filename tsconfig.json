@@ -6,6 +6,9 @@
     "paths": {
       "core": [
         "dist/core"
+      ],
+      "msal": [
+        "dist/msal"
       ]
     },
     "outDir": "./dist/out-tsc",
