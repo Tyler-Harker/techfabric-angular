@@ -1,7 +1,211 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "AzureAdState",
+            "id": "interface-AzureAdState-845988a9d9c29e7922599ec7622dedecc4748e9961feb68d77ad34bcbe3ec29e4cbb1671fafc7c05cb151f8b2ead5faa4cf29c7e342fdfccafb38825eb42f825",
+            "file": "projects/core/src/lib/store/azureAd/azureAd.state.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { IAzureAdConfiguration } from \"./azureAd.models\";\r\n\r\nexport interface AzureAdState extends IAzureAdConfiguration {\r\n\r\n}",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": "IAzureAdConfiguration"
+        },
+        {
+            "name": "ConfigurationState",
+            "id": "interface-ConfigurationState-07303a7b9638b72b4ca9213d0fe17c9d9cd3051639bb4871f348cbe8c2b0d784c352fc0caa876cada9f6c5e2963bef6ce99e9988e075cd08b88904794fcc4ed2",
+            "file": "projects/core/src/lib/store/configuration/configuration.state.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { IConfiguration } from \"./configuration.models\";\r\n\r\nexport interface ConfigurationState  extends IConfiguration{\r\n\r\n}",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": "IConfiguration"
+        },
+        {
+            "name": "IAzureAdConfiguration",
+            "id": "interface-IAzureAdConfiguration-ff6d161a2fd9fd3720c54cc3ee904d676b862a3f36621dd1869f1d639501fbea4b47c0840c2c3f5eb2e1df042e0ca2d361281200877381a9b891a417d1c7b015",
+            "file": "projects/core/src/lib/store/azureAd/azureAd.models.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IAzureAdConfiguration {\r\n    clientId: string | null;\r\n    instanceId: string | null;\r\n    tenantId: string | null;\r\n    redirectUri: string | null;\r\n}",
+            "properties": [
+                {
+                    "name": "clientId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "redirectUri",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "tenantId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "IConfiguration",
+            "id": "interface-IConfiguration-5eb1b92f79755f0bac4944138dd31975d6d54baa9d7d3d9044172330e79ae92af35dcbd74821f47a9fbcc36fe1d9818e1746ccf48fecf9bfdd51ec8f13169fa5",
+            "file": "projects/core/src/lib/store/configuration/configuration.models.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IConfiguration {\r\n    logoUrl: string | null;\r\n}",
+            "properties": [
+                {
+                    "name": "logoUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "signInPageState",
+            "id": "interface-signInPageState-9eeb40ac257ed99b1288c990c791970d0c0d19f632b4ea147d57a31b87abae9153589b794e685749ddc586c5fad1d218fffd2af6c18ca4c166fc87a0c04c74c3",
+            "file": "projects/core/src/lib/store/signIn/signInPage.state.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface signInPageState {\r\n    \r\n}",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
     "injectables": [
+        {
+            "name": "AzureAdConfigurationService",
+            "id": "injectable-AzureAdConfigurationService-7f849f7c094f1820711af453858a040eaa3b5760fde4739b11ad8577d81c91cbb9a22379453a267cf8f7df2bbd6936e0452cd1beddc16490ad7c03b70701c300",
+            "file": "projects/core/src/lib/store/azureAd/azureAdConfigurationService.ts",
+            "properties": [
+                {
+                    "name": "azureAdConfig",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IAzureAdConfiguration | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "http",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HttpClient | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "init",
+                    "args": [
+                        {
+                            "name": "endpoint",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Promise<boolean>",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "endpoint",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpBackend, HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { IAzureAdConfiguration } from \"./azureAd.models\";\r\nimport { map } from \"rxjs\";\r\n\r\n@Injectable({ providedIn: 'root'})\r\nexport class AzureAdConfigurationService {\r\n    azureAdConfig: IAzureAdConfiguration | null = null;\r\n    private http: HttpClient | null = null;\r\n\r\n    constructor(private readonly httpHandler: HttpBackend){\r\n        this.http = new HttpClient(httpHandler);\r\n    }\r\n\r\n    init(endpoint: string): Promise<boolean> {\r\n        return new Promise<boolean>((resolve, reject) => {\r\n            this.http?.get(endpoint).pipe(map(res => res))\r\n            .subscribe(value => {\r\n                this.azureAdConfig = <IAzureAdConfiguration>value;\r\n                resolve(true);\r\n            },\r\n            (error) => {\r\n                reject(error);\r\n            })\r\n        });\r\n    }\r\n\r\n\r\n\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpHandler",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "httpHandler",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
         {
             "name": "CoreService",
             "id": "injectable-CoreService-c02152c508dac826dd8168894c0768e13b5f5b2d27af2c9e2664ad08df8fa9a15ce94f19c186d1e7c156f1bbd008457df49b67faf9dd3b587d115a87737999b0",
@@ -31,7 +235,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-75ffccacfd90513c3c66389ab8d5f5b95de94623920c51b7ec2447daf4ff58dd98c4cfa4dae054f7d0c4fc47d484a2360767dc5fa06825a71619617b80fbbd28",
+            "id": "component-AppComponent-66ee955e4e173c0ae49933deed15897ad8aea213f9fb44a1313e962ab94d0f730a6da5b122734bfd74eee6ae8d3274a1f778fd92ebdb9a5e5035da1ecea089a1",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -58,10 +262,21 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "signIn",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -69,7 +284,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'techfabric-angular';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MsalService } from '@azure/msal-angular';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'techfabric-angular';\r\n  constructor(private authService: MsalService){}\r\n\r\n  signIn(){\r\n    this.authService.loginRedirect();\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -78,7 +293,33 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->\r\n<!-- * * * * * * * to get started with your project! * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<style>\r\n  :host {\r\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\r\n    font-size: 14px;\r\n    color: #333;\r\n    box-sizing: border-box;\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\r\n  }\r\n\r\n  h1,\r\n  h2,\r\n  h3,\r\n  h4,\r\n  h5,\r\n  h6 {\r\n    margin: 8px 0;\r\n  }\r\n\r\n  p {\r\n    margin: 0;\r\n  }\r\n\r\n  .spacer {\r\n    flex: 1;\r\n  }\r\n\r\n  .toolbar {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    height: 60px;\r\n    display: flex;\r\n    align-items: center;\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .toolbar img {\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo {\r\n    height: 40px;\r\n    margin: 0 8px;\r\n  }\r\n\r\n  .toolbar #youtube-logo {\r\n    height: 40px;\r\n    margin: 0 16px;\r\n  }\r\n\r\n  .toolbar #twitter-logo:hover,\r\n  .toolbar #youtube-logo:hover {\r\n    opacity: 0.8;\r\n  }\r\n\r\n  .content {\r\n    display: flex;\r\n    margin: 82px auto 32px;\r\n    padding: 0 16px;\r\n    max-width: 960px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n  }\r\n\r\n  svg.material-icons {\r\n    height: 24px;\r\n    width: auto;\r\n  }\r\n\r\n  svg.material-icons:not(:last-child) {\r\n    margin-right: 8px;\r\n  }\r\n\r\n  .card svg.material-icons path {\r\n    fill: #888;\r\n  }\r\n\r\n  .card-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    margin-top: 16px;\r\n  }\r\n\r\n  .card {\r\n    all: unset;\r\n    border-radius: 4px;\r\n    border: 1px solid #eee;\r\n    background-color: #fafafa;\r\n    height: 40px;\r\n    width: 200px;\r\n    margin: 0 8px 16px;\r\n    padding: 16px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    transition: all 0.2s ease-in-out;\r\n    line-height: 24px;\r\n  }\r\n\r\n  .card-container .card:not(:last-child) {\r\n    margin-right: 0;\r\n  }\r\n\r\n  .card.card-small {\r\n    height: 16px;\r\n    width: 168px;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card) {\r\n    cursor: pointer;\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover {\r\n    transform: translateY(-3px);\r\n    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);\r\n  }\r\n\r\n  .card-container .card:not(.highlight-card):hover .material-icons path {\r\n    fill: rgb(105, 103, 103);\r\n  }\r\n\r\n  .card.highlight-card {\r\n    background-color: #1976d2;\r\n    color: white;\r\n    font-weight: 600;\r\n    border: none;\r\n    width: auto;\r\n    min-width: 30%;\r\n    position: relative;\r\n  }\r\n\r\n  .card.card.highlight-card span {\r\n    margin-left: 60px;\r\n  }\r\n\r\n  svg#rocket {\r\n    width: 80px;\r\n    position: absolute;\r\n    left: -10px;\r\n    top: -24px;\r\n  }\r\n\r\n  svg#rocket-smoke {\r\n    height: calc(100vh - 95px);\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 180px;\r\n    z-index: -10;\r\n  }\r\n\r\n  a,\r\n  a:visited,\r\n  a:hover {\r\n    color: #1976d2;\r\n    text-decoration: none;\r\n  }\r\n\r\n  a:hover {\r\n    color: #125699;\r\n  }\r\n\r\n  .terminal {\r\n    position: relative;\r\n    width: 80%;\r\n    max-width: 600px;\r\n    border-radius: 6px;\r\n    padding-top: 45px;\r\n    margin-top: 8px;\r\n    overflow: hidden;\r\n    background-color: rgb(15, 15, 16);\r\n  }\r\n\r\n  .terminal::before {\r\n    content: \"\\2022 \\2022 \\2022\";\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    height: 4px;\r\n    background: rgb(58, 58, 58);\r\n    color: #c2c3c4;\r\n    width: 100%;\r\n    font-size: 2rem;\r\n    line-height: 0;\r\n    padding: 14px 0;\r\n    text-indent: 4px;\r\n  }\r\n\r\n  .terminal pre {\r\n    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\r\n    color: white;\r\n    padding: 0 1rem 1rem;\r\n    margin: 0;\r\n  }\r\n\r\n  .circle-link {\r\n    height: 40px;\r\n    width: 40px;\r\n    border-radius: 40px;\r\n    margin: 8px;\r\n    background-color: white;\r\n    border: 1px solid #eeeeee;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n    transition: 1s ease-out;\r\n  }\r\n\r\n  .circle-link:hover {\r\n    transform: translateY(-0.25rem);\r\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\r\n  }\r\n\r\n  footer {\r\n    margin-top: 8px;\r\n    display: flex;\r\n    align-items: center;\r\n    line-height: 20px;\r\n  }\r\n\r\n  footer a {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n\r\n  .github-star-badge {\r\n    color: #24292e;\r\n    display: flex;\r\n    align-items: center;\r\n    font-size: 12px;\r\n    padding: 3px 10px;\r\n    border: 1px solid rgba(27,31,35,.2);\r\n    border-radius: 3px;\r\n    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\r\n    margin-left: 4px;\r\n    font-weight: 600;\r\n  }\r\n\r\n  .github-star-badge:hover {\r\n    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\r\n    border-color: rgba(27,31,35,.35);\r\n    background-position: -.5em;\r\n  }\r\n\r\n  .github-star-badge .material-icons {\r\n    height: 16px;\r\n    width: 16px;\r\n    margin-right: 4px;\r\n  }\r\n\r\n  svg#clouds {\r\n    position: fixed;\r\n    bottom: -160px;\r\n    left: -230px;\r\n    z-index: -10;\r\n    width: 1920px;\r\n  }\r\n\r\n  /* Responsive Styles */\r\n  @media screen and (max-width: 767px) {\r\n    .card-container > *:not(.circle-link) ,\r\n    .terminal {\r\n      width: 100%;\r\n    }\r\n\r\n    .card:not(.highlight-card) {\r\n      height: 16px;\r\n      margin: 8px 0;\r\n    }\r\n\r\n    .card.highlight-card span {\r\n      margin-left: 72px;\r\n    }\r\n\r\n    svg#rocket-smoke {\r\n      right: 120px;\r\n      transform: rotate(-5deg);\r\n    }\r\n  }\r\n\r\n  @media screen and (max-width: 575px) {\r\n    svg#rocket-smoke {\r\n      display: none;\r\n      visibility: hidden;\r\n    }\r\n  }\r\n</style>\r\n\r\n<!-- Toolbar -->\r\n<div class=\"toolbar\" role=\"banner\">\r\n  <img\r\n    width=\"40\"\r\n    alt=\"Angular Logo\"\r\n    src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\"\r\n  />\r\n  <span>Welcome</span>\r\n    <div class=\"spacer\"></div>\r\n    <a aria-label=\"Angular on twitter\" target=\"_blank\" rel=\"noopener\" href=\"https://twitter.com/angular\" title=\"Twitter\">\r\n      <svg id=\"twitter-logo\" height=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\">\r\n        <rect width=\"400\" height=\"400\" fill=\"none\"/>\r\n        <path d=\"M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23\" fill=\"#fff\"/>\r\n      </svg>\r\n    </a>\r\n    <a aria-label=\"Angular on YouTube\" target=\"_blank\" rel=\"noopener\" href=\"https://youtube.com/angular\" title=\"YouTube\">\r\n      <svg id=\"youtube-logo\" height=\"24\" width=\"24\" data-name=\"Logo\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"#fff\">\r\n        <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\r\n        <path d=\"M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z\"/>\r\n      </svg>\r\n    </a>\r\n</div>\r\n\r\n<div class=\"content\" role=\"main\">\r\n\r\n  <!-- Highlight Card -->\r\n  <div class=\"card highlight-card card-small\">\r\n\r\n    <svg id=\"rocket\" xmlns=\"http://www.w3.org/2000/svg\" width=\"101.678\" height=\"101.678\" viewBox=\"0 0 101.678 101.678\">\r\n      <title>Rocket Ship</title>\r\n      <g id=\"Group_83\" data-name=\"Group 83\" transform=\"translate(-141 -696)\">\r\n        <circle id=\"Ellipse_8\" data-name=\"Ellipse 8\" cx=\"50.839\" cy=\"50.839\" r=\"50.839\" transform=\"translate(141 696)\" fill=\"#dd0031\"/>\r\n        <g id=\"Group_47\" data-name=\"Group 47\" transform=\"translate(165.185 720.185)\">\r\n          <path id=\"Path_33\" data-name=\"Path 33\" d=\"M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z\" transform=\"translate(0.371 3.363)\" fill=\"#fff\"/>\r\n          <path id=\"Path_34\" data-name=\"Path 34\" d=\"M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z\" transform=\"translate(0 0.005)\" fill=\"#fff\"/>\r\n        </g>\r\n      </g>\r\n    </svg>\r\n\r\n    <span>{{ title }} app is running!</span>\r\n\r\n    <svg id=\"rocket-smoke\" xmlns=\"http://www.w3.org/2000/svg\" width=\"516.119\" height=\"1083.632\" viewBox=\"0 0 516.119 1083.632\">\r\n      <title>Rocket Ship Smoke</title>\r\n      <path id=\"Path_40\" data-name=\"Path 40\" d=\"M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z\" transform=\"translate(-147.025 -140.939)\" fill=\"#f5f5f5\"/>\r\n    </svg>\r\n\r\n  </div>\r\n\r\n  <!-- Resources -->\r\n  <h2>Resources</h2>\r\n  <p>Here are some links to help you get started:</p>\r\n\r\n  <div class=\"card-container\">\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z\"/></svg>\r\n      <span>Learn Angular</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\"/></svg>\r\n      <span>CLI Documentation</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://material.angular.io\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" style=\"margin-right: 8px\" width=\"21.813\" height=\"23.453\" viewBox=\"0 0 179.2 192.7\"><path fill=\"#ffa726\" d=\"M89.4 0 0 32l13.5 118.4 75.9 42.3 76-42.3L179.2 32 89.4 0z\"/><path fill=\"#fb8c00\" d=\"M89.4 0v192.7l76-42.3L179.2 32 89.4 0z\"/><path fill=\"#ffe0b2\" d=\"m102.9 146.3-63.3-30.5 36.3-22.4 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff3e0\" d=\"M102.9 122.8 39.6 92.2l36.3-22.3 63.7 30.6-36.7 22.3z\"/><path fill=\"#fff\" d=\"M102.9 99.3 39.6 68.7l36.3-22.4 63.7 30.6-36.7 22.4z\"/></svg>\r\n      <span>Angular Material</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z\"/></svg>\r\n      <span>Angular Blog</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/devtools/\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 24 24\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" fill=\"#000000\"><g><rect fill=\"none\" height=\"24\" width=\"24\"/></g><g><g><path d=\"M14.73,13.31C15.52,12.24,16,10.93,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.43,0,2.74-0.48,3.81-1.27L19.59,21L21,19.59L14.73,13.31z M9.5,14C7.01,14,5,11.99,5,9.5S7.01,5,9.5,5S14,7.01,14,9.5 S11.99,14,9.5,14z\"/><polygon points=\"10.29,8.44 9.5,6 8.71,8.44 6.25,8.44 8.26,10.03 7.49,12.5 9.5,10.97 11.51,12.5 10.74,10.03 12.75,8.44\"/></g></g></svg>\r\n      <span>Angular DevTools</span>\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\r\n    </a>\r\n\r\n  </div>\r\n\r\n  <!-- Next Steps -->\r\n  <h2>Next Steps</h2>\r\n  <p>What do you want to do next with your app?</p>\r\n\r\n  <input type=\"hidden\" #selection>\r\n\r\n  <div class=\"card-container\">\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'component'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>New Component</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'material'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Angular Material</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'pwa'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add PWA Support</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'dependency'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Add Dependency</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'test'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Run and Watch Tests</span>\r\n    </button>\r\n\r\n    <button class=\"card card-small\" (click)=\"selection.value = 'build'\" tabindex=\"0\">\r\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\r\n      <span>Build for Production</span>\r\n    </button>\r\n  </div>\r\n\r\n  <!-- Terminal -->\r\n  <div class=\"terminal\" [ngSwitch]=\"selection.value\">\r\n      <pre *ngSwitchDefault>ng generate component xyz</pre>\r\n      <pre *ngSwitchCase=\"'material'\">ng add @angular/material</pre>\r\n      <pre *ngSwitchCase=\"'pwa'\">ng add @angular/pwa</pre>\r\n      <pre *ngSwitchCase=\"'dependency'\">ng add _____</pre>\r\n      <pre *ngSwitchCase=\"'test'\">ng test</pre>\r\n      <pre *ngSwitchCase=\"'build'\">ng build</pre>\r\n  </div>\r\n\r\n  <!-- Links -->\r\n  <div class=\"card-container\">\r\n    <a class=\"circle-link\" title=\"Find a Local Meetup\" href=\"https://www.meetup.com/find/?keywords=angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24.607\" height=\"23.447\" viewBox=\"0 0 24.607 23.447\">\r\n        <title>Meetup Logo</title>\r\n        <path id=\"logo--mSwarm\" d=\"M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z\" transform=\"translate(0 0.123)\" fill=\"#f64060\"/>\r\n      </svg>\r\n    </a>\r\n\r\n    <a class=\"circle-link\" title=\"Join the Conversation on Discord\" href=\"https://discord.gg/angular\" target=\"_blank\" rel=\"noopener\">\r\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"26\" height=\"26\" viewBox=\"0 0 245 240\">\r\n        <title>Discord Logo</title>\r\n        <path d=\"M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z\"/>\r\n        <path d=\"M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z\"/>\r\n      </svg>\r\n    </a>\r\n  </div>\r\n\r\n  <!-- Footer -->\r\n  <footer>\r\n      Love Angular?&nbsp;\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\"> Give our repo a star.\r\n        <div class=\"github-star-badge\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\r\n          Star\r\n        </div>\r\n      </a>\r\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\">\r\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" fill=\"#1976d2\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>\r\n      </a>\r\n  </footer>\r\n\r\n  <svg id=\"clouds\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2611.084\" height=\"485.677\" viewBox=\"0 0 2611.084 485.677\">\r\n    <title>Gray Clouds Background</title>\r\n    <path id=\"Path_39\" data-name=\"Path 39\" d=\"M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z\" transform=\"translate(142.69 -634.312)\" fill=\"#eee\"/>\r\n  </svg>\r\n\r\n</div>\r\n\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "authService",
+                        "type": "MsalService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "authService",
+                        "type": "MsalService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<router-outlet></router-outlet>"
         },
         {
             "name": "ButtonComponent",
@@ -183,7 +424,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-b237b32eb030f0709ba3acb92b2ea2d9742f50add74a22075c3f14be72f72e3607d5608815b525ec2316a319414e45750f7ab3b4be20f0410ed6d7a98dfd55b4",
+            "id": "component-CardComponent-bcc51e78c5568bc6de24b482ff623afc900e31ad4e7dae248c267ec9abb27e9b254558e66571dcf3adaeca8ac027b388cd82b0fe78c2c20e1d9fc3addb640e6a",
             "file": "projects/core/src/lib/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -357,7 +598,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewChecked, AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.component.scss']\r\n})\r\nexport class CardComponent {\r\n  @Input() hasTopBar: boolean = false;\r\n\r\n  @ViewChild('header') header: any = null;\r\n  @ViewChild('well') well: any = null;\r\n  @ViewChild('content') content: any = null;\r\n  @ViewChild('footer') footer: any = null;\r\n  constructor() { }\r\n\r\n  shouldDisplayHeader(): boolean {\r\n    return this.doesElementHaveContent(this.header);\r\n  }\r\n  shouldDisplayWell(): boolean {\r\n    return this.doesElementHaveContent(this.well);\r\n  }\r\n  shouldDisplayContent(): boolean {\r\n    return this.doesElementHaveContent(this.content);\r\n  }\r\n  shouldDisplayFooter(): boolean {\r\n    return this.doesElementHaveContent(this.footer);\r\n  }\r\n\r\n  private doesElementHaveContent(element: any): boolean{\r\n    try{\r\n      return element.nativeElement.children.length > 0 || element.nativeElement.innerText != \"\";\r\n    }\r\n    catch(ex){\r\n      return false;\r\n    }\r\n  }\r\n  \r\n}\r\n",
+            "sourceCode": "import { AfterViewChecked, AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n  @Input() hasTopBar: boolean = false;\n\n  @ViewChild('header') header: any = null;\n  @ViewChild('well') well: any = null;\n  @ViewChild('content') content: any = null;\n  @ViewChild('footer') footer: any = null;\n  constructor() { }\n\n  shouldDisplayHeader(): boolean {\n    return this.doesElementHaveContent(this.header);\n  }\n  shouldDisplayWell(): boolean {\n    return this.doesElementHaveContent(this.well);\n  }\n  shouldDisplayContent(): boolean {\n    return this.doesElementHaveContent(this.content);\n  }\n  shouldDisplayFooter(): boolean {\n    return this.doesElementHaveContent(this.footer);\n  }\n\n  private doesElementHaveContent(element: any): boolean{\n    try{\n      return element.nativeElement.children.length > 0 || element.nativeElement.innerText != \"\";\n    }\n    catch(ex){\n      return false;\n    }\n  }\n  \n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -374,7 +615,7 @@
                 "args": [],
                 "line": 14
             },
-            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\r\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\r\n  <ng-content select=\"[header]\"></ng-content>\r\n</section>\r\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\r\n  <ng-content select=\"[well]\"></ng-content>\r\n</section>\r\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\r\n  <ng-content select=\"[content]\"></ng-content>\r\n</section>\r\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\r\n  <ng-content select=\"[footer]\"></ng-content>\r\n</section>"
+            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\n  <ng-content select=\"[header]\"></ng-content>\n</section>\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\n  <ng-content select=\"[well]\"></ng-content>\n</section>\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\n  <ng-content select=\"[content]\"></ng-content>\n</section>\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\n  <ng-content select=\"[footer]\"></ng-content>\n</section>"
         },
         {
             "name": "CheckboxComponent",
@@ -551,7 +792,7 @@
         },
         {
             "name": "ExpanderComponent",
-            "id": "component-ExpanderComponent-606a5cf98a7763eda0b3f1b1be322bc266bc97d2d4834fc4387d7491e91649c3029572d896b72dcd9515ba1f11bea7a589af73a343984ed42e843004aa46fc2e",
+            "id": "component-ExpanderComponent-24790373e5f15de0d0baf2907ed30cf8a728e65a605a7d81aa1f0f16df9243a2542d010c22abe00899841a74a1e780a0c23b85a3480fbadbee4faaa22036a1bd",
             "file": "projects/core/src/lib/components/expander/expander.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -690,7 +931,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\r\n\r\nimport { faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'\r\n\r\n@Component({\r\n  selector: 'tf-expander',\r\n  templateUrl: './expander.component.html',\r\n  styleUrls: ['./expander.component.scss']\r\n})\r\nexport class ExpanderComponent implements OnInit {\r\n  @Input() isOpen: boolean = true;\r\n  @Input() headerText: string = 'Header';\r\n  @Input() displayPreview: boolean = false;\r\n  @Input() hasPrimaryBanner: boolean = false;\r\n  @Input() isSelectable: boolean = false;\r\n  @Input() isSelected: boolean = false;\r\n  @Output() isSelectedChange = new EventEmitter<boolean>();\r\n\r\n  @ViewChild(`content`) contentElement : any = null;\r\n  constructor() { \r\n  }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n  get expandedIcon(): any {\r\n    return this.isOpen ? faMinus : faPlus;\r\n  }\r\n  \r\n\r\n  toggle(){\r\n    this.isOpen = !this.isOpen;\r\n    if(this.isSelectable){\r\n      this.isSelected = this.isOpen;\r\n    }\r\n  }\r\n  \r\n  getContentMaxHeight(){\r\n    let maxHeight = 0;\r\n    try{\r\n      let children  = [...this.contentElement?.nativeElement.children];\r\n      for(let elem of children){\r\n        maxHeight += elem.clientHeight;\r\n      }\r\n    }\r\n    catch(ex){\r\n\r\n    }\r\n    return maxHeight;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\nimport { faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'\n\n@Component({\n  selector: 'tf-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.scss']\n})\nexport class ExpanderComponent implements OnInit {\n  @Input() isOpen: boolean = true;\n  @Input() headerText: string = 'Header';\n  @Input() displayPreview: boolean = false;\n  @Input() hasPrimaryBanner: boolean = false;\n  @Input() isSelectable: boolean = false;\n  @Input() isSelected: boolean = false;\n  @Output() isSelectedChange = new EventEmitter<boolean>();\n\n  @ViewChild(`content`) contentElement : any = null;\n  constructor() { \n  }\n\n  ngOnInit() {\n  }\n\n  get expandedIcon(): any {\n    return this.isOpen ? faMinus : faPlus;\n  }\n  \n\n  toggle(){\n    this.isOpen = !this.isOpen;\n    if(this.isSelectable){\n      this.isSelected = this.isOpen;\n    }\n  }\n  \n  getContentMaxHeight(){\n    let maxHeight = 0;\n    try{\n      let children  = [...this.contentElement?.nativeElement.children];\n      for(let elem of children){\n        maxHeight += elem.clientHeight;\n      }\n    }\n    catch(ex){\n\n    }\n    return maxHeight;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -721,11 +962,11 @@
                     }
                 }
             },
-            "templateData": "<section class=\"primaryBanner\" *ngIf=\"hasPrimaryBanner\">\r\n\r\n</section>\r\n<section class=\"header\" [ngClass]=\"{'selectable': isSelectable}\">\r\n  <div id=\"iconWrapper\" (click)=\"toggle()\" >\r\n    <tf-checkbox \r\n      *ngIf=\"isSelectable\" \r\n      [size]=\"24\" \r\n      [(value)]=\"isSelected\">\r\n    </tf-checkbox>\r\n    <fa-icon \r\n      [icon]=\"expandedIcon\" \r\n      *ngIf=\"!isSelectable\">\r\n    </fa-icon>\r\n  </div>\r\n  <div id=\"title\">\r\n    {{headerText}}\r\n  </div>\r\n  <div id=\"headerContent\">\r\n    <ng-content select=\"[header]\">\r\n\r\n    </ng-content>\r\n  </div>\r\n</section>\r\n<section class=\"preview\" [ngClass]=\"{'hidden': !displayPreview}\">\r\n  <ng-content select=\"[preview]\">\r\n\r\n  </ng-content>\r\n</section>\r\n<section class=\"content\" \r\n  #content \r\n  [ngStyle]=\"{'height.px': isOpen ? getContentMaxHeight() : 0}\" \r\n  [ngClass]=\"{'open': isOpen}\">\r\n  <ng-content select=\"[content]\">\r\n  </ng-content>\r\n</section>"
+            "templateData": "<section class=\"primaryBanner\" *ngIf=\"hasPrimaryBanner\">\n\n</section>\n<section class=\"header\" [ngClass]=\"{'selectable': isSelectable}\">\n  <div id=\"iconWrapper\" (click)=\"toggle()\" >\n    <tf-checkbox \n      *ngIf=\"isSelectable\" \n      [size]=\"24\" \n      [(value)]=\"isSelected\">\n    </tf-checkbox>\n    <fa-icon \n      [icon]=\"expandedIcon\" \n      *ngIf=\"!isSelectable\">\n    </fa-icon>\n  </div>\n  <div id=\"title\">\n    {{headerText}}\n  </div>\n  <div id=\"headerContent\">\n    <ng-content select=\"[header]\">\n\n    </ng-content>\n  </div>\n</section>\n<section class=\"preview\" [ngClass]=\"{'hidden': !displayPreview}\">\n  <ng-content select=\"[preview]\">\n\n  </ng-content>\n</section>\n<section class=\"content\" \n  #content \n  [ngStyle]=\"{'height.px': isOpen ? getContentMaxHeight() : 0}\" \n  [ngClass]=\"{'open': isOpen}\">\n  <ng-content select=\"[content]\">\n  </ng-content>\n</section>"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-7ed29142b2a558c8920e281af35f87585952287753e3274c7fee3d6db08534df498b3eed847af061d69c5a2ed86ec47b189b2bdaed6627142c4111fa69383bac",
+            "id": "component-FooterComponent-1c5d6b2a95133169fb4c27dae55562a8c09ea04842f274260dd5f68db9f1b004efedfb564274f3bfc4942723019b63d1cf2e211d11224956b8a36bf5f644ed71",
             "file": "projects/core/src/lib/components/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -763,7 +1004,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss']\r\n})\r\nexport class FooterComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss']\n})\nexport class FooterComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -857,7 +1098,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../styles.scss';\r\n\r\n:host {\r\n    display: block;\r\n    position: relative;\r\n    input {\r\n        width: 100%;\r\n        border: 1px solid $grey;\r\n        border-radius: 4px;\r\n        line-height: 30px;\r\n        font-size: 16px;\r\n        padding: 10px 12px;\r\n        transition: border-color linear .3s;\r\n\r\n        &:hover {\r\n            border-color: $grey-darker;\r\n        }\r\n\r\n        &:active, &:focus-visible{\r\n            border-color: $primary;\r\n            outline: none;\r\n            &::placeholder{\r\n                visibility: hidden;\r\n            }\r\n            + label {\r\n                visibility: visible;\r\n                color: $primary;\r\n                top: -12px;\r\n            }\r\n        }\r\n    }\r\n    label {\r\n        transition: color linear .3s, top linear .3s;\r\n        //visibility: hidden;\r\n        position: absolute;\r\n        left: 8px;\r\n        top: 12px;\r\n\r\n        \r\n        background-color: $white;\r\n        display: block;\r\n        padding: 0px 4px;\r\n        color: $grey;\r\n\r\n        &.hasValue {\r\n            visibility: visible;\r\n            top: -12px;\r\n        }\r\n    }\r\n    \r\n}",
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host {\r\n    display: block;\r\n    position: relative;\r\n    input {\r\n        width: 100%;\r\n        border: 1px solid $grey;\r\n        border-radius: 4px;\r\n        line-height: 30px;\r\n        font-size: 16px;\r\n        padding: 10px 12px;\r\n        transition: border-color linear .3s;\r\n\r\n        &:hover {\r\n            border-color: $grey-darker;\r\n        }\r\n\r\n        &:active, &:focus-visible{\r\n            border-color: $primary;\r\n            outline: none;\r\n            &::placeholder{\r\n                visibility: hidden;\r\n            }\r\n            + label {\r\n                visibility: visible;\r\n                color: $primary;\r\n                top: -12px;\r\n            }\r\n        }\r\n    }\r\n    label {\r\n        transition: color linear .3s, top linear .3s;\r\n        //visibility: hidden;\r\n        position: absolute;\r\n        left: 8px;\r\n        top: 12px;\r\n        pointer-events: none;\r\n\r\n        \r\n        background-color: $white;\r\n        display: block;\r\n        padding: 0px 4px;\r\n        color: $grey;\r\n\r\n        &.hasValue {\r\n            visibility: visible;\r\n            top: -12px;\r\n        }\r\n    }\r\n    \r\n}",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -877,7 +1118,7 @@
         },
         {
             "name": "NavbarComponent",
-            "id": "component-NavbarComponent-843d0a2a068ca8971aed10608cdc637b31943fa020fff0fd624fc2a2db878baf6c7bdfd6a68def831b50638250a8497ef964282de9f7a517f2a6359ef7275243",
+            "id": "component-NavbarComponent-0c7d5b7a33ce6d0bff9259696e46a1066273536ce9e9c4be6f3abec8fcb4ba969ab6d3e250916f1269d670c7ee93ad526a5d9e1967151a4cbba2e7627c4720f7",
             "file": "projects/core/src/lib/components/navbar/navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -945,7 +1186,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-navbar',\r\n  templateUrl: './navbar.component.html',\r\n  styleUrls: ['./navbar.component.scss']\r\n})\r\nexport class NavbarComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() displayName: string = '';\r\n  hamburgerIcon: any = faBars;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'tf-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  @Input() displayName: string = '';\n  hamburgerIcon: any = faBars;\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -965,11 +1206,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"hamburgerWrapper d-sm-none\">\r\n  <fa-icon [icon]=\"hamburgerIcon\"></fa-icon>\r\n</div>\r\n<div class=\"logo\">\r\n  <img  [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"profile\">\r\n  {{displayName}}\r\n</div>"
+            "templateData": "<div class=\"hamburgerWrapper d-sm-none\">\n  <fa-icon [icon]=\"hamburgerIcon\"></fa-icon>\n</div>\n<div class=\"logo\">\n  <img  [src]=\"logoUrl\" />\n</div>\n<div class=\"profile\">\n  {{displayName}}\n</div>"
         },
         {
             "name": "SignInFormComponent",
-            "id": "component-SignInFormComponent-d8eee746beaa236164e18badcd8db40c21bc9e5d9235ef988805815c9b939bb7df8cdf624e48dab3050a2ae7f13a6771e594655dc7663108a9534805a119c9f8",
+            "id": "component-SignInFormComponent-26ba6bf5be58bce305c7f8c0b08eb25dd87ec778a3bc7b41666095d659a15d0a54a51c7230e3f3ac693e78b55e3d02c1fda3203361d0287c80db573f1f5afb63",
             "file": "projects/core/src/lib/components/signInForm/signInForm.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1005,20 +1246,20 @@
                     "decorators": []
                 },
                 {
+                    "name": "showLegacyLogin",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "showMicrosoftLogin",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "showUsernameAndPassword",
-                    "defaultValue": "true",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -1055,7 +1296,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faMicrosoft } from '@fortawesome/free-brands-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-signInForm',\r\n  templateUrl: './signInForm.component.html',\r\n  styleUrls: ['./signInForm.component.scss']\r\n})\r\nexport class SignInFormComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showUsernameAndPassword: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  @Input() showBackButton: boolean = true;\r\n\r\n  microsoftIcon: any = faMicrosoft;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faMicrosoft } from '@fortawesome/free-brands-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-signInForm',\r\n  templateUrl: './signInForm.component.html',\r\n  styleUrls: ['./signInForm.component.scss']\r\n})\r\nexport class SignInFormComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  @Input() showBackButton: boolean = true;\r\n\r\n  microsoftIcon: any = faMicrosoft;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1075,11 +1316,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"logoContainer\" *ngIf=\"logoUrl !== ''\">\r\n  <img [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"customSignIn\" *ngIf=\"showUsernameAndPassword\">\r\n  <tf-input label=\"Username\"></tf-input>\r\n  <tf-input label=\"Password\"></tf-input>\r\n  <div class=\"buttonContainer\">\r\n    <tf-button [type]=\"1\" *ngIf=\"showBackButton\">Back</tf-button>\r\n    <tf-button [type]=\"2\">Sign In</tf-button>\r\n  </div>\r\n  \r\n</div>\r\n\r\n<div class=\"orDividerContainer\" *ngIf=\"showMicrosoftLogin\">\r\n  <div class=\"orDivider\"></div>\r\n  <div class=\"or\">Sign In With</div>\r\n</div>\r\n\r\n<div class=\"ssoIntegrationWrapper\">\r\n  <div *ngIf=\"showMicrosoftLogin\">\r\n    <tf-button><fa-icon [icon]=\"microsoftIcon\" style=\"color: #00a2ed\"></fa-icon> Microsoft</tf-button>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"logoContainer\" *ngIf=\"logoUrl !== ''\">\r\n  <img [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"customSignIn\" *ngIf=\"showLegacyLogin\">\r\n  <tf-input label=\"Username\"></tf-input>\r\n  <tf-input label=\"Password\"></tf-input>\r\n  <div class=\"buttonContainer\">\r\n    <tf-button [type]=\"1\" *ngIf=\"showBackButton\">Back</tf-button>\r\n    <tf-button [type]=\"2\">Sign In</tf-button>\r\n  </div>\r\n  \r\n</div>\r\n\r\n<div class=\"orDividerContainer\" *ngIf=\"showMicrosoftLogin\">\r\n  <div class=\"orDivider\"></div>\r\n  <div class=\"or\">Sign In With</div>\r\n</div>\r\n\r\n<div class=\"ssoIntegrationWrapper\">\r\n  <div *ngIf=\"showMicrosoftLogin\">\r\n    <tf-button><fa-icon [icon]=\"microsoftIcon\" style=\"color: #00a2ed\"></fa-icon> Microsoft</tf-button>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "SignInPageComponent",
-            "id": "component-SignInPageComponent-5930e6357c087f38bfd692787d0e2cbec5d9631798b3b80a89898e238be359bbe47498b03b6612bed37c5785fcab8e20409aac920f7db446d43ec7c859d273b8",
+            "id": "component-SignInPageComponent-96320333ce117acb7e3cc13be8bfd18daceb058b54b0cc2c3d19dceb38fca135ae8ba60c6f31b24319d49c4d31bc6469cbc9bf2bbde831825530e0d35b80d433",
             "file": "projects/core/src/lib/pages/signInPage/signInPage.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1104,6 +1345,24 @@
                     "line": 9,
                     "type": "string",
                     "decorators": []
+                },
+                {
+                    "name": "showLegacyLogin",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showMicrosoftLogin",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
                 }
             ],
             "outputsClass": [],
@@ -1115,7 +1374,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 14,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1127,11 +1386,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-signInPage',\r\n  templateUrl: './signInPage.component.html',\r\n  styleUrls: ['./signInPage.component.scss']\r\n})\r\nexport class SignInPageComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-signInPage',\r\n  templateUrl: './signInPage.component.html',\r\n  styleUrls: ['./signInPage.component.scss']\r\n})\r\nexport class SignInPageComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host{\r\n    height: 100vh;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-content: space-between;\r\n    tf-signInForm{\r\n        justify-self: center;\r\n        align-self: center;\r\n    }\r\n}",
+                    "data": ":host{\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-content: space-between;\r\n    tf-signInForm{\r\n        justify-self: center;\r\n        align-self: center;\r\n    }\r\n}",
                     "styleUrl": "./signInPage.component.scss"
                 }
             ],
@@ -1142,16 +1401,216 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 9
+                "line": 11
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<tf-navbar [logoUrl]=\"logoUrl\"></tf-navbar>\r\n<tf-signInForm>\r\n\r\n</tf-signInForm>\r\n<tf-footer></tf-footer>"
+            "templateData": "\r\n<tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n    <tf-signInForm [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n\r\n    </tf-signInForm>\r\n</tf-unauthorizedLayout>"
+        },
+        {
+            "name": "SignUpFormComponent",
+            "id": "component-SignUpFormComponent-686a8ff43f9950fc9f0b57219515f675330eb33aedb786619f2745714c15dca37845b5ee384abbd2cf6a2cf38df6d45a18d1f2d3af1a8d4072aa349be051ce12",
+            "file": "projects/core/src/lib/components/signUpForm/signUpForm.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-signUpForm",
+            "styleUrls": [
+                "./signUpForm.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./signUpForm.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "logoUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showBackButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showLegacyLogin",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showMicrosoftLogin",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "microsoftIcon",
+                    "defaultValue": "faMicrosoft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faMicrosoft } from '@fortawesome/free-brands-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-signUpForm',\r\n  templateUrl: './signUpForm.component.html',\r\n  styleUrls: ['./signUpForm.component.scss']\r\n})\r\nexport class SignUpFormComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  @Input() showBackButton: boolean = true;\r\n\r\n  microsoftIcon: any = faMicrosoft;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host {\r\n    .logoContainer {\r\n        display: flex;\r\n        text-align: center;\r\n        justify-content: center;\r\n        width: 100%;\r\n        img {\r\n            width: 60%;\r\n            margin: 20px 0px;\r\n        }\r\n    }\r\n    .customSignIn > * {\r\n        margin-top: 16px;\r\n    }\r\n\r\n    .buttonContainer {\r\n        display: flex;\r\n        justify-content: flex-end;\r\n        align-items: flex-end;\r\n        align-content: flex-end;\r\n        tf-button {\r\n            margin-left: 16px;\r\n        }\r\n    }\r\n\r\n    .ssoIntegrationWrapper {\r\n        display: flex;\r\n        justify-content: center;\r\n    }\r\n    \r\n\r\n    .orDividerContainer {\r\n        position: relative;\r\n        margin: 20px 0px;\r\n        text-align: center;\r\n        .orDivider {\r\n            height: 1px;\r\n            background-color: $grey;;\r\n        }\r\n        .or {\r\n            background-color: $white;\r\n            padding: 0px 10px;\r\n            position: absolute;\r\n            top: -13px;\r\n            left: calc(50% - 50px)\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./signUpForm.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"logoContainer\" *ngIf=\"logoUrl !== ''\">\r\n  <img [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"customSignIn\" *ngIf=\"showLegacyLogin\">\r\n  <tf-input label=\"Username\"></tf-input>\r\n  <tf-input label=\"Password\"></tf-input>\r\n  <tf-input label=\"Confirm Password\"></tf-input>\r\n  <div class=\"buttonContainer\">\r\n    <tf-button [type]=\"1\" *ngIf=\"showBackButton\">Back</tf-button>\r\n    <tf-button [type]=\"2\">Sign Up</tf-button>\r\n  </div>\r\n  \r\n</div>\r\n\r\n<div class=\"orDividerContainer\" *ngIf=\"showMicrosoftLogin\">\r\n  <div class=\"orDivider\"></div>\r\n  <div class=\"or\">Sign Up With</div>\r\n</div>\r\n\r\n<div class=\"ssoIntegrationWrapper\">\r\n  <div *ngIf=\"showMicrosoftLogin\">\r\n    <tf-button><fa-icon [icon]=\"microsoftIcon\" style=\"color: #00a2ed\"></fa-icon> Microsoft</tf-button>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "SignUpPageComponent",
+            "id": "component-SignUpPageComponent-ca859f2aaa3aaefa632fc2fbf78a6f110beee4ff4fa5e1718aea041ed2bd6256479b46e3c86280ceb361e75f96f5474665b7866b877456e75273d5feb8c388b0",
+            "file": "projects/core/src/lib/pages/signUpPage/signUpPage.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-signUpPage",
+            "styleUrls": [
+                "./signUpPage.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./signUpPage.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "logoUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showLegacyLogin",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showMicrosoftLogin",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-signUpPage',\r\n  templateUrl: './signUpPage.component.html',\r\n  styleUrls: ['./signUpPage.component.scss']\r\n})\r\nexport class SignUpPageComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host{\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-content: space-between;\r\n    tf-signUpForm{\r\n        justify-self: center;\r\n        align-self: center;\r\n    }\r\n}",
+                    "styleUrl": "./signUpPage.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "\r\n<tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n  <tf-signUpForm [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n\r\n  </tf-signUpForm>\r\n</tf-unauthorizedLayout>"
         },
         {
             "name": "SliderComponent",
-            "id": "component-SliderComponent-c7ce3a319bd2b655fb6ed76a30b151b786afa8f397d60e2739cd3468e4ae83cada7db9ba2459d54aad4c319b40b8b9b8d4e3306fc1bf7d7478089508ece26a67",
+            "id": "component-SliderComponent-d418be3b087b3065870a2ba2b623fb82c12f87008c66b0373088d9277f16715e197bf3dc820e2e51f74f993a1cd51365e562c24a4745941dd2f334c42eb0ea96",
             "file": "projects/core/src/lib/components/slider/slider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1289,7 +1748,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewChild } from '@angular/core';\r\nimport { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';\r\n\r\n@Component({\r\n  selector: 'tf-slider',\r\n  templateUrl: './slider.component.html',\r\n  styleUrls: ['./slider.component.scss']\r\n})\r\nexport class SliderComponent {\r\n  @Input() value: number = 0;\r\n  @Input() percentageValue: number = 0;\r\n  @Input() maxValue: number = 100;\r\n  constructor() { }\r\n\r\n  @ViewChild('background') backgroundElement: any;\r\n  @ViewChild('circle') circleElement: any;\r\n\r\n  private isDragging: boolean = false;\r\n  position: string = 'test';\r\n\r\n  onDragMoved($event: CdkDragMove){\r\n    this.percentageValue = ($event.pointerPosition.x - this.backgroundElementPosition.x) / (this.backgroundElementWidth) * 100;\r\n  }\r\n\r\n  get backgroundElementPosition(){\r\n    return {x: this.backgroundElement.nativeElement.offsetLeft, y: this.backgroundElement.nativeElement.offsetTop};\r\n  }\r\n\r\n  get backgroundElementWidth(){\r\n    return this.backgroundElement.nativeElement.offsetWidth;\r\n  }\r\n\r\n  get mousePosition(){\r\n    return {x: (<any>window)?.event?.clientX, y: (<any>window)?.event?.clientY};\r\n  }\r\n\r\n  get circlePosition(){\r\n    return {x: this.circleElement.nativeElement.offsetLeft, y: this.circleElement.nativeElement.offsetTop};\r\n  }\r\n\r\n  get circleRelativePosition(){\r\n    try{\r\n      let transform = this.circleElement.nativeElement.style.transform.replace('translate3d(', '').replace(')').replace('px', '');\r\n      let transformValues = transform.split(',');\r\n      return {x: parseInt(transformValues[0]), y: parseInt(transformValues[1])};\r\n    }\r\n    catch(ex) {\r\n      return {x: 0, y: 0};\r\n    }\r\n    \r\n    \r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewChild } from '@angular/core';\nimport { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';\n\n@Component({\n  selector: 'tf-slider',\n  templateUrl: './slider.component.html',\n  styleUrls: ['./slider.component.scss']\n})\nexport class SliderComponent {\n  @Input() value: number = 0;\n  @Input() percentageValue: number = 0;\n  @Input() maxValue: number = 100;\n  constructor() { }\n\n  @ViewChild('background') backgroundElement: any;\n  @ViewChild('circle') circleElement: any;\n\n  private isDragging: boolean = false;\n  position: string = 'test';\n\n  onDragMoved($event: CdkDragMove){\n    this.percentageValue = ($event.pointerPosition.x - this.backgroundElementPosition.x) / (this.backgroundElementWidth) * 100;\n  }\n\n  get backgroundElementPosition(){\n    return {x: this.backgroundElement.nativeElement.offsetLeft, y: this.backgroundElement.nativeElement.offsetTop};\n  }\n\n  get backgroundElementWidth(){\n    return this.backgroundElement.nativeElement.offsetWidth;\n  }\n\n  get mousePosition(){\n    return {x: (<any>window)?.event?.clientX, y: (<any>window)?.event?.clientY};\n  }\n\n  get circlePosition(){\n    return {x: this.circleElement.nativeElement.offsetLeft, y: this.circleElement.nativeElement.offsetTop};\n  }\n\n  get circleRelativePosition(){\n    try{\n      let transform = this.circleElement.nativeElement.style.transform.replace('translate3d(', '').replace(')').replace('px', '');\n      let transformValues = transform.split(',');\n      return {x: parseInt(transformValues[0]), y: parseInt(transformValues[1])};\n    }\n    catch(ex) {\n      return {x: 0, y: 0};\n    }\n    \n    \n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1353,19 +1812,91 @@
                     }
                 }
             },
-            "templateData": "<div class=\"sliderContainer\">\r\n  <div class=\"background\" #background></div>\r\n  <div class=\"highlightBackground\" \r\n    [style.width.%]=\"percentageValue\">\r\n  </div>\r\n  <div class=\"circle\" #circle \r\n    cdkDrag\r\n    cdkDragLockAxis=\"x\"\r\n    cdkDragBoundary=\".sliderContainer\" \r\n    (cdkDragMoved)=\"onDragMoved($event)\">\r\n  </div>\r\n</div>"
+            "templateData": "<div class=\"sliderContainer\">\n  <div class=\"background\" #background></div>\n  <div class=\"highlightBackground\" \n    [style.width.%]=\"percentageValue\">\n  </div>\n  <div class=\"circle\" #circle \n    cdkDrag\n    cdkDragLockAxis=\"x\"\n    cdkDragBoundary=\".sliderContainer\" \n    (cdkDragMoved)=\"onDragMoved($event)\">\n  </div>\n</div>"
+        },
+        {
+            "name": "UnauthorizedLayoutComponent",
+            "id": "component-UnauthorizedLayoutComponent-d57576ed7a6643ff71b7086a8758f6412697f991cc93c92d986645fd59fdc09447304a74d05e3785d204d3593a83555dfd58dcd3c58353bb41d187c4ea25a33b",
+            "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-unauthorizedLayout",
+            "styleUrls": [
+                "./unauthorizedLayout.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./unauthorizedLayout.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "logoUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-unauthorizedLayout',\r\n  templateUrl: './unauthorizedLayout.component.html',\r\n  styleUrls: ['./unauthorizedLayout.component.scss']\r\n})\r\nexport class UnauthorizedLayoutComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host{\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}",
+                    "styleUrl": "./unauthorizedLayout.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<tf-navbar [logoUrl]=\"logoUrl\"></tf-navbar>\r\n<ng-content></ng-content>\r\n<tf-footer></tf-footer>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-eca2d113d3befadbd5fb5f9e6810af6397a051d5bb2576c949e20b2015948e9b815b929c3aa1116b2cc53732b809255047d43652e18f7925d9dac07867e90222",
+            "id": "module-AppModule-01e358b6d74153f54b1423c407efe4992c1a6c5b2349aba42a5ab7f0fba293faf1df55f88604032e969641631b649d576b6feebeae71a911a3972677ac14ea9c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    NgbModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HttpClientModule } from '@angular/common/http'\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\nimport { TechfabricModule } from '../../projects/core/src/lib/core.module';\r\nimport { StoreModule } from '@ngrx/store';\r\nimport { AzureAdModule } from '../../projects/core/src/lib/store/azureAd/azureAd.module';\r\nimport { MsalModule } from '@azure/msal-angular';\r\nimport { InteractionType, PublicClientApplication } from '@azure/msal-browser';\r\nimport { RouterModule } from '@angular/router';\r\n\r\nconst isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    NgbModule,\r\n    TechfabricModule,\r\n    HttpClientModule,\r\n    StoreModule.forRoot({}),\r\n    RouterModule.forRoot([]),\r\n    AzureAdModule.forRoot(\"https://localhost:7073/Configuration/AzureAdConfiguration\"),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1381,7 +1912,14 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AzureAdModule"
+                        },
+                        {
+                            "name": "TechfabricModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1402,14 +1940,132 @@
             ]
         },
         {
+            "name": "AzureAdModule",
+            "id": "module-AzureAdModule-68edd1f2661b283240b4d9bc1547d002296f9bb2e3b9126e396d559f32c51fc206797cc6ab81199c8648028b1716a6d648a24fc60ea58b105f4c3de190d4272f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+            "methods": [
+                {
+                    "name": "forRoot",
+                    "args": [
+                        {
+                            "name": "identityServiceUrl",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{ ngModule: typeof AzureAdModule; providers: {}; }",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "identityServiceUrl",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "sourceCode": "import { NgModule, InjectionToken, APP_INITIALIZER } from \"@angular/core\";\r\nimport { StoreModule } from '@ngrx/store';\r\nimport { azureAdFeatureKey, azureAdReducer } from \"./azureAd.reducers\";\r\nimport { MsalModule, MSAL_INSTANCE, MSAL_BROADCAST_CONFIG, MSAL_GUARD_CONFIG, MSAL_INTERCEPTOR_CONFIG, MsalService } from \"@azure/msal-angular\";\r\nimport { AzureAdConfigurationService } from \"./azureAdConfigurationService\";\r\nimport { Configuration, InteractionType, PublicClientApplication } from \"@azure/msal-browser\";\r\n\r\n\r\n\r\nconst IDENTITY_SERVICE_URL = new InjectionToken<string>('IDENTITY_SERVICE_URL');\r\n\r\n\r\nexport function msalConfigFactory(azureAdConfigService: AzureAdConfigurationService) : any{\r\n\r\n}\r\n\r\nconst isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;\r\n\r\n@NgModule({\r\n    providers: [\r\n\r\n    ],\r\n    imports: [  \r\n        StoreModule.forFeature(azureAdFeatureKey, azureAdReducer),\r\n        MsalModule\r\n    ]\r\n})\r\nexport class AzureAdModule {\r\n    static forRoot(identityServiceUrl: string){\r\n        return {\r\n            ngModule: AzureAdModule,\r\n            providers: [\r\n                AzureAdConfigurationService,\r\n                { provide: IDENTITY_SERVICE_URL, useValue: identityServiceUrl},\r\n                { provide: APP_INITIALIZER, useFactory: (azureAdConfigService: AzureAdConfigurationService) => azureAdConfigService.init(identityServiceUrl), deps: [AzureAdConfigurationService, IDENTITY_SERVICE_URL]},\r\n                {\r\n                    provide: MSAL_INSTANCE,\r\n                    useValue: new PublicClientApplication({\r\n                        auth: {\r\n                          clientId: 'fdc8b9bc-0bd2-4fae-b7b3-7d05b7596de0',\r\n                          authority: 'https://login.microsoftonline.com/a4aa9f35-9917-4518-b764-5fbbb893a6cd',\r\n                          redirectUri: 'http://localhost:4200'\r\n                        },\r\n                        cache: {\r\n                          cacheLocation: 'localStorage',\r\n                          storeAuthStateInCookie: isIE\r\n                        }\r\n                      })\r\n                },\r\n                {\r\n                    provide: MSAL_GUARD_CONFIG,\r\n                    useValue: {\r\n                        interactionType: InteractionType.Redirect, \r\n                        authRequest: {\r\n                          scopes: ['user.read']\r\n                        }\r\n                      }\r\n                },\r\n                {\r\n                    provide: MSAL_INTERCEPTOR_CONFIG,\r\n                    useValue: {\r\n                        interactionType: InteractionType.Redirect,\r\n                        protectedResourceMap: new Map([\r\n                          ['Enter_the_graph_endpoint_Here/v1.0/me', ['user.read']]\r\n                        ])\r\n                      }\r\n                },\r\n                MsalService\r\n            ],\r\n        }\r\n    }\r\n}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ConfigurationModule",
+            "id": "module-ConfigurationModule-91a17fd9cb8c8e6a5ef0d7f7cd6caec90dc16206053ef098c63d90d0d9ea2228b22a777dff64bd2ed15bedc34825c91ae7763286fe07164a447f614f04f5cf2e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/core/src/lib/store/configuration/configuration.module.ts",
+            "methods": [
+                {
+                    "name": "forRoot",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{ ngModule: typeof ConfigurationModule; providers: {}; }",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
+            "sourceCode": "import { NgModule } from \"@angular/core\";\r\nimport { StoreModule } from '@ngrx/store';\r\nimport { configurationFeatureKey, configurationReducer } from \"./configuration.reducers\";\r\n\r\n@NgModule({\r\n    providers: [],\r\n    imports: [\r\n        StoreModule.forFeature(configurationFeatureKey, configurationReducer)\r\n    ]\r\n})\r\nexport class ConfigurationModule {\r\n    static forRoot(){\r\n        return {\r\n            ngModule: ConfigurationModule,\r\n            providers: [\r\n            ]\r\n        }\r\n    }\r\n    \r\n}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "TechfabricModule",
-            "id": "module-TechfabricModule-b7607fc3e9e0eecf572f7c0a59d1f319e4fbca9d3d34cfb5c8c308507e8c72f996013d118003602f457b8273ae9374d28f308d51dd378bf5b7f196e1af387ceb",
+            "id": "module-TechfabricModule-7a90292dfff28c4ec0cc6f2dfdb686ddc4c2c9895e759074c4436af54717a791f3d727fe191935c49c9ae2b49a5ca0724c4fce66f3f0bc55e2023468090115da",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/core/src/lib/core.module.ts",
             "methods": [],
-            "sourceCode": "import { DragDropModule } from '@angular/cdk/drag-drop';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { CardComponent } from './components/card/card.component';\r\nimport { CheckboxComponent } from './components/checkbox/checkbox.component';\r\nimport { ExpanderComponent } from './components/expander/expander.component';\r\nimport { FooterComponent } from './components/footer/footer.component';\r\nimport { InputComponent } from './components/input/input.component';\r\nimport { NavbarComponent } from './components/navbar/navbar.component';\r\nimport { SignInFormComponent } from './components/signInForm/signInForm.component';\r\nimport { SliderComponent } from './components/slider/slider.component';\r\nimport { CoreComponent } from './core.component';\r\nimport { SignInPageComponent } from './pages/signInPage/signInPage.component';\r\n\r\n\r\n\r\nlet components = [\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent\r\n];\r\n\r\n@NgModule({\r\n  declarations: components,\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    DragDropModule,\r\n    FontAwesomeModule,\r\n    FormsModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  exports: components\r\n})\r\nexport class TechfabricModule { }\r\n",
+            "sourceCode": "import { DragDropModule } from '@angular/cdk/drag-drop';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouterModule } from '@angular/router';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { AzureAdModule } from '../public-api';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { CardComponent } from './components/card/card.component';\r\nimport { CheckboxComponent } from './components/checkbox/checkbox.component';\r\nimport { ExpanderComponent } from './components/expander/expander.component';\r\nimport { FooterComponent } from './components/footer/footer.component';\r\nimport { InputComponent } from './components/input/input.component';\r\nimport { NavbarComponent } from './components/navbar/navbar.component';\r\nimport { SignInFormComponent } from './components/signInForm/signInForm.component';\r\nimport { SignUpFormComponent } from './components/signUpForm/signUpForm.component';\r\nimport { SliderComponent } from './components/slider/slider.component';\r\nimport { UnauthorizedLayoutComponent } from './layouts/unauthorizedLayout/unauthorizedLayout.component';\r\nimport { SignInPageComponent } from './pages/signInPage/signInPage.component';\r\nimport { SignUpPageComponent } from './pages/signUpPage/signUpPage.component';\r\nimport { ConfigurationModule } from './store/configuration/configuration.module';\r\n\r\n\r\n\r\n\r\nlet components = [\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent,\r\n  SignUpFormComponent,\r\n  SignUpPageComponent,\r\n  UnauthorizedLayoutComponent\r\n];\r\n\r\n@NgModule({\r\n  declarations: components,\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    DragDropModule,\r\n    FontAwesomeModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    ConfigurationModule,\r\n    RouterModule.forChild([\r\n      {path: 'signIn', component: SignInPageComponent},\r\n      {path: 'signUp', component: SignUpPageComponent}\r\n    ])\r\n  ],\r\n  exports: components\r\n})\r\nexport class TechfabricModule {\r\n  \r\n } \r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1446,13 +2102,26 @@
                             "name": "SignInPageComponent"
                         },
                         {
+                            "name": "SignUpFormComponent"
+                        },
+                        {
+                            "name": "SignUpPageComponent"
+                        },
+                        {
                             "name": "SliderComponent"
+                        },
+                        {
+                            "name": "UnauthorizedLayoutComponent"
                         }
                     ]
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ConfigurationModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1485,7 +2154,16 @@
                             "name": "SignInPageComponent"
                         },
                         {
+                            "name": "SignUpFormComponent"
+                        },
+                        {
+                            "name": "SignUpPageComponent"
+                        },
+                        {
                             "name": "SliderComponent"
+                        },
+                        {
+                            "name": "UnauthorizedLayoutComponent"
                         }
                     ]
                 },
@@ -1502,6 +2180,26 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "azureAdFeatureKey",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'azureAd'"
+            },
+            {
+                "name": "azureAdReducer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createReducer(\r\n    initialState,\r\n    on(AzureAdActions.setConfig, (state, config) => ({\r\n        ...state,\r\n        clientId: config.clientId,\r\n        instanceId: config.instanceId,\r\n        tenantId: config.tenantId,\r\n        redirectUri: config.redirectUri\r\n    }))\r\n)"
+            },
             {
                 "name": "ButtonInEverySection",
                 "ctype": "miscellaneous",
@@ -1550,7 +2248,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent\r\n]"
+                "defaultValue": "[\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent,\r\n  SignUpFormComponent,\r\n  SignUpPageComponent,\r\n  UnauthorizedLayoutComponent\r\n]"
+            },
+            {
+                "name": "configurationFeatureKey",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'tf-configuration'"
+            },
+            {
+                "name": "configurationReducer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createReducer(\r\n    initialState,\r\n    on(ConfigurationActions.setConfiguration, (state, config) => ({\r\n        ...state,\r\n        ...config\r\n    }))\r\n)"
             },
             {
                 "name": "context",
@@ -1586,21 +2304,21 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[ButtonComponent, CheckboxComponent]"
-            },
-            {
-                "name": "declarations",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/core/src/lib/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[ButtonComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[ButtonComponent, CheckboxComponent]"
             },
             {
                 "name": "declarations",
@@ -1636,31 +2354,41 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[InputComponent, ButtonComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
                 "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent]"
             },
             {
-                "name": "Default",
+                "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "any[]",
+                "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
             },
             {
-                "name": "Default",
+                "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+                "type": "any[]",
+                "defaultValue": "[InputComponent, SignUpFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
             },
             {
                 "name": "Default",
@@ -1676,11 +2404,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/components/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n\r\n    },\r\n    template: ` <tf-footer>\r\n                </tf-footer>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -1696,7 +2444,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/input/input.stories.ts",
+                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1716,11 +2464,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signInPage [logoUrl]=\"logoUrl\">\r\n                </tf-signInPage>`,\r\n})"
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signUpForm [logoUrl]=\"logoUrl\">\r\n                </tf-signUpForm>`\r\n})"
             },
             {
                 "name": "Default",
@@ -1731,6 +2479,36 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n                </tf-unauthorizedLayout>`,\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signInPage [logoUrl]=\"logoUrl\">\r\n                </tf-signInPage>`,\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signUpPage [logoUrl]=\"logoUrl\">\r\n                </tf-signUpPage>`,\r\n})"
             },
             {
                 "name": "DefaultBasic",
@@ -1873,6 +2651,96 @@
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
+                "name": "IDENTITY_SERVICE_URL",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new InjectionToken<string>('IDENTITY_SERVICE_URL')"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IConfiguration",
+                "defaultValue": "{\r\n    logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n}"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IAzureAdConfiguration",
+                "defaultValue": "{\r\n    clientId: null,\r\n    instanceId: null,\r\n    tenantId: null,\r\n    redirectUri: null\r\n}"
+            },
+            {
+                "name": "isIE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1"
+            },
+            {
+                "name": "isIE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1"
+            },
+            {
+                "name": "LegacyAndMicrosoftLogin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
+            },
+            {
+                "name": "LegacyAndMicrosoftLogin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signUpForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signUpForm>`\r\n})"
+            },
+            {
+                "name": "LegacyAndMicrosoftLogin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signInPage>`,\r\n})"
+            },
+            {
+                "name": "LegacyAndMicrosoftLogin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signUpPage [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signUpPage>`,\r\n})"
+            },
+            {
                 "name": "MicrosoftSignInOnly",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1880,17 +2748,37 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showUsernameAndPassword: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showUsernameAndPassword]=\"showUsernameAndPassword\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
             },
             {
-                "name": "RegularAndMicrosoftLogin",
+                "name": "MicrosoftSignInOnly",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showUsernameAndPassword: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showUsernameAndPassword]=\"showUsernameAndPassword\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signUpForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signUpForm>`\r\n})"
+            },
+            {
+                "name": "MicrosoftSignInOnly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n              </tf-signInPage>`,\r\n})"
+            },
+            {
+                "name": "MicrosoftSignInOnly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signUpPage [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n              </tf-signUpPage>`,\r\n})"
             },
             {
                 "name": "require",
@@ -1921,6 +2809,66 @@
                 "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: true,\r\n        isSelectable: true,\r\n        isSelected: true,\r\n        hasPrimaryBanner: true\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview [isSelectable]=\"isSelectable\" [(isSelected)]=\"isSelected\" [hasPrimaryBanner]=\"hasPrimaryBanner\">\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        Preview Text\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
             },
             {
+                "name": "selectAzureAdConfiguration",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createFeatureSelector<AzureAdState>(azureAdFeatureKey)"
+            },
+            {
+                "name": "selectConfiguration",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/configuration/configuration.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createFeatureSelector<IConfiguration>(azureAdFeatureKey)"
+            },
+            {
+                "name": "setConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction('[AzureAd] setConfig',\r\n    props<IAzureAdConfiguration>()\r\n)"
+            },
+            {
+                "name": "setConfiguration",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/configuration/configuration.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction('[Configuration] setConfiguration',\r\n    props<IConfiguration>()\r\n)"
+            },
+            {
+                "name": "signInLegacy",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\r\n    '[SignIn Page] SignIn',\r\n    props<{ username: string, password: string}>()\r\n)"
+            },
+            {
+                "name": "signInWithAd",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\r\n    '[SignIn Page] SignInWithMicrosoft'\r\n)"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1929,26 +2877,6 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ExpanderComponent>",
-                "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1964,21 +2892,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<ExpanderComponent>",
+                "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1994,11 +2922,61 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SignInFormComponent>",
                 "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SignUpFormComponent>",
+                "defaultValue": "(args: SignUpFormComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SliderComponent>",
+                "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UnauthorizedLayoutComponent>",
+                "defaultValue": "(args: UnauthorizedLayoutComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2014,14 +2992,44 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SliderComponent>",
-                "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<SignUpPageComponent>",
+                "defaultValue": "(args: SignUpPageComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "msalConfigFactory",
+                "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "azureAdConfigService",
+                        "type": "AzureAdConfigurationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "any",
+                "jsdoctags": [
+                    {
+                        "name": "azureAdConfigService",
+                        "type": "AzureAdConfigurationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
         "typealiases": [],
         "enumerations": [
             {
@@ -2052,6 +3060,38 @@
             }
         ],
         "groupedVariables": {
+            "projects/core/src/lib/store/azureAd/azureAd.reducers.ts": [
+                {
+                    "name": "azureAdFeatureKey",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'azureAd'"
+                },
+                {
+                    "name": "azureAdReducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createReducer(\r\n    initialState,\r\n    on(AzureAdActions.setConfig, (state, config) => ({\r\n        ...state,\r\n        clientId: config.clientId,\r\n        instanceId: config.instanceId,\r\n        tenantId: config.tenantId,\r\n        redirectUri: config.redirectUri\r\n    }))\r\n)"
+                },
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IAzureAdConfiguration",
+                    "defaultValue": "{\r\n    clientId: null,\r\n    instanceId: null,\r\n    tenantId: null,\r\n    redirectUri: null\r\n}"
+                }
+            ],
             "projects/core/src/lib/components/expander/expander.stories.ts": [
                 {
                     "name": "ButtonInEverySection",
@@ -2143,7 +3183,39 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent\r\n]"
+                    "defaultValue": "[\r\n  ButtonComponent,\r\n  CardComponent,\r\n  CheckboxComponent,\r\n  ExpanderComponent,\r\n  SliderComponent,\r\n  NavbarComponent,\r\n  SignInFormComponent,\r\n  SignInPageComponent,\r\n  InputComponent,\r\n  FooterComponent,\r\n  SignUpFormComponent,\r\n  SignUpPageComponent,\r\n  UnauthorizedLayoutComponent\r\n]"
+                }
+            ],
+            "projects/core/src/lib/store/configuration/configuration.reducers.ts": [
+                {
+                    "name": "configurationFeatureKey",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'tf-configuration'"
+                },
+                {
+                    "name": "configurationReducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createReducer(\r\n    initialState,\r\n    on(ConfigurationActions.setConfiguration, (state, config) => ({\r\n        ...state,\r\n        ...config\r\n    }))\r\n)"
+                },
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IConfiguration",
+                    "defaultValue": "{\r\n    logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n}"
                 }
             ],
             "src/test.ts": [
@@ -2438,6 +3510,16 @@
                     "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInForm [logoUrl]=\"logoUrl\">\r\n                </tf-signInForm>`\r\n})"
                 },
                 {
+                    "name": "LegacyAndMicrosoftLogin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
+                },
+                {
                     "name": "MicrosoftSignInOnly",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2445,17 +3527,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showUsernameAndPassword: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showUsernameAndPassword]=\"showUsernameAndPassword\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
-                },
-                {
-                    "name": "RegularAndMicrosoftLogin",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showUsernameAndPassword: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showUsernameAndPassword]=\"showUsernameAndPassword\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signInForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signInForm>`\r\n})"
                 },
                 {
                     "name": "Template",
@@ -2468,6 +3540,90 @@
                     "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
+            "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[InputComponent, ButtonComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signUpForm [logoUrl]=\"logoUrl\">\r\n                </tf-signUpForm>`\r\n})"
+                },
+                {
+                    "name": "LegacyAndMicrosoftLogin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signUpForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signUpForm>`\r\n})"
+                },
+                {
+                    "name": "MicrosoftSignInOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signUpForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signUpForm>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SignUpFormComponent>",
+                    "defaultValue": "(args: SignUpFormComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n                </tf-unauthorizedLayout>`,\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UnauthorizedLayoutComponent>",
+                    "defaultValue": "(args: UnauthorizedLayoutComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "projects/core/src/lib/pages/signInPage/signInPage.stories.ts": [
                 {
                     "name": "declarations",
@@ -2477,7 +3633,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
-                    "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent]"
+                    "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
                 },
                 {
                     "name": "Default",
@@ -2490,6 +3646,26 @@
                     "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signInPage [logoUrl]=\"logoUrl\">\r\n                </tf-signInPage>`,\r\n})"
                 },
                 {
+                    "name": "LegacyAndMicrosoftLogin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signInPage>`,\r\n})"
+                },
+                {
+                    "name": "MicrosoftSignInOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n              </tf-signInPage>`,\r\n})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2498,6 +3674,80 @@
                     "deprecationMessage": "",
                     "type": "Story<SignInPageComponent>",
                     "defaultValue": "(args: SignInPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[InputComponent, SignUpFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signUpPage [logoUrl]=\"logoUrl\">\r\n                </tf-signUpPage>`,\r\n})"
+                },
+                {
+                    "name": "LegacyAndMicrosoftLogin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signUpPage [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signUpPage>`,\r\n})"
+                },
+                {
+                    "name": "MicrosoftSignInOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signUpPage [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n              </tf-signUpPage>`,\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SignUpPageComponent>",
+                    "defaultValue": "(args: SignUpPageComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/input/input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/checkbox/checkbox.stories.ts": [
@@ -2530,28 +3780,6 @@
                     "deprecationMessage": "",
                     "type": "Story<CheckboxComponent>",
                     "defaultValue": "(args: CheckboxComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "projects/core/src/lib/components/input/input.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "(args: InputComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/slider/slider.stories.ts": [
@@ -2599,9 +3827,145 @@
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
+            ],
+            "projects/core/src/lib/store/azureAd/azureAd.module.ts": [
+                {
+                    "name": "IDENTITY_SERVICE_URL",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new InjectionToken<string>('IDENTITY_SERVICE_URL')"
+                },
+                {
+                    "name": "isIE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1"
+                }
+            ],
+            "src/app/app.module.ts": [
+                {
+                    "name": "isIE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1"
+                }
+            ],
+            "projects/core/src/lib/store/azureAd/azureAd.selectors.ts": [
+                {
+                    "name": "selectAzureAdConfiguration",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createFeatureSelector<AzureAdState>(azureAdFeatureKey)"
+                }
+            ],
+            "projects/core/src/lib/store/configuration/configuration.selectors.ts": [
+                {
+                    "name": "selectConfiguration",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/configuration/configuration.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createFeatureSelector<IConfiguration>(azureAdFeatureKey)"
+                }
+            ],
+            "projects/core/src/lib/store/azureAd/azureAd.actions.ts": [
+                {
+                    "name": "setConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction('[AzureAd] setConfig',\r\n    props<IAzureAdConfiguration>()\r\n)"
+                }
+            ],
+            "projects/core/src/lib/store/configuration/configuration.actions.ts": [
+                {
+                    "name": "setConfiguration",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/configuration/configuration.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction('[Configuration] setConfiguration',\r\n    props<IConfiguration>()\r\n)"
+                }
+            ],
+            "projects/core/src/lib/store/signIn/signInPage.action.ts": [
+                {
+                    "name": "signInLegacy",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\r\n    '[SignIn Page] SignIn',\r\n    props<{ username: string, password: string}>()\r\n)"
+                },
+                {
+                    "name": "signInWithAd",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\r\n    '[SignIn Page] SignInWithMicrosoft'\r\n)"
+                }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "projects/core/src/lib/store/azureAd/azureAd.module.ts": [
+                {
+                    "name": "msalConfigFactory",
+                    "file": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "azureAdConfigService",
+                            "type": "AzureAdConfigurationService",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "any",
+                    "jsdoctags": [
+                        {
+                            "name": "azureAdConfigService",
+                            "type": "AzureAdConfigurationService",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         "groupedEnumerations": {
             "projects/core/src/lib/components/button/button.models.ts": [
                 {
@@ -3086,6 +4450,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "LegacyAndMicrosoftLogin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "MicrosoftSignInOnly",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3096,13 +4470,62 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "RegularAndMicrosoftLogin",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SignUpFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LegacyAndMicrosoftLogin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MicrosoftSignInOnly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/components/signUpForm/signUpForm.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3169,12 +4592,51 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UnauthorizedLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/core/src/lib/pages/signInPage/signInPage.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SignInPageComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -3202,7 +4664,290 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "LegacyAndMicrosoftLogin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MicrosoftSignInOnly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SignUpPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LegacyAndMicrosoftLogin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MicrosoftSignInOnly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.models.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IAzureAdConfiguration",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "msalConfigFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IDENTITY_SERVICE_URL",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "isIE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "azureAdFeatureKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "azureAdReducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectAzureAdConfiguration",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAd.state.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AzureAdState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/azureAd/azureAdConfigurationService.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AzureAdConfigurationService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setConfiguration",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.models.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IConfiguration",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "configurationFeatureKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "configurationReducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.reducers.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectConfiguration",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/configuration/configuration.state.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ConfigurationState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "signInLegacy",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/signIn/signInPage.action.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "signInWithAd",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/core/src/lib/store/signIn/signInPage.state.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "signInPageState",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3233,7 +4978,17 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "isIE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

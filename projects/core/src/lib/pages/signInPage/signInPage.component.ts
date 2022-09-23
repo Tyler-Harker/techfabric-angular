@@ -1,4 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MsalService } from '@azure/msal-angular';
+import { select, Store } from '@ngrx/store';
+import { SIGN_IN } from '../../store/azureAd/azureAd.actions';
+
+import { selectLogoUrl } from '../../store/configuration/configuration.selectors';
+import { signInWithAd } from '../../store/signIn/signInPage.actions';
+import { selectSignInPageConfiguration } from '../../store/signIn/signInPage.selectors';
 
 @Component({
   selector: 'tf-signInPage',
@@ -7,11 +14,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SignInPageComponent implements OnInit {
   @Input() logoUrl: string = '';
-  @Input() showLegacyLogin: boolean = true;
-  @Input() showMicrosoftLogin: boolean = false;
-  constructor() { }
+  @Input() showLegacySignIn: boolean = true;
+  @Input() showMicrosoftSignIn: boolean = false;
+  constructor(private store: Store) { }
 
   ngOnInit() {
+    this.store.select(selectLogoUrl).subscribe(o => {
+      this.logoUrl = <string>o;
+    });
+    this.store.select(selectSignInPageConfiguration).subscribe(o => {
+      this.showLegacySignIn = o.showLegacySignIn;
+      this.showMicrosoftSignIn = o.showMicrosoftSignIn;
+    });
+  }
+
+
+  onClickSignInWithMicrosoft(): void {
+    console.log('clicked microsoft')
+    this.store.dispatch({type: SIGN_IN})
   }
 
 }

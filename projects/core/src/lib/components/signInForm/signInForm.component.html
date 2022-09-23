@@ -18,6 +18,6 @@
 
 <div class="ssoIntegrationWrapper">
   <div *ngIf="showMicrosoftLogin">
-    <tf-button><fa-icon [icon]="microsoftIcon" style="color: #00a2ed"></fa-icon> Microsoft</tf-button>
+    <tf-button (click)="onClickSignInWithMicrosoft.emit()"><fa-icon [icon]="microsoftIcon" style="color: #00a2ed"></fa-icon> Microsoft</tf-button>
   </div>
 </div>

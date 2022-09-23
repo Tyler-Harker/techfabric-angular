@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AzureAdModule } from '../public-api';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
@@ -14,10 +16,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignInFormComponent } from './components/signInForm/signInForm.component';
 import { SignUpFormComponent } from './components/signUpForm/signUpForm.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { CoreComponent } from './core.component';
 import { UnauthorizedLayoutComponent } from './layouts/unauthorizedLayout/unauthorizedLayout.component';
 import { SignInPageComponent } from './pages/signInPage/signInPage.component';
 import { SignUpPageComponent } from './pages/signUpPage/signUpPage.component';
+import { ConfigurationModule } from './store/configuration/configuration.module';
+import { SignInPageModule } from './store/signIn/signInPageModule';
 
 
 
@@ -46,8 +49,16 @@ let components = [
     DragDropModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ConfigurationModule,
+    SignInPageModule,
+    RouterModule.forChild([
+      {path: 'signIn', component: SignInPageComponent},
+      {path: 'signUp', component: SignUpPageComponent}
+    ])
   ],
   exports: components
 })
-export class TechfabricModule { }
+export class TechfabricModule {
+  
+ } 

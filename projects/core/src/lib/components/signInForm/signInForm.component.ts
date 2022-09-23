@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 
@@ -12,6 +12,11 @@ export class SignInFormComponent implements OnInit {
   @Input() showLegacyLogin: boolean = true;
   @Input() showMicrosoftLogin: boolean = false;
   @Input() showBackButton: boolean = true;
+
+
+  @Output() onClickSignIn: EventEmitter<void> = new EventEmitter<void>();
+  @Output() onClickSignInWithMicrosoft: EventEmitter<void> = new EventEmitter<void>();
+  
 
   microsoftIcon: any = faMicrosoft;
   constructor() { }

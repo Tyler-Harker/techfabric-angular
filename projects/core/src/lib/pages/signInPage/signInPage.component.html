@@ -1,6 +1,6 @@
 
 <tf-unauthorizedLayout [logoUrl]="logoUrl">
-    <tf-signInForm [logoUrl]="logoUrl" [showMicrosoftLogin]="showMicrosoftLogin" [showLegacyLogin]="showLegacyLogin">
+    <tf-signInForm [logoUrl]="logoUrl" [showMicrosoftLogin]="showMicrosoftSignIn" [showLegacyLogin]="showLegacySignIn" (onClickSignInWithMicrosoft)="onClickSignInWithMicrosoft()">
 
     </tf-signInForm>
 </tf-unauthorizedLayout>
