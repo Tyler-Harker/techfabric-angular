@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AzureAdModule } from '../public-api';
+import { MsalNgrxModule } from 'projects/msal/src/lib/msal.module';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
@@ -55,7 +55,8 @@ let components = [
     RouterModule.forChild([
       {path: 'signIn', component: SignInPageComponent},
       {path: 'signUp', component: SignUpPageComponent}
-    ])
+    ]),
+    MsalNgrxModule
   ],
   exports: components
 })

@@ -9,6 +9,9 @@
       ],
       "msal": [
         "dist/msal"
+      ],
+      "msal-ngrx": [
+        "dist/msal-ngrx"
       ]
     },
     "outDir": "./dist/out-tsc",

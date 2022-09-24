@@ -13,9 +13,16 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { MsalNgrxModule } from 'projects/msal/src/lib/msal.module';
 // import { MsalAuthService } from 'projects/msal/src/lib/msalAuth.service';
-import { MSAL_CONFIG_TOKEN } from 'projects/msal/src/lib/msal.config';
+import { AdConfigWrapper, MSAL_CONFIG_TOKEN } from 'projects/msal/src/lib/msal.config';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
+
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+let adConfigWrapper = <AdConfigWrapper><unknown>environment;
+
+console.log(adConfigWrapper)
 
 @NgModule({
   declarations: [
@@ -28,16 +35,17 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     StoreModule.forRoot({}),
     RouterModule.forRoot([]),
     EffectsModule.forRoot([]),
-    MsalNgrxModule
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    TechfabricModule,
     // AzureAdModule.forRoot("https://localhost:7073/Configuration/AzureAdConfiguration"),
   ],
   providers: [
     {
       provide: MSAL_CONFIG_TOKEN,
       useValue: {
-        clientId: '',
-        tenantId: '',
-        redirectUri: ''
+        clientId: adConfigWrapper.azureAd.clientId,
+        tenantId: adConfigWrapper.azureAd.tenantId,
+        redirectUri: adConfigWrapper.azureAd.redirectUrl
       }
     }
   ],

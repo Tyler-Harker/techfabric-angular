@@ -164,6 +164,37 @@
           }
         }
       }
+    },
+    "msal-ngrx": {
+      "projectType": "library",
+      "root": "projects/msal-ngrx",
+      "sourceRoot": "projects/msal-ngrx/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/msal-ngrx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/msal-ngrx/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/msal-ngrx/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/msal-ngrx/src/test.ts",
+            "tsConfig": "projects/msal-ngrx/tsconfig.spec.json",
+            "karmaConfig": "projects/msal-ngrx/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "cli": {
