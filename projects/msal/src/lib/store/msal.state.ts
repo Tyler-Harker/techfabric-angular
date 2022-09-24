@@ -1,12 +1,8 @@
-import { AccountInfo } from "@azure/msal-browser";
+import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
 
 export interface MsalState {
-    user: AccountInfo | null;
+    authResult: AuthenticationResult | null;
     error: string | null;
     loading: boolean;
     loaded: boolean;
-}
-
-export interface MsalUser { 
-
 }

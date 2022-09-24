@@ -6,7 +6,7 @@ import { MsalState } from './msal.state';
 export const msalConfigurationFeatureKey = 'tfMsal';
 
 export const initialState: MsalState = {
-    user: null,
+    authResult: null,
     error: null,
     loading: false,
     loaded: false
@@ -26,7 +26,7 @@ export const msalReducer = createReducer(
     })),
     on(MsalActions.loginSuccessful, (state, payload) => ({
         ...state,
-        user: payload.user
+        authResult: payload.authResult
     })),
     on(MsalActions.loginFail, (state) => ({
         ...state,

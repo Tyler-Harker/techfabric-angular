@@ -3,9 +3,9 @@ import { msalConfigurationFeatureKey } from "./msal.reducers";
 import { MsalState } from "./msal.state";
 
 export const selectMsalState = createFeatureSelector<MsalState>(msalConfigurationFeatureKey);
-export const getUser = createSelector(
+export const getAuthResult = createSelector(
     selectMsalState,
-    (state: MsalState) => state.user
+    (state: MsalState) => state.authResult
 )
 export const getError = createSelector(
     selectMsalState,

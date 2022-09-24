@@ -1,8 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
 import { MSAL_CONFIG_TOKEN } from './msal.config';
-import { PublicClientApplication } from '@azure/msal-browser';
+import { AuthenticationResult, PublicClientApplication } from '@azure/msal-browser';
 import { from } from 'rxjs';
 import { MsalNgrxModule } from './msal.module';
+import { loginSuccessful } from '../public-api';
+import { Store } from '@ngrx/store';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -13,7 +15,7 @@ export class MsalAuthService {
   private userAgentApplication: PublicClientApplication;
 
   constructor(
-    @Inject(MSAL_CONFIG_TOKEN) private msalConfig: any
+    @Inject(MSAL_CONFIG_TOKEN) private msalConfig: any, private store: Store
   ) {
     this.userAgentApplication = new PublicClientApplication({
       auth: {
@@ -26,7 +28,10 @@ export class MsalAuthService {
         storeAuthStateInCookie: isIE
       }
     })
-    console.log(this.userAgentApplication.getAllAccounts())
+    this.userAgentApplication.handleRedirectPromise().then( (authResult) => {
+      let result = <AuthenticationResult>authResult;
+      this.store.dispatch(loginSuccessful({authResult: result}));
+    })
   }
 
 

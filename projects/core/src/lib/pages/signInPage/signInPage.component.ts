@@ -32,7 +32,7 @@ export class SignInPageComponent implements OnInit {
 
   onClickSignInWithMicrosoft(): void {
     console.log('login')
-    this.store.dispatch(loginPopup());
+    this.store.dispatch(loginRedirect());
   }
 
 }

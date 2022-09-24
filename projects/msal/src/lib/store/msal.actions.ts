@@ -1,13 +1,12 @@
-import { AccountInfo } from "@azure/msal-browser";
+import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
 import { createAction, props } from "@ngrx/store";
-import { MsalUser } from "./msal.state";
 
 export const ACTION_PREFIX = '[TF-MSAL]';
 
 export const loginPopup = createAction(`${ACTION_PREFIX} Login Popup`);
 export const loginRedirect = createAction(`${ACTION_PREFIX} Login Redirect`);
 export const loginSuccessful = createAction(`${ACTION_PREFIX} Login Successful`,
-    props<{ user: AccountInfo}>()
+    props<{ authResult: AuthenticationResult}>()
 );
 export const loginFail = createAction(`${ACTION_PREFIX} Login Fail`,
     props<{ error: string}>()

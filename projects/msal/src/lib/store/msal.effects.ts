@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MsalService } from "@azure/msal-angular";
-import { AccountInfo } from "@azure/msal-browser";
+import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap } from "rxjs";
 import { MsalAuthService } from "../msalAuth.service";
@@ -20,13 +20,11 @@ export class MsalEffects {
         switchMap(() => 
             this.msalAuthService.loginPopup().pipe(
                 map(
-                    (access_token) => {
-                        alert('success')
-                        return MsalActions.loginSuccessful({ user: <AccountInfo>this.msalAuthService.user})
+                    (authResult) => {
+                        return MsalActions.loginSuccessful({ authResult })
                     }
                 ),
                 catchError(error => {
-                    alert('error')
                     return of(MsalActions.loginFail({ error }))
                 })
             )
@@ -35,18 +33,7 @@ export class MsalEffects {
 
     msalLoginRedirect$ = createEffect(() => this.actions$.pipe(
         ofType(MsalActions.loginRedirect),
-        switchMap(() => 
-            this.msalAuthService.loginRedirect().pipe(
-                map(
-                    access_token => {
-                        return MsalActions.loginSuccessful({ user: <AccountInfo>this.msalAuthService.user})
-                    }
-                ),
-                catchError(error => {
-                    alert('error')
-                    return of(MsalActions.loginFail({ error }))
-                })
-            )
+        switchMap(() => this.msalAuthService.loginRedirect())
         )
-    ));
+    , {dispatch: false});
 }
