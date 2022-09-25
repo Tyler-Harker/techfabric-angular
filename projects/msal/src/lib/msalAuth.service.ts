@@ -42,7 +42,8 @@ export class MsalAuthService {
     return this.userAgentApplication = new PublicClientApplication({
       auth,
       cache
-    })
+    });
+    console.log(this.userAgentApplication)
   }
 
 

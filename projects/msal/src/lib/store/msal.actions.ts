@@ -17,5 +17,5 @@ export const logout = createAction(`${ACTION_PREFIX} Logout`);
 
 
 export const msalAuthUpdate = createAction(`${ACTION_PREFIX} Auth Update`,
-    props<{ auth: BrowserAuthOptions }>()
+    props<BrowserAuthOptions>()
 );

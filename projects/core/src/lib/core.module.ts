@@ -55,8 +55,7 @@ let components = [
     RouterModule.forChild([
       {path: 'signIn', component: SignInPageComponent},
       {path: 'signUp', component: SignUpPageComponent}
-    ]),
-    MsalNgrxModule
+    ])
   ],
   exports: components
 })
