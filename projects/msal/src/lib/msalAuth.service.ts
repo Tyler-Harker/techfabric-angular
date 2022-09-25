@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 import { MsalNgrxModule } from './msal.module';
 import { loginSuccessful } from '../public-api';
 import { Store } from '@ngrx/store';
-import { AdConfig } from 'msal';
+import { AdConfig } from './msal.config';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 

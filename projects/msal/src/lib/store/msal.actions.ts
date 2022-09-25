@@ -1,6 +1,6 @@
 import { AccountInfo, AuthenticationResult, BrowserAuthOptions } from "@azure/msal-browser";
 import { createAction, props } from "@ngrx/store";
-import { AdConfig } from "msal";
+import { AdConfig } from "../msal.config";
 
 export const ACTION_PREFIX = '[TF-MSAL]';
 
