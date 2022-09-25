@@ -5,6 +5,7 @@ import { from } from 'rxjs';
 import { MsalNgrxModule } from './msal.module';
 import { loginSuccessful } from '../public-api';
 import { Store } from '@ngrx/store';
+import { AdConfig } from 'msal';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -37,13 +38,15 @@ export class MsalAuthService {
   }
 
 
-  async init(auth: BrowserAuthOptions, cache: CacheOptions) {
-    console.log('auth', auth)
+  async init(auth: AdConfig, cache: CacheOptions) {
     return this.userAgentApplication = new PublicClientApplication({
-      auth,
+      auth: {
+        clientId: auth.clientId,
+        authority: `https://login.microsoftonline.com/${auth.tenantId}`,
+        redirectUri: auth.redirectUrl
+      },
       cache
     });
-    console.log(this.userAgentApplication)
   }
 
 
