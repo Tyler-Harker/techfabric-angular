@@ -9,7 +9,8 @@ export const initialState: MsalState = {
     authResult: null,
     error: null,
     loading: false,
-    loaded: false
+    loaded: false,
+    config: null,
 }
 
 export const msalReducer = createReducer(

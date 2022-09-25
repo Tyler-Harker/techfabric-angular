@@ -32,6 +32,8 @@ export class MsalAuthService {
       let result = <AuthenticationResult>authResult;
       this.store.dispatch(loginSuccessful({authResult: result}));
     })
+
+    console.log(this.userAgentApplication)
   }
 
 

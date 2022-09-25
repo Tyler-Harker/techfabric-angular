@@ -6,7 +6,6 @@ import { AzureAdConfigurationService } from "./azureAdConfigurationService";
 import { Configuration, InteractionType, PublicClientApplication } from "@azure/msal-browser";
 import { AzureAdEffects, MsalServiceCustom } from "./azureAd.effects";
 import { EffectsModule } from "@ngrx/effects";
-import { MsalNgrxModule } from "projects/msal/src/lib/msal.module";
 
 
 

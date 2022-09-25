@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MsalService } from '@azure/msal-angular';
 import { select, Store } from '@ngrx/store';
-import { loginPopup, loginRedirect } from 'projects/msal/src/public-api';
+import { loginPopup, loginRedirect } from '@techfabric/msal-ngrx';
 import { SIGN_IN } from '../../store/azureAd/azureAd.actions';
 
 import { selectLogoUrl } from '../../store/configuration/configuration.selectors';

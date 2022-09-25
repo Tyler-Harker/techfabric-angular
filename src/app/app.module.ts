@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TechfabricModule } from '../../projects/core/src/lib/core.module';
+import { TechfabricModule } from 'projects/core/src/lib/core.module';
 import { StoreModule } from '@ngrx/store';
 import { AzureAdModule } from '../../projects/core/src/lib/store/azureAd/azureAd.module';
 import { MsalModule } from '@azure/msal-angular';
@@ -37,15 +37,16 @@ console.log(adConfigWrapper)
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     TechfabricModule,
+    MsalNgrxModule
     // AzureAdModule.forRoot("https://localhost:7073/Configuration/AzureAdConfiguration"),
   ],
   providers: [
     {
       provide: MSAL_CONFIG_TOKEN,
       useValue: {
-        clientId: adConfigWrapper.azureAd.clientId,
-        tenantId: adConfigWrapper.azureAd.tenantId,
-        redirectUri: adConfigWrapper.azureAd.redirectUrl
+        clientId: environment.azureAd.clientId,
+        tenantId: environment.azureAd.tenantId,
+        redirectUri: environment.azureAd.redirectUri
       }
     }
   ],

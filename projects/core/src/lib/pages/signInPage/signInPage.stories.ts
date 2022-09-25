@@ -23,7 +23,6 @@ import { signInPageFeatureKey } from '../../store/signIn/signInPage.reducers';
 import { initialState as signInPageInitialState } from '../../store/signIn/signInPage.reducers';
 import { SignInPageState } from '../../store/signIn/signInPage.state';
 import { AzureAdModule } from '../../store/azureAd/azureAd.module';
-import { MsalModule, MsalService } from '@azure/msal-angular';
 
 
 let declarations: any[] = [InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent];
