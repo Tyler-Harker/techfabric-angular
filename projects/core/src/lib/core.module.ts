@@ -45,7 +45,6 @@ let components = [
   declarations: components,
   imports: [
     CommonModule,
-    BrowserModule,
     DragDropModule,
     FontAwesomeModule,
     FormsModule,
