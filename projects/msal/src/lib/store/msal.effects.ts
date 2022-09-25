@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { MsalService } from "@azure/msal-angular";
-import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
+import { AccountInfo, AuthenticationResult, BrowserAuthOptions } from "@azure/msal-browser";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, of, switchMap } from "rxjs";
+import { catchError, map, mergeMap, of, switchMap } from "rxjs";
 import { MsalAuthService } from "../msalAuth.service";
 
 import * as MsalActions from './msal.actions';
@@ -15,9 +15,16 @@ export class MsalEffects {
         private msalAuthService: MsalAuthService){
     }
 
+    msalAuthUpdate = createEffect(() => this.actions$.pipe(
+        ofType(MsalActions.msalAuthUpdate.type),
+        mergeMap((action: any) => 
+            this.msalAuthService.init(action, this.msalAuthService.cache)
+        )
+    ), { dispatch: false})
+
     msalLoginPopup$ = createEffect(() => this.actions$.pipe(
         ofType(MsalActions.loginPopup.type),
-        switchMap(() => 
+        switchMap((paqyload) => 
             this.msalAuthService.loginPopup().pipe(
                 map(
                     (authResult) => {
