@@ -1,5 +1,6 @@
-import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
+import { AccountInfo, AuthenticationResult, BrowserAuthOptions } from "@azure/msal-browser";
 import { createAction, props } from "@ngrx/store";
+import { AdConfig } from "../msal.config";
 
 export const ACTION_PREFIX = '[TF-MSAL]';
 
@@ -14,3 +15,8 @@ export const loginFail = createAction(`${ACTION_PREFIX} Login Fail`,
 export const acquireTokenSilent = createAction(`${ACTION_PREFIX} Acquire Token Silent`);
 export const acquireTokenPopup = createAction(`${ACTION_PREFIX} Acquire Token Popup`);
 export const logout = createAction(`${ACTION_PREFIX} Logout`);
+
+
+export const msalAuthUpdate = createAction(`${ACTION_PREFIX} Auth Update`,
+    props<AdConfig>()
+);

@@ -5,7 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MsalNgrxModule } from 'projects/msal/src/lib/msal.module';
+import { StoreModule } from '@ngrx/store';
+import { MsalNgrxModule } from '@techfabric/msal-ngrx';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
@@ -45,7 +46,6 @@ let components = [
   declarations: components,
   imports: [
     CommonModule,
-    BrowserModule,
     DragDropModule,
     FontAwesomeModule,
     FormsModule,
@@ -56,9 +56,12 @@ let components = [
       {path: 'signIn', component: SignInPageComponent},
       {path: 'signUp', component: SignUpPageComponent}
     ]),
-    MsalNgrxModule
   ],
-  exports: components
+  exports: [
+    ...components,
+    ConfigurationModule,
+    SignInPageModule
+  ]
 })
 export class TechfabricModule {
   
