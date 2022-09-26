@@ -1,0 +1,33 @@
+@import '../../../../styles.scss';
+
+:host {
+    display: inline-block;
+    button {
+        padding: 10px 14px;
+        border-radius: 6px;
+        box-sizing: content-box;
+        font-weight: 500;
+        cursor: pointer;
+        &.basic {
+            background-color: transparent;
+            border: 1px solid $grey;
+            color: $primary;
+            font-style: medium;
+        }
+        &.primary {
+            background-color: $primary;
+            color: $white;
+            border: none;
+        }
+        &.ghost {
+            background-color: $white;
+            color: $primary;
+            border: none;
+            font-weight: 500;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+        }
+    }
+}

@@ -4,6 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "controls": [
+        "dist/controls"
+      ],
       "core": [
         "dist/core"
       ],
@@ -12,6 +15,18 @@
       ],
       "msal-ngrx": [
         "dist/msal-ngrx"
+      ],
+      "techfabric-msal-ngrx": [
+        "dist/techfabric-msal-ngrx"
+      ],
+      "techfabricAngularControls": [
+        "dist/techfabric-angular-controls"
+      ],
+      "techfabricAngularMsalNgrx": [
+        "dist/techfabric-angular-msal-ngrx"
+      ],
+      "techfabricMsalNgrx": [
+        "dist/techfabric-msal-ngrx"
       ]
     },
     "outDir": "./dist/out-tsc",

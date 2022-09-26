@@ -195,6 +195,161 @@
           }
         }
       }
+    },
+    "controls": {
+      "projectType": "library",
+      "root": "projects/controls",
+      "sourceRoot": "projects/controls/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/controls/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/controls/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/controls/src/test.ts",
+            "tsConfig": "projects/controls/tsconfig.spec.json",
+            "karmaConfig": "projects/controls/karma.conf.js"
+          }
+        }
+      }
+    },
+    "techfabricAngularControls": {
+      "projectType": "library",
+      "root": "projects/techfabric-angular-controls",
+      "sourceRoot": "projects/techfabric-angular-controls/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/techfabric-angular-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/techfabric-angular-controls/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/techfabric-angular-controls/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/techfabric-angular-controls/src/test.ts",
+            "tsConfig": "projects/techfabric-angular-controls/tsconfig.spec.json",
+            "karmaConfig": "projects/techfabric-angular-controls/karma.conf.js"
+          }
+        }
+      }
+    },
+    "techfabric-msal-ngrx": {
+      "projectType": "library",
+      "root": "projects/techfabric-msal-ngrx",
+      "sourceRoot": "projects/techfabric-msal-ngrx/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/techfabric-msal-ngrx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/techfabric-msal-ngrx/src/test.ts",
+            "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.spec.json",
+            "karmaConfig": "projects/techfabric-msal-ngrx/karma.conf.js"
+          }
+        }
+      }
+    },
+    "techfabricMsalNgrx": {
+      "projectType": "library",
+      "root": "projects/techfabric-msal-ngrx",
+      "sourceRoot": "projects/techfabric-msal-ngrx/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/techfabric-msal-ngrx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/techfabric-msal-ngrx/src/test.ts",
+            "tsConfig": "projects/techfabric-msal-ngrx/tsconfig.spec.json",
+            "karmaConfig": "projects/techfabric-msal-ngrx/karma.conf.js"
+          }
+        }
+      }
+    },
+    "techfabricAngularMsalNgrx": {
+      "projectType": "library",
+      "root": "projects/techfabric-angular-msal-ngrx",
+      "sourceRoot": "projects/techfabric-angular-msal-ngrx/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/techfabric-angular-msal-ngrx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/techfabric-angular-msal-ngrx/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/techfabric-angular-msal-ngrx/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/techfabric-angular-msal-ngrx/src/test.ts",
+            "tsConfig": "projects/techfabric-angular-msal-ngrx/tsconfig.spec.json",
+            "karmaConfig": "projects/techfabric-angular-msal-ngrx/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "cli": {
