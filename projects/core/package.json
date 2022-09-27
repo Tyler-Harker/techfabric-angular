@@ -1,6 +1,6 @@
 {
   "name": "@techfabric/angular",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0",
