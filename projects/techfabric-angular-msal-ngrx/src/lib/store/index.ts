@@ -1,4 +1,3 @@
-import { msalConfigFactory } from "projects/core/src/public-api";
 
 export * from './msal.actions';
 export * from './msal.effects';

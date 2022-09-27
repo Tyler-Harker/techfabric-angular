@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { TechfabricAngularControlsService } from './techfabric-angular-controls.service';
-
-describe('TechfabricAngularControlsService', () => {
+ 
+describe('TechfabricAngularControlsService', () => { 
   let service: TechfabricAngularControlsService;
 
   beforeEach(() => {

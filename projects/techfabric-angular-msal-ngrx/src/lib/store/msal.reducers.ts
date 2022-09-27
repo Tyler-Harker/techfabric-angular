@@ -9,7 +9,12 @@ export const initialState: MsalState = {
     authResult: null,
     error: null,
     loading: false,
-    loaded: false
+    loaded: false,
+    authConfig: {
+        clientId: '',
+        tenantId: '',
+        redirectUri: ''
+    }
 }
 
 export const msalReducer = createReducer(

@@ -19,6 +19,9 @@
       "techfabric-msal-ngrx": [
         "dist/techfabric-msal-ngrx"
       ],
+      "techfabricAngularApp": [
+        "dist/techfabric-angular-app"
+      ],
       "techfabricAngularControls": [
         "dist/techfabric-angular-controls"
       ],

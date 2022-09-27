@@ -1,5 +1,5 @@
 {
-  "name": "techfabric-angular-msal-ngrx",
+  "name": "@techfabric/angular-msal-ngrx",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^14.2.0",

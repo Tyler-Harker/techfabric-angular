@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "clean": "rimraf dist",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -13,7 +12,8 @@
     "build-storybook": "npm run docs:json && build-storybook",
     "watch-lib:contols": "ng build techfabricAngularControls --watch",
     "watch-lib:msal-ngrx": "node node_modules/wait-on/bin/wait-on dist/techfabric-angular-controls/public-api.d.ts && ng build techfabricAngularMsalNgrx --watch",
-    "watch-all": "npm run clean && run-p watch-lib:*"
+    "watch-lib:app": "node node_modules/wait-on/bin/wait-on dist/techfabric-angular-msal-ngrx/public-api.d.ts && ng build techfabricAngularApp --watch",
+    "watch-all": "run-p watch-lib:*"
   },
   "private": true,
   "dependencies": {

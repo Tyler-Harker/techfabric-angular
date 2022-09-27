@@ -3,7 +3,7 @@ import { MsalService } from "@azure/msal-angular";
 import { AccountInfo, AuthenticationResult } from "@azure/msal-browser";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap } from "rxjs";
-import { MsalAuthService } from "../msalAuth.service";
+import { TechfabricAngularMsalNgrxService } from "../techfabric-angular-msal-ngrx.service";
 
 import * as MsalActions from './msal.actions';
 
@@ -12,7 +12,7 @@ export class MsalEffects {
     
     constructor(
         private actions$: Actions,
-        private msalAuthService: MsalAuthService){
+        private msalAuthService: TechfabricAngularMsalNgrxService){
     }
 
     msalLoginPopup$ = createEffect(() => this.actions$.pipe(
