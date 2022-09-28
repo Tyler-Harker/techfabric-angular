@@ -14,16 +14,32 @@ import { TfNavbarComponent } from './tf-navbar.component';
 import { configurationFeatureKey, initialState as configInitialState } from '../../store/tf-config/tf-config.reducers'
 import { navigationFeatureKey, initialState as navigationInitialState } from '../../store/tf-navigation/tf-navigation.reducers';
 import { TfNavigationItem, TfNavigationItemType } from '../../store/tf-navigation/tf-navigation.models';
+import { TfNavbarNavItemComponent } from '../tf-navbar-nav-item/tf-navbar-nav-item.component';
 
 
-let declarations: any[] = [];
+let declarations: any[] = [ TfNavbarNavItemComponent ];
 
 const initialState: any = {
 };
 initialState[configurationFeatureKey] = configInitialState;
 initialState[navigationFeatureKey] = navigationInitialState;
 initialState[navigationFeatureKey].navigationItems = [
-    <TfNavigationItem>{ displayText: 'Home', navigationItemType: TfNavigationItemType.Navbar }
+    <TfNavigationItem>{ 
+        displayText: 'Menu', 
+        navigationItemType: TfNavigationItemType.Navbar, 
+        childNavigationItems: [ 
+            <TfNavigationItem>{displayText: 'option 1'},
+            <TfNavigationItem>{displayText: 'option 2'}
+        ] 
+    },
+    <TfNavigationItem>{ 
+        displayText: 'Menu2', 
+        navigationItemType: TfNavigationItemType.Navbar, 
+        childNavigationItems: [ 
+            <TfNavigationItem>{displayText: 'option 1'},
+            <TfNavigationItem>{displayText: 'option 2'}
+        ] 
+    }
 ]
 
 console.log(initialState)

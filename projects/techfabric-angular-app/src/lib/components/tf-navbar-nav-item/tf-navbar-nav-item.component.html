@@ -1,0 +1,9 @@
+<span (mouseleave)="mouseLeave()" class="navItemWrapper" #wrapper>
+    <span (click)="onClickMenu()" class="displayText">{{model.displayText}}</span>
+    <div class="children" *ngIf="model.childNavigationItems !== null && isOpen" [style.top.px]="offsetHeight" [style.left.px]="offsetWidth+10">
+        <div *ngFor="let navItem of model.childNavigationItems" >
+            {{navItem.displayText}}
+        </div>
+    </div>
+</span>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TfConfigState } from '../../store/tf-config/tf-config.models';
 import { selectLogoUrl, selectTfConfig } from '../../store/tf-config/tf-config.selectors';
@@ -19,13 +19,13 @@ export class TfNavbarComponent implements OnInit {
   logoUrl: string = '';
   navItems: TfNavigationItem[] = [];
 
+
   ngOnInit() {
     this.store.select(selectLogoUrl).subscribe( (logoUrl: string) => {
       this.logoUrl = logoUrl;
     });
     this.store.select(getNavbarNavigationItems).subscribe((navigationItems: TfNavigationItem[]) => {
       this.navItems = navigationItems;
-      console.log(this.navItems)
     });
   }
 
