@@ -15,9 +15,11 @@ import { configurationFeatureKey, initialState as configInitialState } from '../
 import { navigationFeatureKey, initialState as navigationInitialState } from '../../store/tf-navigation/tf-navigation.reducers';
 import { TfNavigationItem, TfNavigationItemType } from '../../store/tf-navigation/tf-navigation.models';
 import { TfNavbarNavItemComponent } from '../tf-navbar-nav-item/tf-navbar-nav-item.component';
+import { StorybookUtilityService } from '../../utilities/storybook-utility.service';
+import { TechfabricAngularAppModule } from '../../techfabric-angular-app.module';
 
 
-let declarations: any[] = [ TfNavbarNavItemComponent ];
+let declarations: any[] = [ ];
 
 const initialState: any = {
 };
@@ -54,12 +56,18 @@ export default {
       //👇 Imports both components to allow component composition with Storybook
       declarations,
       providers: [
-        provideMockStore({ initialState })
+        StorybookUtilityService
       ],
-      imports: [FontAwesomeModule, FormsModule, StoreDevtoolsModule.instrument({
-        maxAge: 25,
-        logOnly: environment.production
-      })],
+      imports: [
+        FontAwesomeModule, 
+        FormsModule,
+        StoreModule.forRoot({}),
+        TechfabricAngularAppModule,
+        StoreDevtoolsModule.instrument({
+          maxAge: 25,
+          logOnly: environment.production
+        })
+      ],
     })
   ]
 } as Meta;

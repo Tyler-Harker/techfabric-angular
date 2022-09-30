@@ -1,3 +1,3 @@
 export interface TfConfigState {
-    logoUrl: string
+    logoUrl: string | null
 }

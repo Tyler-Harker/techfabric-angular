@@ -1,10 +1,12 @@
 import { Component, Input, OnInit, Optional } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { setNavigationItems } from '../../store/tf-navigation/tf-navigation.actions';
 import { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';
 import { getSidebarNavigationItems } from '../../store/tf-navigation/tf-navigation.selectors';
-import { setSidebarDisplay } from '../../store/tf-sidebar/tf-sidebar.actions';
+import { setSidebarDisplay, setSidebarType } from '../../store/tf-sidebar/tf-sidebar.actions';
 import { TfSidebarDisplay, TfSidebarState, TfSidebarType } from '../../store/tf-sidebar/tf-sidebar.models';
 import { selectSidebarState } from '../../store/tf-sidebar/tf-sidebar.selectors';
+import { StorybookUtilityService } from '../../utilities/storybook-utility.service';
 
 @Component({
   selector: 'tf-sidebar',
@@ -13,13 +15,16 @@ import { selectSidebarState } from '../../store/tf-sidebar/tf-sidebar.selectors'
 })
 export class TfSidebarComponent implements OnInit {
 
-  constructor(@Optional() private store: Store | null = null) { }
+  constructor(@Optional() private store: Store | null = null, @Optional() private storybookService: StorybookUtilityService) { }
   @Input() type: TfSidebarType = TfSidebarType.ContentAware;
   @Input() display: TfSidebarDisplay = TfSidebarDisplay.Open;
   @Input() navigationItems: TfNavigationItem[] = [];
   classNames: string = '';
 
   ngOnInit() {
+    if(this.storybookService != null){
+      this.storyBookInit();
+    }
     this.store?.select(getSidebarNavigationItems).subscribe(navItems => {
       this.navigationItems = navItems;
     })
@@ -27,8 +32,12 @@ export class TfSidebarComponent implements OnInit {
       this.type = state.type;
       this.display = state.display;
     });
+  }
 
-    setInterval(() => console.log(this.display), 2000)
+  storyBookInit(){
+    this.store?.dispatch(setSidebarDisplay({payload: this.display}));
+    this.store?.dispatch(setSidebarType({payload: this.type}));
+    this.store?.dispatch(setNavigationItems({navigationItems: this.navigationItems}))
   }
 
   get displayClassName(): string {
