@@ -33,8 +33,9 @@
         font-size: 24px;
         transition: left linear .3s;
         background-color: white;
-        transition: background-color linear .3s;
+        transition: background-color linear .3s, left linear .3s;
     }
+
     .displayText{
         display: flex;
         align-items: center;
@@ -62,6 +63,14 @@
             .displayText{
                 visibility: hidden;
             }
+        }
+    }
+}
+
+.displayPreview {
+    :host {
+        .noPath {
+            background-color: $primary;
         }
     }
 }

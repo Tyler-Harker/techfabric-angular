@@ -401,12 +401,12 @@
         },
         {
             "name": "TfNavigationItem",
-            "id": "interface-TfNavigationItem-c508f1ba01a7c2538620744ac1713c6ca5ad8ef618927dc1e35b24a46f0899cc59c9d435341aa9122a4066c9d2fd901ae299636aeadd3bef6290897100f63160",
+            "id": "interface-TfNavigationItem-81461be7bdb837e39a38399babb06623e217a3cdcd897738021efa80b3e322016323ee7dcc26280f162dee11453b9d6c0fce076f57184955d51e9fa5a44f67f0",
             "file": "projects/techfabric-angular-app/src/lib/store/tf-navigation/tf-navigation.models.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface TfNavigationState {\r\n    navigationItems: TfNavigationItem[];\r\n}\r\n\r\nexport interface TfNavigationItem {\r\n    displayIcon: any | null;\r\n    displayText: string;\r\n    routeToPath: string | null;\r\n    childNavigationItems: TfNavigationItem[];\r\n    navigationItemType: TfNavigationItemType;\r\n}\r\n\r\nexport enum TfNavigationItemType {\r\n    Navbar,\r\n    Sidebar,\r\n    NavbarAndSidebar\r\n}",
+            "sourceCode": "export interface TfNavigationState {\r\n    navigationItems: TfNavigationItem[];\r\n}\r\n\r\nexport interface TfNavigationItem {\r\n    displayIcon: any | null;\r\n    displayText: string;\r\n    path: string | null;\r\n    childNavigationItems: TfNavigationItem[];\r\n    navigationItemType: TfNavigationItemType;\r\n}\r\n\r\nexport enum TfNavigationItemType {\r\n    Navbar,\r\n    Sidebar,\r\n    NavbarAndSidebar\r\n}",
             "properties": [
                 {
                     "name": "childNavigationItems",
@@ -445,7 +445,7 @@
                     "line": 10
                 },
                 {
-                    "name": "routeToPath",
+                    "name": "path",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string | null",
@@ -460,12 +460,12 @@
         },
         {
             "name": "TfNavigationState",
-            "id": "interface-TfNavigationState-c508f1ba01a7c2538620744ac1713c6ca5ad8ef618927dc1e35b24a46f0899cc59c9d435341aa9122a4066c9d2fd901ae299636aeadd3bef6290897100f63160",
+            "id": "interface-TfNavigationState-81461be7bdb837e39a38399babb06623e217a3cdcd897738021efa80b3e322016323ee7dcc26280f162dee11453b9d6c0fce076f57184955d51e9fa5a44f67f0",
             "file": "projects/techfabric-angular-app/src/lib/store/tf-navigation/tf-navigation.models.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface TfNavigationState {\r\n    navigationItems: TfNavigationItem[];\r\n}\r\n\r\nexport interface TfNavigationItem {\r\n    displayIcon: any | null;\r\n    displayText: string;\r\n    routeToPath: string | null;\r\n    childNavigationItems: TfNavigationItem[];\r\n    navigationItemType: TfNavigationItemType;\r\n}\r\n\r\nexport enum TfNavigationItemType {\r\n    Navbar,\r\n    Sidebar,\r\n    NavbarAndSidebar\r\n}",
+            "sourceCode": "export interface TfNavigationState {\r\n    navigationItems: TfNavigationItem[];\r\n}\r\n\r\nexport interface TfNavigationItem {\r\n    displayIcon: any | null;\r\n    displayText: string;\r\n    path: string | null;\r\n    childNavigationItems: TfNavigationItem[];\r\n    navigationItemType: TfNavigationItemType;\r\n}\r\n\r\nexport enum TfNavigationItemType {\r\n    Navbar,\r\n    Sidebar,\r\n    NavbarAndSidebar\r\n}",
             "properties": [
                 {
                     "name": "navigationItems",
@@ -1234,7 +1234,7 @@
         },
         {
             "name": "TechfabricAngularAppService",
-            "id": "injectable-TechfabricAngularAppService-6248a557f5cfe13682909abc3de81c654c91bde728054ce3b3dfdbe7e6ad7494abe42aa52ecfc2894a9f10a0900898ef85e7fe2db99d6d92df15bb14a4c4e3d1",
+            "id": "injectable-TechfabricAngularAppService-b0ed3e9d9f1bfdc5069da090726e83549c82f81ff33ed1f1c918dc4a92bec7e96adc69af40593889210531603e029dc1afcba2cc65f4095062d5e3ea89153f64",
             "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.service.ts",
             "properties": [],
             "methods": [],
@@ -1242,7 +1242,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class TechfabricAngularAppService {\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class TechfabricAngularAppService {\r\n\r\n  constructor() { }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1577,7 +1577,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-bcc51e78c5568bc6de24b482ff623afc900e31ad4e7dae248c267ec9abb27e9b254558e66571dcf3adaeca8ac027b388cd82b0fe78c2c20e1d9fc3addb640e6a",
+            "id": "component-CardComponent-b237b32eb030f0709ba3acb92b2ea2d9742f50add74a22075c3f14be72f72e3607d5608815b525ec2316a319414e45750f7ab3b4be20f0410ed6d7a98dfd55b4",
             "file": "projects/core/src/lib/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1751,7 +1751,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewChecked, AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n  @Input() hasTopBar: boolean = false;\n\n  @ViewChild('header') header: any = null;\n  @ViewChild('well') well: any = null;\n  @ViewChild('content') content: any = null;\n  @ViewChild('footer') footer: any = null;\n  constructor() { }\n\n  shouldDisplayHeader(): boolean {\n    return this.doesElementHaveContent(this.header);\n  }\n  shouldDisplayWell(): boolean {\n    return this.doesElementHaveContent(this.well);\n  }\n  shouldDisplayContent(): boolean {\n    return this.doesElementHaveContent(this.content);\n  }\n  shouldDisplayFooter(): boolean {\n    return this.doesElementHaveContent(this.footer);\n  }\n\n  private doesElementHaveContent(element: any): boolean{\n    try{\n      return element.nativeElement.children.length > 0 || element.nativeElement.innerText != \"\";\n    }\n    catch(ex){\n      return false;\n    }\n  }\n  \n}\n",
+            "sourceCode": "import { AfterViewChecked, AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.component.scss']\r\n})\r\nexport class CardComponent {\r\n  @Input() hasTopBar: boolean = false;\r\n\r\n  @ViewChild('header') header: any = null;\r\n  @ViewChild('well') well: any = null;\r\n  @ViewChild('content') content: any = null;\r\n  @ViewChild('footer') footer: any = null;\r\n  constructor() { }\r\n\r\n  shouldDisplayHeader(): boolean {\r\n    return this.doesElementHaveContent(this.header);\r\n  }\r\n  shouldDisplayWell(): boolean {\r\n    return this.doesElementHaveContent(this.well);\r\n  }\r\n  shouldDisplayContent(): boolean {\r\n    return this.doesElementHaveContent(this.content);\r\n  }\r\n  shouldDisplayFooter(): boolean {\r\n    return this.doesElementHaveContent(this.footer);\r\n  }\r\n\r\n  private doesElementHaveContent(element: any): boolean{\r\n    try{\r\n      return element.nativeElement.children.length > 0 || element.nativeElement.innerText != \"\";\r\n    }\r\n    catch(ex){\r\n      return false;\r\n    }\r\n  }\r\n  \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1768,7 +1768,7 @@
                 "args": [],
                 "line": 14
             },
-            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\n  <ng-content select=\"[header]\"></ng-content>\n</section>\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\n  <ng-content select=\"[well]\"></ng-content>\n</section>\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\n  <ng-content select=\"[content]\"></ng-content>\n</section>\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\n  <ng-content select=\"[footer]\"></ng-content>\n</section>"
+            "templateData": "<section class=\"bar\" *ngIf=\"hasTopBar\"></section>\r\n<section #header class=\"header\" [style.display]=\"shouldDisplayHeader() ? 'block': 'none'\">\r\n  <ng-content select=\"[header]\"></ng-content>\r\n</section>\r\n<section #well class=\"well\" [style.display]=\"shouldDisplayWell() ? 'block': 'none'\">\r\n  <ng-content select=\"[well]\"></ng-content>\r\n</section>\r\n<section #content class=\"content\" [style.display]=\"shouldDisplayContent() ? 'block': 'none'\">\r\n  <ng-content select=\"[content]\"></ng-content>\r\n</section>\r\n<section #footer class=\"footer\" [style.display]=\"shouldDisplayFooter() ? 'block': 'none'\">\r\n  <ng-content select=\"[footer]\"></ng-content>\r\n</section>"
         },
         {
             "name": "CheckboxComponent",
@@ -1945,7 +1945,7 @@
         },
         {
             "name": "ExpanderComponent",
-            "id": "component-ExpanderComponent-24790373e5f15de0d0baf2907ed30cf8a728e65a605a7d81aa1f0f16df9243a2542d010c22abe00899841a74a1e780a0c23b85a3480fbadbee4faaa22036a1bd",
+            "id": "component-ExpanderComponent-606a5cf98a7763eda0b3f1b1be322bc266bc97d2d4834fc4387d7491e91649c3029572d896b72dcd9515ba1f11bea7a589af73a343984ed42e843004aa46fc2e",
             "file": "projects/core/src/lib/components/expander/expander.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2084,7 +2084,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\nimport { faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'\n\n@Component({\n  selector: 'tf-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.scss']\n})\nexport class ExpanderComponent implements OnInit {\n  @Input() isOpen: boolean = true;\n  @Input() headerText: string = 'Header';\n  @Input() displayPreview: boolean = false;\n  @Input() hasPrimaryBanner: boolean = false;\n  @Input() isSelectable: boolean = false;\n  @Input() isSelected: boolean = false;\n  @Output() isSelectedChange = new EventEmitter<boolean>();\n\n  @ViewChild(`content`) contentElement : any = null;\n  constructor() { \n  }\n\n  ngOnInit() {\n  }\n\n  get expandedIcon(): any {\n    return this.isOpen ? faMinus : faPlus;\n  }\n  \n\n  toggle(){\n    this.isOpen = !this.isOpen;\n    if(this.isSelectable){\n      this.isSelected = this.isOpen;\n    }\n  }\n  \n  getContentMaxHeight(){\n    let maxHeight = 0;\n    try{\n      let children  = [...this.contentElement?.nativeElement.children];\n      for(let elem of children){\n        maxHeight += elem.clientHeight;\n      }\n    }\n    catch(ex){\n\n    }\n    return maxHeight;\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\r\n\r\nimport { faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'\r\n\r\n@Component({\r\n  selector: 'tf-expander',\r\n  templateUrl: './expander.component.html',\r\n  styleUrls: ['./expander.component.scss']\r\n})\r\nexport class ExpanderComponent implements OnInit {\r\n  @Input() isOpen: boolean = true;\r\n  @Input() headerText: string = 'Header';\r\n  @Input() displayPreview: boolean = false;\r\n  @Input() hasPrimaryBanner: boolean = false;\r\n  @Input() isSelectable: boolean = false;\r\n  @Input() isSelected: boolean = false;\r\n  @Output() isSelectedChange = new EventEmitter<boolean>();\r\n\r\n  @ViewChild(`content`) contentElement : any = null;\r\n  constructor() { \r\n  }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n  get expandedIcon(): any {\r\n    return this.isOpen ? faMinus : faPlus;\r\n  }\r\n  \r\n\r\n  toggle(){\r\n    this.isOpen = !this.isOpen;\r\n    if(this.isSelectable){\r\n      this.isSelected = this.isOpen;\r\n    }\r\n  }\r\n  \r\n  getContentMaxHeight(){\r\n    let maxHeight = 0;\r\n    try{\r\n      let children  = [...this.contentElement?.nativeElement.children];\r\n      for(let elem of children){\r\n        maxHeight += elem.clientHeight;\r\n      }\r\n    }\r\n    catch(ex){\r\n\r\n    }\r\n    return maxHeight;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2115,11 +2115,11 @@
                     }
                 }
             },
-            "templateData": "<section class=\"primaryBanner\" *ngIf=\"hasPrimaryBanner\">\n\n</section>\n<section class=\"header\" [ngClass]=\"{'selectable': isSelectable}\">\n  <div id=\"iconWrapper\" (click)=\"toggle()\" >\n    <tf-checkbox \n      *ngIf=\"isSelectable\" \n      [size]=\"24\" \n      [(value)]=\"isSelected\">\n    </tf-checkbox>\n    <fa-icon \n      [icon]=\"expandedIcon\" \n      *ngIf=\"!isSelectable\">\n    </fa-icon>\n  </div>\n  <div id=\"title\">\n    {{headerText}}\n  </div>\n  <div id=\"headerContent\">\n    <ng-content select=\"[header]\">\n\n    </ng-content>\n  </div>\n</section>\n<section class=\"preview\" [ngClass]=\"{'hidden': !displayPreview}\">\n  <ng-content select=\"[preview]\">\n\n  </ng-content>\n</section>\n<section class=\"content\" \n  #content \n  [ngStyle]=\"{'height.px': isOpen ? getContentMaxHeight() : 0}\" \n  [ngClass]=\"{'open': isOpen}\">\n  <ng-content select=\"[content]\">\n  </ng-content>\n</section>"
+            "templateData": "<section class=\"primaryBanner\" *ngIf=\"hasPrimaryBanner\">\r\n\r\n</section>\r\n<section class=\"header\" [ngClass]=\"{'selectable': isSelectable}\">\r\n  <div id=\"iconWrapper\" (click)=\"toggle()\" >\r\n    <tf-checkbox \r\n      *ngIf=\"isSelectable\" \r\n      [size]=\"24\" \r\n      [(value)]=\"isSelected\">\r\n    </tf-checkbox>\r\n    <fa-icon \r\n      [icon]=\"expandedIcon\" \r\n      *ngIf=\"!isSelectable\">\r\n    </fa-icon>\r\n  </div>\r\n  <div id=\"title\">\r\n    {{headerText}}\r\n  </div>\r\n  <div id=\"headerContent\">\r\n    <ng-content select=\"[header]\">\r\n\r\n    </ng-content>\r\n  </div>\r\n</section>\r\n<section class=\"preview\" [ngClass]=\"{'hidden': !displayPreview}\">\r\n  <ng-content select=\"[preview]\">\r\n\r\n  </ng-content>\r\n</section>\r\n<section class=\"content\" \r\n  #content \r\n  [ngStyle]=\"{'height.px': isOpen ? getContentMaxHeight() : 0}\" \r\n  [ngClass]=\"{'open': isOpen}\">\r\n  <ng-content select=\"[content]\">\r\n  </ng-content>\r\n</section>"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-1c5d6b2a95133169fb4c27dae55562a8c09ea04842f274260dd5f68db9f1b004efedfb564274f3bfc4942723019b63d1cf2e211d11224956b8a36bf5f644ed71",
+            "id": "component-FooterComponent-7ed29142b2a558c8920e281af35f87585952287753e3274c7fee3d6db08534df498b3eed847af061d69c5a2ed86ec47b189b2bdaed6627142c4111fa69383bac",
             "file": "projects/core/src/lib/components/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2157,7 +2157,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss']\n})\nexport class FooterComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss']\r\n})\r\nexport class FooterComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2271,7 +2271,7 @@
         },
         {
             "name": "NavbarComponent",
-            "id": "component-NavbarComponent-0c7d5b7a33ce6d0bff9259696e46a1066273536ce9e9c4be6f3abec8fcb4ba969ab6d3e250916f1269d670c7ee93ad526a5d9e1967151a4cbba2e7627c4720f7",
+            "id": "component-NavbarComponent-843d0a2a068ca8971aed10608cdc637b31943fa020fff0fd624fc2a2db878baf6c7bdfd6a68def831b50638250a8497ef964282de9f7a517f2a6359ef7275243",
             "file": "projects/core/src/lib/components/navbar/navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2339,7 +2339,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'tf-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  @Input() displayName: string = '';\n  hamburgerIcon: any = faBars;\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-navbar',\r\n  templateUrl: './navbar.component.html',\r\n  styleUrls: ['./navbar.component.scss']\r\n})\r\nexport class NavbarComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() displayName: string = '';\r\n  hamburgerIcon: any = faBars;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2359,7 +2359,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"hamburgerWrapper d-sm-none\">\n  <fa-icon [icon]=\"hamburgerIcon\"></fa-icon>\n</div>\n<div class=\"logo\">\n  <img  [src]=\"logoUrl\" />\n</div>\n<div class=\"profile\">\n  {{displayName}}\n</div>"
+            "templateData": "<div class=\"hamburgerWrapper d-sm-none\">\r\n  <fa-icon [icon]=\"hamburgerIcon\"></fa-icon>\r\n</div>\r\n<div class=\"logo\">\r\n  <img  [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"profile\">\r\n  {{displayName}}\r\n</div>"
         },
         {
             "name": "SignInFormComponent",
@@ -2608,7 +2608,7 @@
         },
         {
             "name": "SignUpFormComponent",
-            "id": "component-SignUpFormComponent-686a8ff43f9950fc9f0b57219515f675330eb33aedb786619f2745714c15dca37845b5ee384abbd2cf6a2cf38df6d45a18d1f2d3af1a8d4072aa349be051ce12",
+            "id": "component-SignUpFormComponent-eac7c7e6984b06f17d6211edc511ad68e432453bea5de112becb40deb56b638a2028cc76bccfea26a7e44f6bc4832e289fb22e56d87740915e02220db8975e7d",
             "file": "projects/core/src/lib/components/signUpForm/signUpForm.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2694,7 +2694,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\nimport { faMicrosoft } from '@fortawesome/free-brands-svg-icons';\r\n\r\n@Component({\r\n  selector: 'tf-signUpForm',\r\n  templateUrl: './signUpForm.component.html',\r\n  styleUrls: ['./signUpForm.component.scss']\r\n})\r\nexport class SignUpFormComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  @Input() showBackButton: boolean = true;\r\n\r\n  microsoftIcon: any = faMicrosoft;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nimport { faMicrosoft } from '@fortawesome/free-brands-svg-icons';\n\n@Component({\n  selector: 'tf-signUpForm',\n  templateUrl: './signUpForm.component.html',\n  styleUrls: ['./signUpForm.component.scss']\n})\nexport class SignUpFormComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  @Input() showLegacyLogin: boolean = true;\n  @Input() showMicrosoftLogin: boolean = false;\n  @Input() showBackButton: boolean = true;\n\n  microsoftIcon: any = faMicrosoft;\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2714,11 +2714,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"logoContainer\" *ngIf=\"logoUrl !== ''\">\r\n  <img [src]=\"logoUrl\" />\r\n</div>\r\n<div class=\"customSignIn\" *ngIf=\"showLegacyLogin\">\r\n  <tf-input label=\"Username\"></tf-input>\r\n  <tf-input label=\"Password\"></tf-input>\r\n  <tf-input label=\"Confirm Password\"></tf-input>\r\n  <div class=\"buttonContainer\">\r\n    <tf-button [type]=\"1\" *ngIf=\"showBackButton\">Back</tf-button>\r\n    <tf-button [type]=\"2\">Sign Up</tf-button>\r\n  </div>\r\n  \r\n</div>\r\n\r\n<div class=\"orDividerContainer\" *ngIf=\"showMicrosoftLogin\">\r\n  <div class=\"orDivider\"></div>\r\n  <div class=\"or\">Sign Up With</div>\r\n</div>\r\n\r\n<div class=\"ssoIntegrationWrapper\">\r\n  <div *ngIf=\"showMicrosoftLogin\">\r\n    <tf-button><fa-icon [icon]=\"microsoftIcon\" style=\"color: #00a2ed\"></fa-icon> Microsoft</tf-button>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"logoContainer\" *ngIf=\"logoUrl !== ''\">\n  <img [src]=\"logoUrl\" />\n</div>\n<div class=\"customSignIn\" *ngIf=\"showLegacyLogin\">\n  <tf-input label=\"Username\"></tf-input>\n  <tf-input label=\"Password\"></tf-input>\n  <tf-input label=\"Confirm Password\"></tf-input>\n  <div class=\"buttonContainer\">\n    <tf-button [type]=\"1\" *ngIf=\"showBackButton\">Back</tf-button>\n    <tf-button [type]=\"2\">Sign Up</tf-button>\n  </div>\n  \n</div>\n\n<div class=\"orDividerContainer\" *ngIf=\"showMicrosoftLogin\">\n  <div class=\"orDivider\"></div>\n  <div class=\"or\">Sign Up With</div>\n</div>\n\n<div class=\"ssoIntegrationWrapper\">\n  <div *ngIf=\"showMicrosoftLogin\">\n    <tf-button><fa-icon [icon]=\"microsoftIcon\" style=\"color: #00a2ed\"></fa-icon> Microsoft</tf-button>\n  </div>\n</div>\n"
         },
         {
             "name": "SignUpPageComponent",
-            "id": "component-SignUpPageComponent-ca859f2aaa3aaefa632fc2fbf78a6f110beee4ff4fa5e1718aea041ed2bd6256479b46e3c86280ceb361e75f96f5474665b7866b877456e75273d5feb8c388b0",
+            "id": "component-SignUpPageComponent-9fc38c7707b4fa463bf3f1f4e0d27952dd47842c9b543bebc0ca00b8edfd5dd846b6f794e1dff8ae999fc93a2f04160a8e558e474750f630db49ae59ac05bc46",
             "file": "projects/core/src/lib/pages/signUpPage/signUpPage.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2784,7 +2784,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-signUpPage',\r\n  templateUrl: './signUpPage.component.html',\r\n  styleUrls: ['./signUpPage.component.scss']\r\n})\r\nexport class SignUpPageComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  @Input() showLegacyLogin: boolean = true;\r\n  @Input() showMicrosoftLogin: boolean = false;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-signUpPage',\n  templateUrl: './signUpPage.component.html',\n  styleUrls: ['./signUpPage.component.scss']\n})\nexport class SignUpPageComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  @Input() showLegacyLogin: boolean = true;\n  @Input() showMicrosoftLogin: boolean = false;\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2804,11 +2804,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n<tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n  <tf-signUpForm [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\r\n\r\n  </tf-signUpForm>\r\n</tf-unauthorizedLayout>"
+            "templateData": "\n<tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\n  <tf-signUpForm [logoUrl]=\"logoUrl\" [showMicrosoftLogin]=\"showMicrosoftLogin\" [showLegacyLogin]=\"showLegacyLogin\">\n\n  </tf-signUpForm>\n</tf-unauthorizedLayout>"
         },
         {
             "name": "SliderComponent",
-            "id": "component-SliderComponent-d418be3b087b3065870a2ba2b623fb82c12f87008c66b0373088d9277f16715e197bf3dc820e2e51f74f993a1cd51365e562c24a4745941dd2f334c42eb0ea96",
+            "id": "component-SliderComponent-c7ce3a319bd2b655fb6ed76a30b151b786afa8f397d60e2739cd3468e4ae83cada7db9ba2459d54aad4c319b40b8b9b8d4e3306fc1bf7d7478089508ece26a67",
             "file": "projects/core/src/lib/components/slider/slider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2946,7 +2946,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewChild } from '@angular/core';\nimport { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';\n\n@Component({\n  selector: 'tf-slider',\n  templateUrl: './slider.component.html',\n  styleUrls: ['./slider.component.scss']\n})\nexport class SliderComponent {\n  @Input() value: number = 0;\n  @Input() percentageValue: number = 0;\n  @Input() maxValue: number = 100;\n  constructor() { }\n\n  @ViewChild('background') backgroundElement: any;\n  @ViewChild('circle') circleElement: any;\n\n  private isDragging: boolean = false;\n  position: string = 'test';\n\n  onDragMoved($event: CdkDragMove){\n    this.percentageValue = ($event.pointerPosition.x - this.backgroundElementPosition.x) / (this.backgroundElementWidth) * 100;\n  }\n\n  get backgroundElementPosition(){\n    return {x: this.backgroundElement.nativeElement.offsetLeft, y: this.backgroundElement.nativeElement.offsetTop};\n  }\n\n  get backgroundElementWidth(){\n    return this.backgroundElement.nativeElement.offsetWidth;\n  }\n\n  get mousePosition(){\n    return {x: (<any>window)?.event?.clientX, y: (<any>window)?.event?.clientY};\n  }\n\n  get circlePosition(){\n    return {x: this.circleElement.nativeElement.offsetLeft, y: this.circleElement.nativeElement.offsetTop};\n  }\n\n  get circleRelativePosition(){\n    try{\n      let transform = this.circleElement.nativeElement.style.transform.replace('translate3d(', '').replace(')').replace('px', '');\n      let transformValues = transform.split(',');\n      return {x: parseInt(transformValues[0]), y: parseInt(transformValues[1])};\n    }\n    catch(ex) {\n      return {x: 0, y: 0};\n    }\n    \n    \n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewChild } from '@angular/core';\r\nimport { CdkDragStart, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';\r\n\r\n@Component({\r\n  selector: 'tf-slider',\r\n  templateUrl: './slider.component.html',\r\n  styleUrls: ['./slider.component.scss']\r\n})\r\nexport class SliderComponent {\r\n  @Input() value: number = 0;\r\n  @Input() percentageValue: number = 0;\r\n  @Input() maxValue: number = 100;\r\n  constructor() { }\r\n\r\n  @ViewChild('background') backgroundElement: any;\r\n  @ViewChild('circle') circleElement: any;\r\n\r\n  private isDragging: boolean = false;\r\n  position: string = 'test';\r\n\r\n  onDragMoved($event: CdkDragMove){\r\n    this.percentageValue = ($event.pointerPosition.x - this.backgroundElementPosition.x) / (this.backgroundElementWidth) * 100;\r\n  }\r\n\r\n  get backgroundElementPosition(){\r\n    return {x: this.backgroundElement.nativeElement.offsetLeft, y: this.backgroundElement.nativeElement.offsetTop};\r\n  }\r\n\r\n  get backgroundElementWidth(){\r\n    return this.backgroundElement.nativeElement.offsetWidth;\r\n  }\r\n\r\n  get mousePosition(){\r\n    return {x: (<any>window)?.event?.clientX, y: (<any>window)?.event?.clientY};\r\n  }\r\n\r\n  get circlePosition(){\r\n    return {x: this.circleElement.nativeElement.offsetLeft, y: this.circleElement.nativeElement.offsetTop};\r\n  }\r\n\r\n  get circleRelativePosition(){\r\n    try{\r\n      let transform = this.circleElement.nativeElement.style.transform.replace('translate3d(', '').replace(')').replace('px', '');\r\n      let transformValues = transform.split(',');\r\n      return {x: parseInt(transformValues[0]), y: parseInt(transformValues[1])};\r\n    }\r\n    catch(ex) {\r\n      return {x: 0, y: 0};\r\n    }\r\n    \r\n    \r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3010,7 +3010,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"sliderContainer\">\n  <div class=\"background\" #background></div>\n  <div class=\"highlightBackground\" \n    [style.width.%]=\"percentageValue\">\n  </div>\n  <div class=\"circle\" #circle \n    cdkDrag\n    cdkDragLockAxis=\"x\"\n    cdkDragBoundary=\".sliderContainer\" \n    (cdkDragMoved)=\"onDragMoved($event)\">\n  </div>\n</div>"
+            "templateData": "<div class=\"sliderContainer\">\r\n  <div class=\"background\" #background></div>\r\n  <div class=\"highlightBackground\" \r\n    [style.width.%]=\"percentageValue\">\r\n  </div>\r\n  <div class=\"circle\" #circle \r\n    cdkDrag\r\n    cdkDragLockAxis=\"x\"\r\n    cdkDragBoundary=\".sliderContainer\" \r\n    (cdkDragMoved)=\"onDragMoved($event)\">\r\n  </div>\r\n</div>"
         },
         {
             "name": "TechfabricAngularControlsComponent",
@@ -3220,6 +3220,68 @@
             "templateData": "<button class=\"{{buttonClassName}}\" [disabled]=\"disabled\">\r\n  <ng-content></ng-content>\r\n</button>"
         },
         {
+            "name": "TfDashboardLayoutComponent",
+            "id": "component-TfDashboardLayoutComponent-04df1ff2d6778cfaacea3c4820c914e5dc4756b70dd7085fefa6f98f8013342f823bc5d60a0f88c172dec38ed31746f7bf50fffcf361b22055ccbf073789adae",
+            "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tf-dashboard-layout",
+            "styleUrls": [
+                "./tf-dashboard-layout.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tf-dashboard-layout.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-tf-dashboard-layout',\n  templateUrl: './tf-dashboard-layout.component.html',\n  styleUrls: ['./tf-dashboard-layout.component.scss']\n})\nexport class TfDashboardLayoutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tf-dashboard-layout.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<tf-navbar></tf-navbar>"
+        },
+        {
             "name": "TfInputComponent",
             "id": "component-TfInputComponent-886f116ae84a6915701579ed641f31cf23a484ea08a774fab0350548b7bfc33cb1f39d119ea924dc617f517ed84e2fb8d7ab53c72dd0dbf3459622809a7f05cd",
             "file": "projects/techfabric-angular-controls/src/lib/components/tf-input/tf-input.component.ts",
@@ -3311,7 +3373,7 @@
         },
         {
             "name": "TfNavbarComponent",
-            "id": "component-TfNavbarComponent-e3b2cb33df36cb61659f17be8ba9641006f21cbeefddc8457d89c536bb43d540b8f264594fccad676666e9b11c93e0f91a23bafbca08f46da6eea804edb96b24",
+            "id": "component-TfNavbarComponent-6f827088fe823226d390e4958cc13f97aae149b18e33c90bf49b61e7c015b91d0fa45d8d968d6642553336d626b4efa2f768a06a866d5f2d3390aca03b941a4b",
             "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3380,7 +3442,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewChild } from '@angular/core';\nimport { Store } from '@ngrx/store';\nimport { TfConfigState } from '../../store/tf-config/tf-config.models';\nimport { selectLogoUrl, selectTfConfig } from '../../store/tf-config/tf-config.selectors';\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\n\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\nimport { getNavbarNavigationItems } from '../../store/tf-navigation/tf-navigation.selectors';\n\n@Component({\n  selector: 'tf-navbar',\n  templateUrl: './tf-navbar.component.html',\n  styleUrls: ['./tf-navbar.component.scss']\n})\nexport class TfNavbarComponent implements OnInit {\n  constructor(private store: Store) { }\n\n  barsIcon: any = faBars;\n  logoUrl: string = '';\n  navItems: TfNavigationItem[] = [];\n\n\n  ngOnInit() {\n    this.store.select(selectLogoUrl).subscribe( (logoUrl: string) => {\n      this.logoUrl = logoUrl;\n    });\n    this.store.select(getNavbarNavigationItems).subscribe((navigationItems: TfNavigationItem[]) => {\n      this.navItems = navigationItems;\n    });\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Optional, ViewChild } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { TfConfigState } from '../../store/tf-config/tf-config.models';\r\nimport { selectLogoUrl, selectTfConfig } from '../../store/tf-config/tf-config.selectors';\r\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\r\n\r\nimport { faBars } from '@fortawesome/free-solid-svg-icons';\r\nimport { getNavbarNavigationItems } from '../../store/tf-navigation/tf-navigation.selectors';\r\n\r\n@Component({\r\n  selector: 'tf-navbar',\r\n  templateUrl: './tf-navbar.component.html',\r\n  styleUrls: ['./tf-navbar.component.scss']\r\n})\r\nexport class TfNavbarComponent implements OnInit {\r\n  constructor(@Optional() private store: Store | null = null) { }\r\n\r\n  barsIcon: any = faBars;\r\n  logoUrl: string = '';\r\n  navItems: TfNavigationItem[] = [];\r\n\r\n\r\n  ngOnInit() {\r\n    this.store?.select(selectLogoUrl).subscribe( (logoUrl: string) => {\r\n      this.logoUrl = logoUrl;\r\n    });\r\n    this.store?.select(getNavbarNavigationItems).subscribe((navigationItems: TfNavigationItem[]) => {\r\n      this.navItems = navigationItems;\r\n    });\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3397,18 +3459,20 @@
                 "args": [
                     {
                         "name": "store",
-                        "type": "Store",
+                        "type": "Store | null",
                         "deprecated": false,
-                        "deprecationMessage": ""
+                        "deprecationMessage": "",
+                        "defaultValue": "null"
                     }
                 ],
                 "line": 15,
                 "jsdoctags": [
                     {
                         "name": "store",
-                        "type": "Store",
+                        "type": "Store | null",
                         "deprecated": false,
                         "deprecationMessage": "",
+                        "defaultValue": "null",
                         "tagName": {
                             "text": "param"
                         }
@@ -3418,11 +3482,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<fa-icon [icon]=\"barsIcon\"></fa-icon>\n<img class=\"logo\" [src]=\"logoUrl\">\n\n<div class=\"navItems\">\n  <tf-navbar-navItem *ngFor=\"let navItem of navItems\" [model]=\"navItem\">\n  </tf-navbar-navItem>\n</div>"
+            "templateData": "<fa-icon [icon]=\"barsIcon\"></fa-icon>\r\n<img class=\"logo\" [src]=\"logoUrl\">\r\n\r\n<div class=\"navItems\">\r\n  <tf-navbar-navItem *ngFor=\"let navItem of navItems\" [model]=\"navItem\">\r\n  </tf-navbar-navItem>\r\n</div>"
         },
         {
             "name": "TfNavbarNavItemComponent",
-            "id": "component-TfNavbarNavItemComponent-df95c5e1e8c756a0be3e7dcf21a035bb80affa4b338dd24847f65478b34a3373844f30941010da0b828c8a4104d839f08a6ddeec24b7a6683cdfa250b93fe926",
+            "id": "component-TfNavbarNavItemComponent-e6d7e11190f045ec52b40f57cd46888c778f0f6dda2e35e5940e0fbb8f2e6a866153543b119f1fa2f394b9b6385e5014621ffe012ed4728cd8d92d21a4ae4237",
             "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3536,7 +3600,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Input, ViewChild } from '@angular/core';\nimport { Component, OnInit } from '@angular/core';\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\n\n@Component({\n  selector: 'tf-navbar-navItem',\n  templateUrl: './tf-navbar-nav-item.component.html',\n  styleUrls: ['./tf-navbar-nav-item.component.scss']\n})\nexport class TfNavbarNavItemComponent implements OnInit {\n  @Input() model: TfNavigationItem | null = null;\n\n  isOpen: boolean = false;\n\n  offsetHeight: number = 0;\n  offsetWidth: number = 0;\n  constructor() { }\n\n  @ViewChild('wrapper') navItemWrapperElem: any;\n\n\n  ngOnInit() {\n  }\n\n  onClickMenu(){\n    console.log(this.navItemWrapperElem)\n    this.offsetHeight = this.navItemWrapperElem.offsetTop + this.navItemWrapperElem.nativeElement.offsetHeight;\n    this.offsetWidth = this.navItemWrapperElem.offsetLeft + this.navItemWrapperElem.nativeElement.offsetWidth;\n    this.isOpen = true;\n  }\n\n  mouseLeave(){\n    console.log('left')\n    this.isOpen = false;\n\n  }\n\n}\n",
+            "sourceCode": "import { Input, ViewChild } from '@angular/core';\r\nimport { Component, OnInit } from '@angular/core';\r\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\r\n\r\n@Component({\r\n  selector: 'tf-navbar-navItem',\r\n  templateUrl: './tf-navbar-nav-item.component.html',\r\n  styleUrls: ['./tf-navbar-nav-item.component.scss']\r\n})\r\nexport class TfNavbarNavItemComponent implements OnInit {\r\n  @Input() model: TfNavigationItem | null = null;\r\n\r\n  isOpen: boolean = false;\r\n\r\n  offsetHeight: number = 0;\r\n  offsetWidth: number = 0;\r\n  constructor() { }\r\n\r\n  @ViewChild('wrapper') navItemWrapperElem: any;\r\n\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n  onClickMenu(){\r\n    console.log(this.navItemWrapperElem)\r\n    this.offsetHeight = this.navItemWrapperElem.offsetTop + this.navItemWrapperElem.nativeElement.offsetHeight;\r\n    this.offsetWidth = this.navItemWrapperElem.offsetLeft + this.navItemWrapperElem.nativeElement.offsetWidth;\r\n    this.isOpen = true;\r\n  }\r\n\r\n  mouseLeave(){\r\n    console.log('left')\r\n    this.isOpen = false;\r\n\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3556,11 +3620,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<span (mouseleave)=\"mouseLeave()\" class=\"navItemWrapper\" #wrapper>\n    <span (click)=\"onClickMenu()\" class=\"displayText\">{{model.displayText}}</span>\n    <div class=\"children\" *ngIf=\"model.childNavigationItems !== null && isOpen\" [style.top.px]=\"offsetHeight\" [style.left.px]=\"offsetWidth+10\">\n        <div *ngFor=\"let navItem of model.childNavigationItems\" >\n            {{navItem.displayText}}\n        </div>\n    </div>\n</span>\n\n"
+            "templateData": "<span (mouseleave)=\"mouseLeave()\" class=\"navItemWrapper\" #wrapper>\r\n    <span (click)=\"onClickMenu()\" class=\"displayText\">{{model.displayText}}</span>\r\n    <div class=\"children\" *ngIf=\"model.childNavigationItems !== null && isOpen\" [style.top.px]=\"offsetHeight\" [style.left.px]=\"offsetWidth+10\">\r\n        <div *ngFor=\"let navItem of model.childNavigationItems\" >\r\n            {{navItem.displayText}}\r\n        </div>\r\n    </div>\r\n</span>\r\n\r\n"
         },
         {
             "name": "TfSidebarComponent",
-            "id": "component-TfSidebarComponent-25fefbfcc8983aba4b3b9bac545d3cb6f8c7cbad46085532ee8a11ba653292b1fdb9eb294bc4d4898b8485908b08c54fb61001e5bca531fe650f484696f4ff88",
+            "id": "component-TfSidebarComponent-3842691e84b16f39c48a6bab361746546bc455f49e4a626a90821c6e1877c1967bf63c141a11723cd3dab3948638e11dfb4bbb834b6606147c6a9eb51666f3a6",
             "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3596,15 +3660,6 @@
                     "decorators": []
                 },
                 {
-                    "name": "test",
-                    "defaultValue": "0",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 20,
-                    "type": "number",
-                    "decorators": []
-                },
-                {
                     "name": "type",
                     "defaultValue": "TfSidebarType.ContentAware",
                     "deprecated": false,
@@ -3624,7 +3679,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 20
                 }
             ],
             "methodsClass": [
@@ -3634,7 +3689,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 62,
+                    "line": 61,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3644,7 +3699,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3654,7 +3709,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 71,
+                    "line": 70,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3664,7 +3719,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3676,11 +3731,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, Optional } from '@angular/core';\nimport { Store } from '@ngrx/store';\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\nimport { getSidebarNavigationItems } from '../../store/tf-navigation/tf-navigation.selectors';\nimport { setSidebarDisplay } from '../../store/tf-sidebar/tf-sidebar.actions';\nimport { TfSidebarDisplay, TfSidebarState, TfSidebarType } from '../../store/tf-sidebar/tf-sidebar.models';\nimport { selectSidebarState } from '../../store/tf-sidebar/tf-sidebar.selectors';\n\n@Component({\n  selector: 'tf-sidebar',\n  templateUrl: './tf-sidebar.component.html',\n  styleUrls: ['./tf-sidebar.component.scss']\n})\nexport class TfSidebarComponent implements OnInit {\n\n  constructor(@Optional() private store: Store | null = null) { }\n  @Input() type: TfSidebarType = TfSidebarType.ContentAware;\n  @Input() display: TfSidebarDisplay = TfSidebarDisplay.Open;\n  @Input() navigationItems: TfNavigationItem[] = [];\n  @Input() test: number = 0;\n  classNames: string = '';\n\n  ngOnInit() {\n    this.store?.select(getSidebarNavigationItems).subscribe(navItems => {\n      this.navigationItems = navItems;\n    })\n    this.store?.select(selectSidebarState).subscribe(state => {\n      this.type = state.type;\n      this.display = state.display;\n    });\n\n    setInterval(() => console.log(this.display), 2000)\n  }\n\n  get displayClassName(): string {\n    switch(this.display){\n      case TfSidebarDisplay.None: return 'displayNone';\n      case TfSidebarDisplay.Open: return 'displayOpen';\n      case TfSidebarDisplay.Preview: return 'displayPreview';\n      default: return '';\n    }\n  }\n\n  get typeClassName(): string {\n    switch(this.type){\n      case TfSidebarType.ContentAware: return 'typeContentAware';\n      case TfSidebarType.Fixed: return 'typeFixed';\n      default: return '';\n    }\n  }\n\n  preview(): void {\n    if(this.store !== null){\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.Preview}));\n    }\n    else{\n      this.display = TfSidebarDisplay.Preview;\n    }\n    \n  }\n\n  close(): void {\n    if(this.store !== null){\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.None}));\n    }\n    else{\n      this.display = TfSidebarDisplay.None;\n    }\n  }\n\n  open(): void {\n    if(this.store !== null){\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.Open}));\n    }\n    else {\n      this.display = TfSidebarDisplay.Open;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, Optional } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\r\nimport { getSidebarNavigationItems } from '../../store/tf-navigation/tf-navigation.selectors';\r\nimport { setSidebarDisplay } from '../../store/tf-sidebar/tf-sidebar.actions';\r\nimport { TfSidebarDisplay, TfSidebarState, TfSidebarType } from '../../store/tf-sidebar/tf-sidebar.models';\r\nimport { selectSidebarState } from '../../store/tf-sidebar/tf-sidebar.selectors';\r\n\r\n@Component({\r\n  selector: 'tf-sidebar',\r\n  templateUrl: './tf-sidebar.component.html',\r\n  styleUrls: ['./tf-sidebar.component.scss']\r\n})\r\nexport class TfSidebarComponent implements OnInit {\r\n\r\n  constructor(@Optional() private store: Store | null = null) { }\r\n  @Input() type: TfSidebarType = TfSidebarType.ContentAware;\r\n  @Input() display: TfSidebarDisplay = TfSidebarDisplay.Open;\r\n  @Input() navigationItems: TfNavigationItem[] = [];\r\n  classNames: string = '';\r\n\r\n  ngOnInit() {\r\n    this.store?.select(getSidebarNavigationItems).subscribe(navItems => {\r\n      this.navigationItems = navItems;\r\n    })\r\n    this.store?.select(selectSidebarState).subscribe(state => {\r\n      this.type = state.type;\r\n      this.display = state.display;\r\n    });\r\n\r\n    setInterval(() => console.log(this.display), 2000)\r\n  }\r\n\r\n  get displayClassName(): string {\r\n    switch(this.display){\r\n      case TfSidebarDisplay.None: return 'displayNone';\r\n      case TfSidebarDisplay.Open: return 'displayOpen';\r\n      case TfSidebarDisplay.Preview: return 'displayPreview';\r\n      default: return '';\r\n    }\r\n  }\r\n\r\n  get typeClassName(): string {\r\n    switch(this.type){\r\n      case TfSidebarType.ContentAware: return 'typeContentAware';\r\n      case TfSidebarType.Fixed: return 'typeFixed';\r\n      default: return '';\r\n    }\r\n  }\r\n\r\n  preview(): void {\r\n    if(this.store !== null){\r\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.Preview}));\r\n    }\r\n    else{\r\n      this.display = TfSidebarDisplay.Preview;\r\n    }\r\n    \r\n  }\r\n\r\n  close(): void {\r\n    if(this.store !== null){\r\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.None}));\r\n    }\r\n    else{\r\n      this.display = TfSidebarDisplay.None;\r\n    }\r\n  }\r\n\r\n  open(): void {\r\n    if(this.store !== null){\r\n      this.store?.dispatch(setSidebarDisplay({payload: TfSidebarDisplay.Open}));\r\n    }\r\n    else {\r\n      this.display = TfSidebarDisplay.Open;\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../styles.scss';\r\n:host{\r\n    $width: 260px;\r\n    $previewWidth: 60px;\r\n\r\n    display: block;\r\n    position: relative;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    .sidebarWrapper {\r\n        width: $width;\r\n        box-shadow: $box-shadow;\r\n        height: 100%;\r\n        background-color: white;\r\n        transition: margin-left linear .3s;\r\n        \r\n        &.displayNone{\r\n            margin-left: calc(0px - $width);\r\n        }\r\n        &.displayPreview{\r\n            margin-left: calc(0px - ($width - $previewWidth))\r\n        }\r\n        &.displayOpen{\r\n            margin-left: 0px;\r\n        }\r\n\r\n        &.typeContentAware{\r\n            position: relative;\r\n        }\r\n\r\n        &.typeFixed{\r\n            position: fixed;\r\n        }\r\n    }\r\n}",
+                    "data": "@import '../../../../styles.scss';\r\n:host{\r\n    $width: 260px;\r\n    $previewWidth: 60px;\r\n\r\n    display: block;\r\n    position: relative;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    .sidebarWrapper {\r\n        width: $width;\r\n        box-shadow: $box-shadow;\r\n        height: 100%;\r\n        background-color: white;\r\n        transition: margin-left linear .3s;\r\n        \r\n        &.displayNone{\r\n            margin-left: calc(0px - $width);\r\n        }\r\n        &.displayPreview{\r\n            margin-left: calc(0px - ($width - $previewWidth));\r\n        }\r\n        &.displayOpen{\r\n            margin-left: 0px;\r\n        }\r\n\r\n        &.typeContentAware{\r\n            position: relative;\r\n        }\r\n\r\n        &.typeFixed{\r\n            position: fixed;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./tf-sidebar.component.scss"
                 }
             ],
@@ -3723,7 +3778,7 @@
                         "name": "displayClassName",
                         "type": "string",
                         "returnType": "string",
-                        "line": 35
+                        "line": 34
                     }
                 },
                 "typeClassName": {
@@ -3732,15 +3787,87 @@
                         "name": "typeClassName",
                         "type": "string",
                         "returnType": "string",
-                        "line": 44
+                        "line": 43
                     }
                 }
             },
-            "templateData": "<div class=\"sidebarWrapper {{displayClassName}} {{typeClassName}}\">\n  {{test}}\n</div>\n<div>\n  <tf-button [type]=\"2\" (click)=\"close()\">Close</tf-button>\n  <tf-button [type]=\"2\" (click)=\"preview()\">Preview</tf-button>\n  <tf-button [type]=\"2\" (click)=\"open()\">Open</tf-button>\n</div>"
+            "templateData": "<div class=\"sidebarWrapper {{displayClassName}} {{typeClassName}}\">\r\n  <tf-sidebar-nav-item *ngFor=\"let navItem of navigationItems\" [model]=\"navItem\"></tf-sidebar-nav-item>\r\n</div>"
+        },
+        {
+            "name": "TfSidebarNavItemComponent",
+            "id": "component-TfSidebarNavItemComponent-59a5a19f736209e2cb5bd494807d7a1e389955b4b94accaac8ee60eee92677e42a2ca7e495c204def53d3e536294983710fba32075f66483fdf3de73debcf962",
+            "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tf-sidebar-nav-item",
+            "styleUrls": [
+                "./tf-sidebar-nav-item.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tf-sidebar-nav-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "model",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "TfNavigationItem | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { TfNavigationItem } from '../../store/tf-navigation/tf-navigation.models';\r\n\r\n@Component({\r\n  selector: 'tf-sidebar-nav-item',\r\n  templateUrl: './tf-sidebar-nav-item.component.html',\r\n  styleUrls: ['./tf-sidebar-nav-item.component.scss']\r\n})\r\nexport class TfSidebarNavItemComponent implements OnInit {\r\n  @Input() model: TfNavigationItem | null = null;\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../styles.scss';\r\n\r\n:host {\r\n    display: block;\r\n    position: relative;\r\n    user-select: none;\r\n    border-bottom: 1px solid $grey-light;\r\n    \r\n    .navItem{\r\n        transition: background-color linear .3s;\r\n        &:hover {\r\n            background-color: $primary-lighter;\r\n\r\n            .faWrapper {\r\n                background-color: $primary-lighter;\r\n            }\r\n        }\r\n\r\n        &.selected {\r\n            background-color: primary-light;\r\n        }\r\n    }\r\n\r\n    \r\n    .faWrapper{\r\n        position: absolute;\r\n        left: 0px;\r\n        height: 50px;\r\n        width: 60px;\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        font-size: 24px;\r\n        transition: left linear .3s;\r\n        background-color: white;\r\n        transition: background-color linear .3s;\r\n    }\r\n    .displayText{\r\n        display: flex;\r\n        align-items: center;\r\n        height: 50px;\r\n        padding-left: 76px;\r\n        font-size: 20px;\r\n    }\r\n\r\n    .path{\r\n        cursor: pointer;\r\n        background-color: white;\r\n    }\r\n    .noPath{\r\n        background-color: $primary;\r\n    }\r\n}\r\n\r\n.displayPreview, .displayNone{\r\n    :host {\r\n        .faWrapper {\r\n            left: 200px;\r\n        }\r\n        .path, .noPath {\r\n            background-color: transparent;\r\n            .displayText{\r\n                visibility: hidden;\r\n            }\r\n        }\r\n    }\r\n}\r\n// :host {\r\n//     display: block;\r\n//     height: 60px;\r\n//     .noPath{\r\n//         background-color: green;\r\n//     }\r\n\r\n//     .faWrapper{\r\n//         position: absolute;\r\n//         transition: left linear .3s;\r\n//         background-color: grey;\r\n//         left: 0px;\r\n//         width: 60px;\r\n//         height: 60px;\r\n//         display: flex;\r\n//         justify-content: center;\r\n//         align-items: center;\r\n//     }\r\n\r\n//     .displayText {\r\n//         padding: 0px 0px 0px 76px;\r\n//     }\r\n\r\n    \r\n// }\r\n\r\n",
+                    "styleUrl": "./tf-sidebar-nav-item.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"{{model?.path == null ? 'noPath' : 'path'}} navItem\">\r\n  <div class=\"faWrapper\" *ngIf=\"model?.displayIcon\">\r\n    <fa-icon [icon]=\"model?.displayIcon\"></fa-icon>\r\n  </div>\r\n  <div class=\"displayText\">\r\n    {{model?.displayText}}\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<tf-sidebar-nav-item *ngFor=\"let navItem of model?.childNavigationItems\" [model]=\"navItem\"></tf-sidebar-nav-item>"
         },
         {
             "name": "UnauthorizedLayoutComponent",
-            "id": "component-UnauthorizedLayoutComponent-d57576ed7a6643ff71b7086a8758f6412697f991cc93c92d986645fd59fdc09447304a74d05e3785d204d3593a83555dfd58dcd3c58353bb41d187c4ea25a33b",
+            "id": "component-UnauthorizedLayoutComponent-9aab08b2639bbf68276e4410653a924a3e4198eabfdb0b43faf0bff80577b95b6f56d139d8f17bc19e412d16326609f73b4a66fffa084efcc01bfb6fee78f80b",
             "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3788,7 +3915,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'tf-unauthorizedLayout',\r\n  templateUrl: './unauthorizedLayout.component.html',\r\n  styleUrls: ['./unauthorizedLayout.component.scss']\r\n})\r\nexport class UnauthorizedLayoutComponent implements OnInit {\r\n  @Input() logoUrl: string = '';\r\n  constructor() { }\r\n\r\n  ngOnInit() {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'tf-unauthorizedLayout',\n  templateUrl: './unauthorizedLayout.component.html',\n  styleUrls: ['./unauthorizedLayout.component.scss']\n})\nexport class UnauthorizedLayoutComponent implements OnInit {\n  @Input() logoUrl: string = '';\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3808,7 +3935,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<tf-navbar [logoUrl]=\"logoUrl\"></tf-navbar>\r\n<ng-content></ng-content>\r\n<tf-footer></tf-footer>"
+            "templateData": "<tf-navbar [logoUrl]=\"logoUrl\"></tf-navbar>\n<ng-content></ng-content>\n<tf-footer></tf-footer>"
         }
     ],
     "modules": [
@@ -4016,13 +4143,13 @@
         },
         {
             "name": "TechfabricAngularAppModule",
-            "id": "module-TechfabricAngularAppModule-5180fe4a98f17caf1485d70139847786bceef9aa9ec7d83592333bca9306db0b3d70101e235f3172b4cf6f383e43a855e32153a07b5b9f84f3cae80ecadb8174",
+            "id": "module-TechfabricAngularAppModule-6d8554293b47fd06110ccf85c3787fb8bee037144096b7987f0a75a9dea84d234582fb0f234691e04f5bf0521fcc1faa628713587372c4a750e14debfe394bfc",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { EffectsModule } from '@ngrx/effects';\nimport { StoreModule } from '@ngrx/store';\nimport { TechfabricAngularControlsModule } from 'techfabricAngularControls';\nimport { TfNavbarComponent } from './components/tf-navbar/tf-navbar.component';\nimport { TfSidebarComponent } from './components/tf-sidebar/tf-sidebar.component';\nimport { configurationFeatureKey, tfConfigReducer } from './store/tf-config/tf-config.reducers';\nimport { navigationFeatureKey, tfNavigationReducer } from './store/tf-navigation/tf-navigation.reducers';\nimport { sidebarFeatureKey, tfSidebarReducer } from './store/tf-sidebar/tf-sidebar.reducers';\n\nlet components = [TfNavbarComponent, TfSidebarComponent]\n\n\n@NgModule({\n  declarations: [\n    ...components\n  ],\n  imports: [\n    FontAwesomeModule,\n    TechfabricAngularControlsModule,\n    // EffectsModule.forFeature([]),\n    StoreModule.forFeature(navigationFeatureKey, tfNavigationReducer),\n    StoreModule.forFeature(configurationFeatureKey, tfConfigReducer),\n    StoreModule.forFeature(sidebarFeatureKey, tfSidebarReducer)\n  ],\n  exports: [\n    ...components,\n    TechfabricAngularControlsModule\n  ]\n})\nexport class TechfabricAngularAppModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { EffectsModule } from '@ngrx/effects';\r\nimport { StoreModule } from '@ngrx/store';\r\nimport { TechfabricAngularControlsModule } from 'techfabricAngularControls';\r\nimport { TfNavbarNavItemComponent, TfSidebarNavItemComponent } from './components';\r\nimport { TfDashboardLayoutComponent } from './components/tf-dashboard-layout/tf-dashboard-layout.component';\r\nimport { TfNavbarComponent } from './components/tf-navbar/tf-navbar.component';\r\nimport { TfSidebarComponent } from './components/tf-sidebar/tf-sidebar.component';\r\nimport { configurationFeatureKey, tfConfigReducer } from './store/tf-config/tf-config.reducers';\r\nimport { navigationFeatureKey, tfNavigationReducer } from './store/tf-navigation/tf-navigation.reducers';\r\nimport { sidebarFeatureKey, tfSidebarReducer } from './store/tf-sidebar/tf-sidebar.reducers';\r\n\r\nexport const Components = [TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent, TfDashboardLayoutComponent]\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ...Components\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    FontAwesomeModule,\r\n    TechfabricAngularControlsModule,\r\n    StoreModule.forFeature(navigationFeatureKey, tfNavigationReducer),\r\n    StoreModule.forFeature(configurationFeatureKey, tfConfigReducer),\r\n    StoreModule.forFeature(sidebarFeatureKey, tfSidebarReducer)\r\n  ],\r\n  exports: [\r\n    ...Components,\r\n    CommonModule,\r\n    TechfabricAngularControlsModule\r\n  ]\r\n})\r\nexport class TechfabricAngularAppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4032,10 +4159,19 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "TfDashboardLayoutComponent"
+                        },
+                        {
                             "name": "TfNavbarComponent"
                         },
                         {
+                            "name": "TfNavbarNavItemComponent"
+                        },
+                        {
                             "name": "TfSidebarComponent"
+                        },
+                        {
+                            "name": "TfSidebarNavItemComponent"
                         }
                     ]
                 },
@@ -4054,10 +4190,19 @@
                             "name": "TechfabricAngularControlsModule"
                         },
                         {
+                            "name": "TfDashboardLayoutComponent"
+                        },
+                        {
                             "name": "TfNavbarComponent"
                         },
                         {
+                            "name": "TfNavbarNavItemComponent"
+                        },
+                        {
                             "name": "TfSidebarComponent"
+                        },
+                        {
+                            "name": "TfSidebarNavItemComponent"
                         }
                     ]
                 },
@@ -4089,10 +4234,10 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "TfNavbarComponent"
+                            "name": "TfButtonComponent"
                         },
                         {
-                            "name": "TfSidebarComponent"
+                            "name": "TfInputComponent"
                         }
                     ]
                 },
@@ -4104,10 +4249,10 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "TfNavbarComponent"
+                            "name": "TfButtonComponent"
                         },
                         {
-                            "name": "TfSidebarComponent"
+                            "name": "TfInputComponent"
                         }
                     ]
                 },
@@ -4242,21 +4387,21 @@
                 "name": "ACTION_PREFIX",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "string",
-                "defaultValue": "'tfConfig'"
-            },
-            {
-                "name": "ACTION_PREFIX",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/techfabric-angular-app/src/lib/store/tf-sidebar/tf-sidebar.actions.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'[TF-Sidebar]'"
+            },
+            {
+                "name": "ACTION_PREFIX",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'tfConfig'"
             },
             {
                 "name": "adConfigWrapper",
@@ -4342,21 +4487,21 @@
                 "name": "components",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[TfNavbarComponent, TfSidebarComponent]"
-            },
-            {
-                "name": "components",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/techfabric-angular-controls/src/lib/techfabric-angular-controls.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\r\n  TfButtonComponent,\r\n  TfInputComponent\r\n]"
+            },
+            {
+                "name": "Components",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent, TfDashboardLayoutComponent]"
             },
             {
                 "name": "configurationFeatureKey",
@@ -4389,60 +4534,10 @@
                 "defaultValue": "createReducer(\r\n    initialState,\r\n    on(ConfigurationActions.setConfiguration, (state, config) => ({\r\n        ...state,\r\n        ...config\r\n    }))\r\n)"
             },
             {
-                "name": "ContentAwareDisplayNone",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        type: TfSidebarType.ContentAware,\r\n        display: TfSidebarDisplay.None\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-            },
-            {
-                "name": "ContentAwareDisplayOpen",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n        providers: [\r\n            { INITIAL_STATE, useFactory: () => contentAwareDisplayOpenState }\r\n        ]\r\n    },\r\n    props: {\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-            },
-            {
-                "name": "contentAwareDisplayOpenState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "<any>{}"
-            },
-            {
-                "name": "ContentAwareDisplayPreview",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        type: TfSidebarType.ContentAware,\r\n        display: TfSidebarDisplay.Preview\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-            },
-            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/msal/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4462,7 +4557,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/test.ts",
+                "file": "projects/msal/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4489,14 +4584,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "declarations",
+                "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/button/button.stories.ts",
+                "file": "projects/techfabric-angular-app/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "any[]",
-                "defaultValue": "[]"
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
                 "name": "declarations",
@@ -4512,17 +4607,7 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[ButtonComponent, CheckboxComponent]"
-            },
-            {
-                "name": "declarations",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
@@ -4533,6 +4618,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/core/src/lib/components/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
@@ -4562,11 +4657,51 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[ButtonComponent, CheckboxComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
                 "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[InputComponent, SignUpFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-controls/src/lib/components/tf-button/tf-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent]"
             },
             {
                 "name": "declarations",
@@ -4592,41 +4727,21 @@
                 "name": "declarations",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[ TfSidebarNavItemComponent ]"
+            },
+            {
+                "name": "declarations",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
-                "defaultValue": "[ TfNavbarNavItemComponent ]"
-            },
-            {
-                "name": "declarations",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "any[]",
-                "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
-            },
-            {
-                "name": "declarations",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "any[]",
-                "defaultValue": "[InputComponent, SignUpFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
-            },
-            {
-                "name": "declarations",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-controls/src/lib/components/tf-button/tf-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "any[]",
-                "defaultValue": "[]"
+                "defaultValue": "[ TfSidebarNavItemComponent]"
             },
             {
                 "name": "Default",
@@ -4652,26 +4767,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n\r\n    },\r\n    template: ` <tf-footer>\r\n                </tf-footer>`\r\n})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/core/src/lib/components/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4692,21 +4787,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInForm [logoUrl]=\"logoUrl\">\r\n                </tf-signInForm>`\r\n})"
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n\r\n    },\r\n    template: ` <tf-footer>\r\n                </tf-footer>`\r\n})"
             },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` <tf-signInForm [logoUrl]=\"logoUrl\">\r\n                </tf-signInForm>`\r\n})"
             },
             {
                 "name": "Default",
@@ -4722,11 +4817,61 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        headerText: 'Title',\r\n        displayPreview: false,\r\n    },\r\n    template: ` <tf-expander [headerText]=\"headerText\" [displayPreview]=displayPreview>\r\n                    <div header>\r\n                    </div>\r\n                    <div preview>\r\n                        test\r\n                    </div>\r\n                    <div content>\r\n                        content\r\n                    </div>\r\n                </tf-expander>`\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-unauthorizedLayout [logoUrl]=\"logoUrl\">\r\n                </tf-unauthorizedLayout>`,\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signUpPage [logoUrl]=\"logoUrl\">\r\n                </tf-signUpPage>`,\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-controls/src/lib/components/tf-input/tf-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -4752,7 +4897,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4762,27 +4907,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signInPage >\r\n                </tf-signInPage>`,\r\n})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signUpPage [logoUrl]=\"logoUrl\">\r\n                </tf-signUpPage>`,\r\n})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-controls/src/lib/components/tf-input/tf-input.stories.ts",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5142,16 +5267,6 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "any",
-                "defaultValue": "{\r\n}"
-            },
-            {
-                "name": "initialState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/techfabric-angular-app/src/lib/store/tf-navigation/tf-navigation.reducers.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5162,11 +5277,11 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
+                "file": "projects/techfabric-angular-app/src/lib/store/tf-sidebar/tf-sidebar.reducers.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "any",
-                "defaultValue": "{}"
+                "type": "TfSidebarState",
+                "defaultValue": "{\r\n    type: TfSidebarType.Fixed,\r\n    display: TfSidebarDisplay.None\r\n}"
             },
             {
                 "name": "initialState",
@@ -5177,16 +5292,6 @@
                 "deprecationMessage": "",
                 "type": "TfConfigState",
                 "defaultValue": "{\r\n    logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n}"
-            },
-            {
-                "name": "initialState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/store/tf-sidebar/tf-sidebar.reducers.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "TfSidebarState",
-                "defaultValue": "{\r\n    type: TfSidebarType.Fixed,\r\n    display: TfSidebarDisplay.None\r\n}"
             },
             {
                 "name": "isIE",
@@ -5252,16 +5357,6 @@
                 "name": "LegacyAndMicrosoftLogin",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations,\r\n      providers: [\r\n        provideMockStore({initialState: LegacyAndMicrosoftLoginState})\r\n      ]\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage>\r\n              </tf-signInPage>`,\r\n})"
-            },
-            {
-                "name": "LegacyAndMicrosoftLogin",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5269,16 +5364,6 @@
                 "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signUpPage [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"showMicrosoftLogin\">\r\n              </tf-signUpPage>`,\r\n})"
             },
             {
-                "name": "LegacyAndMicrosoftLoginState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "JSON.parse(JSON.stringify(initialState))"
-            },
-            {
                 "name": "loginFail",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5377,16 +5462,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createAction(`${ACTION_PREFIX} Logout`)"
-            },
-            {
-                "name": "microsoftOnlyState",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "JSON.parse(JSON.stringify(initialState))"
             },
             {
                 "name": "MicrosoftSignInOnly",
@@ -5407,16 +5482,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n  },\r\n  template: ` <tf-signUpForm [logoUrl]=\"logoUrl\" [showLegacyLogin]=\"showLegacyLogin\" [showMicrosoftLogin]=\"true\">\r\n              </tf-signUpForm>`\r\n})"
-            },
-            {
-                "name": "MicrosoftSignInOnly",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations,\r\n      providers: [\r\n        provideMockStore({initialState: microsoftOnlyState})\r\n      ]\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage>\r\n              </tf-signInPage>`,\r\n})"
             },
             {
                 "name": "MicrosoftSignInOnly",
@@ -5502,11 +5567,21 @@
                 "name": "navigationItems1",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Unauthorized',\r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'Home',\r\n                displayIcon: faHome,\r\n                path: '/'\r\n            },\r\n            {\r\n                displayText: 'Sign In',\r\n                displayIcon: faKey,\r\n                path: '/signIn'\r\n            }\r\n        ]\r\n    }\r\n]"
+            },
+            {
+                "name": "navigationItems1",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Menu 1', \r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'option 1'\r\n            },\r\n            {\r\n                displayText: 'option 2'\r\n            }\r\n        ]\r\n    }\r\n]"
+                "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Unauthorized',\r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'Home',\r\n                displayIcon: faHome,\r\n                path: '/'\r\n            },\r\n            {\r\n                displayText: 'Sign In',\r\n                displayIcon: faKey,\r\n                path: '/signIn'\r\n            }\r\n        ]\r\n    }\r\n]"
             },
             {
                 "name": "removeNavigationItemByDisplayName",
@@ -5531,15 +5606,6 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/msal/src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "literal type"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/core/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5549,7 +5615,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/test.ts",
+                "file": "projects/msal/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
@@ -5568,6 +5634,15 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/techfabric-angular-msal-ngrx/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
@@ -5806,16 +5881,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/core/src/lib/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5836,21 +5901,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "file": "projects/core/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ExpanderComponent>",
-                "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5876,21 +5931,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
+                "file": "projects/core/src/lib/components/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SignInFormComponent>",
-                "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "file": "projects/core/src/lib/components/signInForm/signInForm.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SliderComponent>",
-                "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<SignInFormComponent>",
+                "defaultValue": "(args: SignInFormComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5906,51 +5961,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/core/src/lib/components/slider/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SliderComponent>",
+                "defaultValue": "(args: SliderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/core/src/lib/components/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ExpanderComponent>",
+                "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/core/src/lib/layouts/unauthorizedLayout/unauthorizedLayout.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UnauthorizedLayoutComponent>",
                 "defaultValue": "(args: UnauthorizedLayoutComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<TfNavbarComponent>",
-                "defaultValue": "(args: TfNavbarComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<TfNavbarNavItemComponent>",
-                "defaultValue": "(args: TfNavbarNavItemComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<SignInPageComponent>",
-                "defaultValue": "(args: SignInPageComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -5981,6 +6016,56 @@
                 "deprecationMessage": "",
                 "type": "Story<TfInputComponent>",
                 "defaultValue": "(args: TfInputComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TfNavbarComponent>",
+                "defaultValue": "(args: TfNavbarComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TfNavbarNavItemComponent>",
+                "defaultValue": "(args: TfNavbarNavItemComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
             },
             {
                 "name": "tfConfigReducer",
@@ -6404,28 +6489,6 @@
                     "defaultValue": "createAction(`${ACTION_PREFIX} Remove Navigation Item By Name`,\r\n    props<{ displayText: string }>()\r\n)"
                 }
             ],
-            "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts": [
-                {
-                    "name": "ACTION_PREFIX",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'tfConfig'"
-                },
-                {
-                    "name": "setConfig",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "createAction(\r\n    `${ACTION_PREFIX} Set Config`,\r\n    props<TfConfigState>()\r\n)"
-                }
-            ],
             "projects/techfabric-angular-app/src/lib/store/tf-sidebar/tf-sidebar.actions.ts": [
                 {
                     "name": "ACTION_PREFIX",
@@ -6456,6 +6519,28 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "createAction(\r\n    `${ACTION_PREFIX} Set Type`,\r\n    props<{payload: TfSidebarType}>()\r\n)"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts": [
+                {
+                    "name": "ACTION_PREFIX",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'tfConfig'"
+                },
+                {
+                    "name": "setConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/store/tf-config/tf-config.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\r\n    `${ACTION_PREFIX} Set Config`,\r\n    props<TfConfigState>()\r\n)"
                 }
             ],
             "src/app/app.module.ts": [
@@ -6594,18 +6679,6 @@
                     "defaultValue": "(args: ExpanderComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts": [
-                {
-                    "name": "components",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[TfNavbarComponent, TfSidebarComponent]"
-                }
-            ],
             "projects/techfabric-angular-controls/src/lib/techfabric-angular-controls.module.ts": [
                 {
                     "name": "components",
@@ -6616,6 +6689,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n  TfButtonComponent,\r\n  TfInputComponent\r\n]"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts": [
+                {
+                    "name": "Components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/techfabric-angular-app.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent, TfDashboardLayoutComponent]"
                 }
             ],
             "projects/core/src/lib/store/configuration/configuration.reducers.ts": [
@@ -6682,98 +6767,6 @@
                     "defaultValue": "createReducer(\r\n    initialState\r\n)"
                 }
             ],
-            "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts": [
-                {
-                    "name": "ContentAwareDisplayNone",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        type: TfSidebarType.ContentAware,\r\n        display: TfSidebarDisplay.None\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-                },
-                {
-                    "name": "ContentAwareDisplayOpen",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n        providers: [\r\n            { INITIAL_STATE, useFactory: () => contentAwareDisplayOpenState }\r\n        ]\r\n    },\r\n    props: {\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-                },
-                {
-                    "name": "contentAwareDisplayOpenState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "<any>{}"
-                },
-                {
-                    "name": "ContentAwareDisplayPreview",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        type: TfSidebarType.ContentAware,\r\n        display: TfSidebarDisplay.Preview\r\n    },\r\n    template: ` \r\n        <div style=\"height: 100vh\">\r\n            <tf-sidebar [type]=\"type\" [display]=\"display\">\r\n            </tf-sidebar>\r\n        </div>`,\r\n})"
-                },
-                {
-                    "name": "declarations",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[ TfNavbarNavItemComponent ]"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "initialState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "defaultValue": "{\r\n}"
-                },
-                {
-                    "name": "navigationItems1",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Menu 1', \r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'option 1'\r\n            },\r\n            {\r\n                displayText: 'option 2'\r\n            }\r\n        ]\r\n    }\r\n]"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
-                }
-            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -6790,27 +6783,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "literal type"
-                }
-            ],
-            "projects/msal/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/msal/src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/msal/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
@@ -6837,12 +6809,12 @@
                     "type": "literal type"
                 }
             ],
-            "projects/techfabric-angular-app/src/test.ts": [
+            "projects/msal/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/test.ts",
+                    "file": "projects/msal/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6852,7 +6824,7 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/test.ts",
+                    "file": "projects/msal/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
@@ -6900,86 +6872,25 @@
                     "type": "literal type"
                 }
             ],
-            "projects/core/src/lib/components/button/button.stories.ts": [
+            "projects/techfabric-angular-app/src/test.ts": [
                 {
-                    "name": "declarations",
+                    "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[]"
-                },
-                {
-                    "name": "DefaultBasic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "file": "projects/techfabric-angular-app/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n  },\r\n  template: ` <tf-button>\r\n                Button\r\n              </tf-button>`\r\n})"
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
                 },
                 {
-                    "name": "DefaultGhost",
+                    "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "file": "projects/techfabric-angular-app/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Ghost\r\n  },\r\n  template: ` <tf-button [type]=\"type\">\r\n                Button\r\n              </tf-button>`\r\n})"
-                },
-                {
-                    "name": "DefaultPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Primary\r\n  },\r\n  template: ` <tf-button [type]=\"type\">\r\n                Button\r\n              </tf-button>`\r\n})"
-                },
-                {
-                    "name": "DisabledBasic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
-                },
-                {
-                    "name": "DisabledGhost",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Ghost,\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [type]=\"type\" [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
-                },
-                {
-                    "name": "DisabledPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Basic,\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [type]=\"type\" [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                    "type": "literal type"
                 }
             ],
             "projects/core/src/lib/components/card/card.stories.ts": [
@@ -7064,36 +6975,86 @@
                     "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "projects/core/src/lib/components/footer/footer.stories.ts": [
+            "projects/core/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "declarations",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
                     "defaultValue": "[]"
                 },
                 {
-                    "name": "Default",
+                    "name": "DefaultBasic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n\r\n    },\r\n    template: ` <tf-footer>\r\n                </tf-footer>`\r\n})"
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n  },\r\n  template: ` <tf-button>\r\n                Button\r\n              </tf-button>`\r\n})"
+                },
+                {
+                    "name": "DefaultGhost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Ghost\r\n  },\r\n  template: ` <tf-button [type]=\"type\">\r\n                Button\r\n              </tf-button>`\r\n})"
+                },
+                {
+                    "name": "DefaultPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Primary\r\n  },\r\n  template: ` <tf-button [type]=\"type\">\r\n                Button\r\n              </tf-button>`\r\n})"
+                },
+                {
+                    "name": "DisabledBasic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
+                },
+                {
+                    "name": "DisabledGhost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Ghost,\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [type]=\"type\" [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
+                },
+                {
+                    "name": "DisabledPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations\r\n  },\r\n  props: {\r\n    type: ButtonType.Basic,\r\n    disabled: true\r\n  },\r\n  template: ` <tf-button [type]=\"type\" [disabled]=\"disabled\">\r\n                Button\r\n              </tf-button>`\r\n})"
                 },
                 {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "file": "projects/core/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FooterComponent>",
-                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/navbar/navbar.stories.ts": [
@@ -7126,6 +7087,38 @@
                     "deprecationMessage": "",
                     "type": "Story<NavbarComponent>",
                     "defaultValue": "(args: NavbarComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/core/src/lib/components/footer/footer.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations\r\n    },\r\n    props: {\r\n\r\n    },\r\n    template: ` <tf-footer>\r\n                </tf-footer>`\r\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/core/src/lib/components/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FooterComponent>",
+                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/signInForm/signInForm.stories.ts": [
@@ -7264,172 +7257,6 @@
                     "defaultValue": "(args: UnauthorizedLayoutComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts": [
-                {
-                    "name": "declarations",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[ TfNavbarNavItemComponent ]"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n    },\r\n    template: ` \r\n                <tf-navbar>\r\n                </tf-navbar>`,\r\n})"
-                },
-                {
-                    "name": "initialState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "defaultValue": "{\r\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<TfNavbarComponent>",
-                    "defaultValue": "(args: TfNavbarComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts": [
-                {
-                    "name": "declarations",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[]"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<TfNavbarNavItemComponent>",
-                    "defaultValue": "(args: TfNavbarNavItemComponent) => ({\r\n  props: args,\r\n})"
-                },
-                {
-                    "name": "WithChildren",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "projects/core/src/lib/pages/signInPage/signInPage.stories.ts": [
-                {
-                    "name": "declarations",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[InputComponent, SignInFormComponent, NavbarComponent, ButtonComponent, FooterComponent, UnauthorizedLayoutComponent]"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n        displayName: 'Tyler H.',\r\n        logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg'\r\n    },\r\n    template: ` \r\n                <tf-signInPage >\r\n                </tf-signInPage>`,\r\n})"
-                },
-                {
-                    "name": "initialState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "LegacyAndMicrosoftLogin",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations,\r\n      providers: [\r\n        provideMockStore({initialState: LegacyAndMicrosoftLoginState})\r\n      ]\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: true,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage>\r\n              </tf-signInPage>`,\r\n})"
-                },
-                {
-                    "name": "LegacyAndMicrosoftLoginState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "JSON.parse(JSON.stringify(initialState))"
-                },
-                {
-                    "name": "microsoftOnlyState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "JSON.parse(JSON.stringify(initialState))"
-                },
-                {
-                    "name": "MicrosoftSignInOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  moduleMetadata: {\r\n      declarations,\r\n      providers: [\r\n        provideMockStore({initialState: microsoftOnlyState})\r\n      ]\r\n  },\r\n  props: {\r\n      logoUrl: 'https://assets-global.website-files.com/5e4d87b2291197807847f220/5e4fd127dca002ab4d52b079_Techfabric%20dark.svg',\r\n      showLegacyLogin: false,\r\n      showMicrosoftLogin: true,\r\n  },\r\n  template: ` \r\n              <tf-signInPage>\r\n              </tf-signInPage>`,\r\n})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<SignInPageComponent>",
-                    "defaultValue": "(args: SignInPageComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
             "projects/core/src/lib/pages/signUpPage/signUpPage.stories.ts": [
                 {
                     "name": "declarations",
@@ -7562,6 +7389,206 @@
                     "deprecationMessage": "",
                     "type": "Story<TfButtonComponent>",
                     "defaultValue": "(args: TfButtonComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "navigationItems1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Unauthorized',\r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'Home',\r\n                displayIcon: faHome,\r\n                path: '/'\r\n            },\r\n            {\r\n                displayText: 'Sign In',\r\n                displayIcon: faKey,\r\n                path: '/signIn'\r\n            }\r\n        ]\r\n    }\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[ TfNavbarNavItemComponent ]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    moduleMetadata: {\r\n        declarations,\r\n    },\r\n    props: {\r\n    },\r\n    template: ` \r\n                <tf-navbar>\r\n                </tf-navbar>`,\r\n})"
+                },
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar/tf-navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TfNavbarComponent>",
+                    "defaultValue": "(args: TfNavbarComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TfNavbarNavItemComponent>",
+                    "defaultValue": "(args: TfNavbarNavItemComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "WithChildren",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[ TfSidebarNavItemComponent ]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts": [
+                {
+                    "name": "declarations",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[ TfSidebarNavItemComponent]"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "navigationItems1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "<TfNavigationItem[]>[\r\n    { \r\n        displayText: 'Unauthorized',\r\n        childNavigationItems: <TfNavigationItem[]>[\r\n            {\r\n                displayText: 'Home',\r\n                displayIcon: faHome,\r\n                path: '/'\r\n            },\r\n            {\r\n                displayText: 'Sign In',\r\n                displayIcon: faKey,\r\n                path: '/signIn'\r\n            }\r\n        ]\r\n    }\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
                 }
             ],
             "projects/core/src/lib/components/checkbox/checkbox.stories.ts": [
@@ -8964,86 +8991,6 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "declarations",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "initialState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LegacyAndMicrosoftLogin",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LegacyAndMicrosoftLoginState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "microsoftOnlyState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "MicrosoftSignInOnly",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/core/src/lib/pages/signInPage/signInPage.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/core/src/lib/pages/signUpPage/signUpPage.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -9659,6 +9606,55 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TfDashboardLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "navigationItems1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-dashboard-layout/tf-dashboard-layout.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/techfabric-angular-app/src/lib/components/tf-navbar-nav-item/tf-navbar-nav-item.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -9757,52 +9753,51 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TfSidebarNavItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "declarations",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar-nav-item/tf-sidebar-nav-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TfSidebarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ContentAwareDisplayNone",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ContentAwareDisplayOpen",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "contentAwareDisplayOpenState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ContentAwareDisplayPreview",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -9821,16 +9816,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/techfabric-angular-app/src/lib/components/tf-sidebar/tf-sidebar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "initialState",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -10136,7 +10121,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "components",
+                "name": "Components",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

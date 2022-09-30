@@ -17,5 +17,9 @@ export const tfNavigationReducer = createReducer(
     on(TfNavigationActions.removeNavigationItemByDisplayName, (state, props) => ({
         ...state,
         navigationItems: state.navigationItems.filter(i => i.displayText !== props.displayText)
+    })),
+    on(TfNavigationActions.setNavigationItems, (state, props) => ({
+        ...state,
+        navigationItems: props.navigationItems
     }))
 )

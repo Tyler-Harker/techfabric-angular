@@ -3,6 +3,10 @@ import { TfNavigationItem } from "./tf-navigation.models";
 
 const ACTION_PREFIX = '[TF-Navigation]';
 
+export const setNavigationItems = createAction(`${ACTION_PREFIX} Set Navigation Items`,
+    props<{ navigationItems: TfNavigationItem[]}>()
+)
+
 export const addNavigationItem = createAction(`${ACTION_PREFIX} Add Navigation Item`,
     props<TfNavigationItem>()
 );
