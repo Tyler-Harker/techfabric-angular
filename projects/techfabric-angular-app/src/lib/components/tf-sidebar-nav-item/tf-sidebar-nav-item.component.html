@@ -1,0 +1,13 @@
+<div class="{{model?.path == null ? 'noPath' : 'path'}} navItem">
+  <div class="faWrapper" *ngIf="model?.displayIcon">
+    <fa-icon [icon]="model?.displayIcon"></fa-icon>
+  </div>
+  <div class="displayText">
+    {{model?.displayText}}
+  </div>
+</div>
+
+
+
+
+<tf-sidebar-nav-item *ngFor="let navItem of model?.childNavigationItems" [model]="navItem"></tf-sidebar-nav-item>

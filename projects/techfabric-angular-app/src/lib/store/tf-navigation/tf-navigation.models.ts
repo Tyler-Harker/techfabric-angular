@@ -5,7 +5,7 @@ export interface TfNavigationState {
 export interface TfNavigationItem {
     displayIcon: any | null;
     displayText: string;
-    routeToPath: string | null;
+    path: string | null;
     childNavigationItems: TfNavigationItem[];
     navigationItemType: TfNavigationItemType;
 }

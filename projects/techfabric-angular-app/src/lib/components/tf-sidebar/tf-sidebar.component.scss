@@ -18,7 +18,7 @@
             margin-left: calc(0px - $width);
         }
         &.displayPreview{
-            margin-left: calc(0px - ($width - $previewWidth))
+            margin-left: calc(0px - ($width - $previewWidth));
         }
         &.displayOpen{
             margin-left: 0px;
