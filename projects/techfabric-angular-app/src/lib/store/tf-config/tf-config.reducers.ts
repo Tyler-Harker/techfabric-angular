@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as TfNavigationActions from './tf-config.actions';
+import * as TfConfigActions from './tf-config.actions';
 import { TfConfigState } from "./tf-config.models";
 
 export const configurationFeatureKey = 'tfConfig';
@@ -9,5 +9,13 @@ export const initialState: TfConfigState = {
 }
 
 export const tfConfigReducer = createReducer(
-    initialState
+    initialState,
+    on(TfConfigActions.setConfig, (state, props) => {
+        console.log('state', state)
+        return {
+            ...state,
+            ...props
+        };
+        
+    })
 )

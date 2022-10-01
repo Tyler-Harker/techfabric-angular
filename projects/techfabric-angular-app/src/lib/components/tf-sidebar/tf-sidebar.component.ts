@@ -22,9 +22,12 @@ export class TfSidebarComponent implements OnInit {
   classNames: string = '';
 
   ngOnInit() {
-    if(this.storybookService != null){
-      this.storyBookInit();
-    }
+    this.storybookService?.initWrapper(() => {
+      this.store?.dispatch(setSidebarDisplay({payload: this.display}));
+      this.store?.dispatch(setSidebarType({payload: this.type}));
+      this.store?.dispatch(setNavigationItems({navigationItems: this.navigationItems}))
+    });
+
     this.store?.select(getSidebarNavigationItems).subscribe(navItems => {
       this.navigationItems = navItems;
     })
@@ -32,12 +35,6 @@ export class TfSidebarComponent implements OnInit {
       this.type = state.type;
       this.display = state.display;
     });
-  }
-
-  storyBookInit(){
-    this.store?.dispatch(setSidebarDisplay({payload: this.display}));
-    this.store?.dispatch(setSidebarType({payload: this.type}));
-    this.store?.dispatch(setNavigationItems({navigationItems: this.navigationItems}))
   }
 
   get displayClassName(): string {

@@ -1,3 +1,4 @@
+import { state } from "@angular/animations";
 import { createReducer, on } from "@ngrx/store";
 import * as TfNavigationActions from './tf-navigation.actions';
 import { TfNavigationState } from "./tf-navigation.models";
@@ -21,5 +22,9 @@ export const tfNavigationReducer = createReducer(
     on(TfNavigationActions.setNavigationItems, (state, props) => ({
         ...state,
         navigationItems: props.navigationItems
+    })),
+    on(TfNavigationActions.setNavigationState, (state, props) => ({
+        ...state,
+        ...props
     }))
 )

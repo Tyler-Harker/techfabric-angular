@@ -1,7 +1,11 @@
 import { createAction, props } from "@ngrx/store";
-import { TfNavigationItem } from "./tf-navigation.models";
+import { TfNavigationItem, TfNavigationState } from "./tf-navigation.models";
 
 const ACTION_PREFIX = '[TF-Navigation]';
+
+export const setNavigationState = createAction(`${ACTION_PREFIX} Set Navigation State`,
+    props<TfNavigationState>()
+)
 
 export const setNavigationItems = createAction(`${ACTION_PREFIX} Set Navigation Items`,
     props<{ navigationItems: TfNavigationItem[]}>()

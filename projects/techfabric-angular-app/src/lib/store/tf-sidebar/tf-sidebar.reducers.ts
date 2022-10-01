@@ -18,5 +18,9 @@ export const tfSidebarReducer = createReducer(
     on(TfSidebarActions.setSidebarDisplay, (state, action) => ({
         ...state,
         display: action.payload
+    })),
+    on(TfSidebarActions.setSidebarState, (state, props) => ({
+        ...state,
+        ...props.state
     }))
 );

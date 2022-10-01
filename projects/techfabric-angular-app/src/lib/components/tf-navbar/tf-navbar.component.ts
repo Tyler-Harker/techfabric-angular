@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, Optional, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Optional, Output, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TfConfigState } from '../../store/tf-config/tf-config.models';
 import { selectLogoUrl, selectTfConfig } from '../../store/tf-config/tf-config.selectors';
@@ -16,34 +16,32 @@ import { setNavigationItems } from '../../store/tf-navigation/tf-navigation.acti
   styleUrls: ['./tf-navbar.component.scss']
 })
 export class TfNavbarComponent implements OnInit {
-  constructor(@Optional() private store: Store | null = null, @Optional() private storyBookInit: StorybookUtilityService | null = null) { }
+  constructor(@Optional() private store: Store | null = null, @Optional() private storyBookService: StorybookUtilityService | null = null) { }
 
   barsIcon: any = faBars;
   @Input() logoUrl: string | null = null;
   @Input() navItems: TfNavigationItem[] = [];
 
 
+  @Output() onClickBars: EventEmitter<void> = new EventEmitter<void>();
+
+
   ngOnInit() {
-    if(this.storyBookInit != null) {
-      this.initStoryBook();
-    }
+    console.log(this.store)
+    this.storyBookService?.initWrapper(() => {
+      this.store?.dispatch(setConfig({
+        logoUrl: <string>this.logoUrl
+      }));
+      this.store?.dispatch(setNavigationItems({
+        navigationItems: this.navItems
+      }))
+    });
+
     this.store?.select(selectLogoUrl).subscribe( (logoUrl: string | null) => {
       this.logoUrl = logoUrl;
     });
     this.store?.select(getNavbarNavigationItems).subscribe((navigationItems: TfNavigationItem[]) => {
       this.navItems = navigationItems;
     });
-
-    
   }
-
-  initStoryBook() {
-    this.store?.dispatch(setConfig({
-      logoUrl: this.logoUrl
-    }));
-    this.store?.dispatch(setNavigationItems({
-      navigationItems: this.navItems
-    }))
-  }
-
 }

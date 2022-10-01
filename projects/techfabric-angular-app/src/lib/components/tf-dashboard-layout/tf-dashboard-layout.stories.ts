@@ -14,10 +14,17 @@ import { TfSidebarComponent } from '../tf-sidebar/tf-sidebar.component';
 import { CommonModule } from '@angular/common';
 
 import { initialState as tfConfigInitialState } from '../../store/tf-config/tf-config.reducers';
+import { TfNavigationState } from 'dist/techfabric-angular-app/lib/store/tf-navigation/tf-navigation.models';
+import { StorybookUtilityService } from '../../utilities/storybook-utility.service';
+import { StoreModule } from '@ngrx/store';
+
+import { initialState as tfSidebarInitialState } from '../../store/tf-sidebar/tf-sidebar.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { TfDashboardType } from '../../store/tf-dashboard/tf-dashboard.models';
 
 
 
-let declarations: any[] = [TfNavbarComponent, TfSidebarComponent, TfNavbarNavItemComponent, TfSidebarNavItemComponent];
+let declarations: any[] = [];
 
 
 let navigationItems1 = <TfNavigationItem[]>[
@@ -48,8 +55,11 @@ export default {
     moduleMetadata({
       //👇 Imports both components to allow component composition with Storybook
         declarations,
+        providers: [StorybookUtilityService],
         imports: [
-            TechfabricAngularControlsModule,
+            StoreModule.forRoot({}),
+            EffectsModule.forRoot([]),
+            TechfabricAngularAppModule,
             FontAwesomeModule
         ]
     })
@@ -65,8 +75,82 @@ const Template: Story = (args) => ({
 })
 
 
-export const Default = Template.bind({});
-Default.args = {
-    tfConfig: tfConfigInitialState
+export const OpenAndCloseContentAware = Template.bind({});
+OpenAndCloseContentAware.args = {
+    tfConfig: tfConfigInitialState,
+    tfSidebar: <TfSidebarState>{
+        type: TfSidebarType.ContentAware,
+        display: TfSidebarDisplay.Open
+    },
+    tfNavigation: {
+        navigationItems: [
+            <TfNavigationItem>{
+                navigationItemType: TfNavigationItemType.Sidebar,
+                displayText: 'Home'
+            }
+        ]
+    },
+    tfDashboard: {
+        type: TfDashboardType.OpenAndClose
+    }
 };
 
+export const OpenAndPreviewContentAware = Template.bind({});
+OpenAndPreviewContentAware.args = {
+    tfConfig: tfConfigInitialState,
+    tfSidebar: <TfSidebarState>{
+        type: TfSidebarType.ContentAware,
+        display: TfSidebarDisplay.Open
+    },
+    tfNavigation: {
+        navigationItems: [
+            <TfNavigationItem>{
+                navigationItemType: TfNavigationItemType.Sidebar,
+                displayText: 'Home'
+            }
+        ]
+    },
+    tfDashboard: {
+        
+    }
+};
+
+export const OpenAndPreviewFixed = Template.bind({});
+OpenAndPreviewFixed.args = {
+    tfConfig: tfConfigInitialState,
+    tfSidebar: <TfSidebarState>{
+        type: TfSidebarType.Fixed,
+        display: TfSidebarDisplay.Open
+    },
+    tfNavigation: {
+        navigationItems: [
+            <TfNavigationItem>{
+                navigationItemType: TfNavigationItemType.Sidebar,
+                displayText: 'Home'
+            }
+        ]
+    },
+    tfDashboard: {
+        
+    }
+};
+
+export const OpenAndClosedFixed = Template.bind({});
+OpenAndClosedFixed.args = {
+    tfConfig: tfConfigInitialState,
+    tfSidebar: <TfSidebarState>{
+        type: TfSidebarType.Fixed,
+        display: TfSidebarDisplay.Open
+    },
+    tfNavigation: {
+        navigationItems: [
+            <TfNavigationItem>{
+                navigationItemType: TfNavigationItemType.Sidebar,
+                displayText: 'Home'
+            }
+        ]
+    },
+    tfDashboard: {
+        
+    }
+};
