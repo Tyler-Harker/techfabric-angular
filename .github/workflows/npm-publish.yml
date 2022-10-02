@@ -23,6 +23,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: ls
       - run: cd projects/techfabric-angular-controls/
+      - run: git config user.email "me@tylerharker.com"
+      - run: git config user.name "Tyler Harker"
       - run: npm version patch --force
       - run: npx -p @angular/cli ng build techfabricAngularControls
       - run: cd ../../dist/techfabric-angular-controls/
