@@ -26,7 +26,7 @@ jobs:
       - run: git config user.email "me@tylerharker.com"
       - run: git config user.name "Tyler Harker"
       - run: npm version patch --force
-      - run: ng build techfabricAngularControls
+      - run: npm run-script ng build techfabricAngularControls
       - run: cd ../../dist/techfabric-angular-controls/
       - run: npm publish
         env:
