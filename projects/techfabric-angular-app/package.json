@@ -1,11 +1,16 @@
 {
   "name": "@techfabric/angular-app",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
   },
   "dependencies": {
+    "@techfabric/angular-controls": "0.0.7",
     "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
