@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: ls
       - run: cd .\projects\techfabric-angular-app\
       - run: npm version patch --force
       - run: npx -p @angular/cli ng build techfabricAngularControls
