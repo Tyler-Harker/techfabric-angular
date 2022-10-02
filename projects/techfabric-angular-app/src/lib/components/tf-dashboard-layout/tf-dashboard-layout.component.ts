@@ -38,7 +38,7 @@ export class TfDashboardLayoutComponent implements OnInit {
       this.store?.dispatch(setConfig(this.tfConfig));
       this.store?.dispatch(setSidebarState({state: <TfSidebarState>this.tfSidebar}));
       this.store?.dispatch(setDashboardState({payload: this.tfDashboard}))
-    });
+    }); 
     this.store?.select(selectTfConfig).subscribe(config => this.tfConfig = config);
     this.store?.select(getTfNavigationState).subscribe(navigationState => this.tfNavigation = navigationState);
     this.store?.select(selectTfDashboardState).subscribe(dashboardState => this.tfDashboard = dashboardState);

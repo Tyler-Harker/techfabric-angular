@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { TfInputComponent, TfButtonComponent }from './components';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 let components = [
   TfButtonComponent,
@@ -17,10 +18,12 @@ let components = [
   ],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     FormsModule
   ],
   exports: [
-    ...components
+    ...components,
+    FontAwesomeModule
   ]
 })
 export class TechfabricAngularControlsModule { }

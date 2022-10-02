@@ -151,6 +151,6 @@ OpenAndClosedFixed.args = {
         ]
     },
     tfDashboard: {
-        
+        type: TfDashboardType.OpenAndClose
     }
 };

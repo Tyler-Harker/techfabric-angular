@@ -33,7 +33,7 @@ export const Components = [TfNavbarComponent, TfSidebarComponent, TfNavbarNavIte
   ],
   exports: [
     ...Components,
-    CommonModule,
+    CommonModule, 
     TechfabricAngularControlsModule
   ]
 })
