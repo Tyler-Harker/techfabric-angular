@@ -31,7 +31,7 @@ jobs:
       - run: cd ../../
       - run: ls
       - run: cd dist/
-      - run: ls
+      - run: ls dist/
       - run: cd techfabric-angular-controls
       - run: npm publish
         env:
